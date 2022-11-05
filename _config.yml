@@ -1,5 +1,5 @@
 # Site settings
-title: Chantelles World
+title: "Chantelle's World"
 url: "http://ChantelleAA.github.io"    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
 baseurl: "" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
 #timezone: Asia/Chongqing
@@ -11,7 +11,7 @@ description: >
 email: chantelatta@gmail.com
 author: Chantelle
 avatar: "https://github.com/ChantelleAA/ChantelleAA.github.io/blob/gh-pages/Chantelle.jpeg?raw=true"
-profile: Chantelle A girl on fire.
+profile: Chantelle: A girl on fire.
 #twitter_username: SavedChantel
 #github_username:  ChantelleAA
 profile_links:
