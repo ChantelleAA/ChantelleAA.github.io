@@ -4,8 +4,7 @@ url: "http://ChantelleAA.github.io"    # the protocol and hostname of your site,
 baseurl: "" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
 #timezone: Asia/Chongqing
 description: >
-  Hello Lovely people, my name is Chantelle , and I love to write.
-  In this blog, I will take you on my evolution journey. 
+  Hello Lovely people, my name is Chantelle , and I love to write. In this blog, I will take you on my evolution journey. 
   
 
 # Your information
