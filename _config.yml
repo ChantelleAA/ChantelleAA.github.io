@@ -1,10 +1,10 @@
 # Site settings
-title: Chantelles World
+title: Chantelle Amoako-Atta
 url: "http://ChantelleAA.github.io"    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
 baseurl: "" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
 #timezone: Asia/Chongqing
 description: >
-  Hello Lovely people my name is Chantelle
+  A 
   
 
 # Your information
@@ -17,6 +17,7 @@ profile: Chantelle A girl on fire.
 profile_links:
   Email: "mailto:chantelatta@gmail.com"
   GitHub: "https://github.com/ChantelleAA"
+  LinkedIn: "http://www.linkedin.com/in/chantelle-amoako-atta-4791671b9"
   # You can add more profile links above, or edit _includes/sidebar.html 
 
 # Comment Service (Disqus or 多说)
