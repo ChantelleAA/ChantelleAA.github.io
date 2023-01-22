@@ -4,14 +4,14 @@ url: "http://ChantelleAA.github.io"    # the protocol and hostname of your site,
 baseurl: "" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
 #timezone: Asia/Chongqing
 description: >
-  A 
+  Learning concepts and theories in Mathematics, Machine Learning, and Mathematics for Machine Learning.
   
 
 # Your information
 email: chantelatta@gmail.com
 author: Chantelle
 avatar: "https://github.com/ChantelleAA/ChantelleAA.github.io/blob/gh-pages/Chantelle.jpeg?raw=true"
-profile: Chantelle A girl on fire.
+profile: Msc. Student at African Institute of Mathematical Sciences, Teacher, Machine Learning and Data Science Enthusiast.
 #twitter_username: SavedChantel
 #github_username:  ChantelleAA
 profile_links:
