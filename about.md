@@ -4,7 +4,6 @@ title: About
 permalink: /about/
 ---
 
-About Me
 Hi! I’m Chantelle Amoako-Atta, a machine learning enthusiast and data scientist passionate about finding innovative solutions to complex problems. With a strong background in data-centric engineering and mathematical sciences, I've had the pleasure of working on projects ranging from medical image segmentation to forecasting energy consumption using deep learning models.
 
 My journey began with a love for mathematics, which soon evolved into an exploration of its application in AI and data science. I believe in the power of data to transform industries, and I'm driven by a curiosity to improve diagnostic tools in healthcare and beyond.
