@@ -11,13 +11,13 @@ description: >
 email: chantelatta@gmail.com
 author: Chantelle
 avatar: "https://github.com/ChantelleAA/ChantelleAA.github.io/blob/gh-pages/Chantelle.jpeg?raw=true"
-profile: Msc. Student at African Institute of Mathematical Sciences, Teacher, Machine Learning and Data Science Enthusiast.
+profile: Tutor at African Institute of Mathematical Sciences, Data Science and Machine Learning Instructor at Adaire, Machine Learning and Data Science Enthusiast.
 #twitter_username: SavedChantel
 #github_username:  ChantelleAA
 profile_links:
   Email: "mailto:chantelatta@gmail.com"
   GitHub: "https://github.com/ChantelleAA"
-  LinkedIn: "http://www.linkedin.com/in/chantelle-amoako-atta-4791671b9"
+  LinkedIn: "http://www.linkedin.com/in/chantelleaa"
   # You can add more profile links above, or edit _includes/sidebar.html 
 
 # Comment Service (Disqus or 多说)
@@ -31,6 +31,7 @@ header:
   links:             # Links on the header. Link to in-site page with a slash as prefix
     About: /about/
     Category: /category/
+    Resume: /Resume/
     Donate: https://laobubu.net/donate.html
 
 permalink: /archivers/:title
