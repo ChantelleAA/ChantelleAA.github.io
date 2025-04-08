@@ -1,34 +1,29 @@
 # Site settings
 title: Chantelle Amoako-Atta
-url: "http://ChantelleAA.github.io"    # the protocol and hostname of your site, eg. `http://laobubu.github.io`
-baseurl: "" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
-#timezone: Asia/Chongqing
+url: "http://ChantelleAA.github.io"
+baseurl: ""
 description: >
-  Learning concepts and theories in Mathematics, Machine Learning, and Mathematics for Machine Learning.
-  
+  Machine Learning Engineer exploring and sharing insights in code, data, and teaching—bringing clarity to complex ideas through thoughtful writing.
 
 # Your information
 email: chantelatta@gmail.com
 author: Chantelle
 avatar: "https://github.com/ChantelleAA/ChantelleAA.github.io/blob/gh-pages/Chantelle.jpeg?raw=true"
-profile: Tutor at African Institute of Mathematical Sciences, Data Science and Machine Learning Instructor at Adaire, Machine Learning and Data Science Enthusiast.
-#twitter_username: SavedChantel
-#github_username:  ChantelleAA
+profile: Machine Learning Engineer and educator with a background in mathematics. Passionate about helping others understand code, data, and machine learning in simple and practical ways.
+
 profile_links:
   Email: "mailto:chantelatta@gmail.com"
   GitHub: "https://github.com/ChantelleAA"
   LinkedIn: "http://www.linkedin.com/in/chantelleaa"
-  # You can add more profile links above, or edit _includes/sidebar.html 
 
 # Comment Service (Disqus or 多说)
-#  choose one and un-comment the line to active it
-#disqus_shortname: xxx   # get one: https://disqus.com/admin/signup/
-#duoshuo_shortname: xxx  # get one: http://duoshuo.com/create-site/
+#disqus_shortname: xxx
+#duoshuo_shortname: xxx
 
 excerpt_separator: <!--more-->
 
 header:
-  links:             # Links on the header. Link to in-site page with a slash as prefix
+  links:
     About: /about/
     Category: /category/
     Resume: /Resume/
@@ -47,7 +42,6 @@ paginate_path: "page:num"
 highlighter: rouge
 markdown: kramdown
 
-# https://jekyllrb.com/docs/configuration/#precedence
 defaults:
   -
     scope:
