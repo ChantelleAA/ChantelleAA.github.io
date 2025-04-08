@@ -2,15 +2,11 @@
   <img class="avatar" src="{{ site.avatar }}" alt="{{ site.author }}">
   <div class="col-box-title name">{{ site.author }}</div>
   <p>{{ site.profile }}</p>
-  <p class="contact">
-    {% if site.github_username %}
-    <a href="https://github.com/{{ site.github_username }}">GitHub</a>
-    {% endif %}
-    {% if site.twitter_username %}
-    <a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a>
-    {% endif %}
-    {% for link in site.profile_links %}
-    <a href="{{ link | last }}">{{ link | first }}</a>
+
+  <p class="contact-links">
+    {% assign links = site.profile_links %}
+    {% for link in links %}
+      <a href="{{ link[1] }}">{{ link[0] }}</a>{% unless forloop.last %} | {% endunless %}
     {% endfor %}
   </p>
 </div>
