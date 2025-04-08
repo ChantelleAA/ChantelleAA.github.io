@@ -4,12 +4,14 @@ title: About
 permalink: /about/
 ---
 
-Hi, I am Chantelle Amoako-Atta, a machine learning enthusiast and data scientist passionate about finding innovative solutions to complex problems. With a strong background in data-centric engineering and mathematical sciences, I've had the pleasure of working on projects ranging from medical image segmentation to forecasting energy consumption using deep learning models.
+Hi, I’m Chantelle Amoako-Atta—a machine learning engineer and educator with a background in mathematical sciences and data-centric engineering.
 
-My journey began with a love for mathematics, which soon evolved into an exploration of its application in AI and data science. I believe in the power of data to transform industries, and I'm driven by a curiosity to improve diagnostic tools in healthcare and beyond.
+My journey started with a deep love for mathematics and has evolved into a purposeful exploration of how data and AI can be used to solve real-world problems. Over the years, I’ve worked on projects ranging from brain tumor segmentation in medical imaging to energy consumption forecasting and cardiac arrhythmia classification using machine learning.
 
-I have experience working with Python, TensorFlow, and CUDA for GPU computing, and my recent work includes developing user-centric systems using Django and applying machine learning algorithms to classify cardiac arrhythmias.
+I build with tools like Python, TensorFlow, and CUDA for GPU computing. I also enjoy creating intuitive systems with Django and simplifying complex concepts for others—whether that’s through mentoring, teaching, or writing.
 
-Looking forward, I aim to deepen my expertise in AI and contribute to impactful projects that make a difference in people’s lives. When I'm not coding or researching, you can find me enjoying a strategic game of Oware or exploring nature trails.
+This blog is a space where I share what I’m building, explain how I approach challenges, and break down concepts in machine learning and programming—especially for those transitioning into tech from non-traditional paths.
 
-Thanks for stopping by I hope you enjoy exploring my blog and projects!
+When I'm not coding or guiding students, I enjoy a good game of Oware or walking quiet nature trails.
+
+Thanks for visiting—feel free to explore, learn, and reach out.
