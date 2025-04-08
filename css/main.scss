@@ -3,41 +3,93 @@
 ---
 @charset "utf-8";
 
-$base-font-family: "Open Sans", "Helvetica Neue", "DejaVu Sans", Arial, "PingFang SC", "Noto Sans CJK SC", "Hiragino Sans GB", "微软雅黑",  Helvetica, sans-serif;
+// 🌸 FONT SETUP
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+$base-font-family: 'Poppins', sans-serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+$base-line-height: 1.6;
 
-$code-font-family:   Menlo, Monaco, Consolas, "DejaVu Sans Mono", "Liberation Mono", "文泉驿等宽微米黑", "Courier New", Courier, SimSun, monospace;
-$code-font-size:     15px;
+$code-font-family: Menlo, Monaco, Consolas, monospace;
+$code-font-size:   15px;
 
-// Width of the content area
 $content-width:    800px;
-
 $on-palm:          600px;
 $on-laptop:        800px;
 
-$color-link: #036;
-$color-link-hover: #069;
+// 🌼 COLOR PALETTE (soft pastel theme)
+$color-link: #6a9ecf;
+$color-link-hover: #4b7bab;
 
-$header-bg: #607D8B;
-$header-bg-hover: #78909C;
-$header-link: #CFD8DC;
-$header-fg: #FFF;
+$header-bg: #b3d7f5;          // soft pastel blue
+$header-bg-hover: #a2cbee;    // hover version
+$header-link: #ffffff;
+$header-fg: #2c3e50;          // soft dark blue for text
 
+// ✨ MIXIN
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+  @media screen and (max-width: $device) {
+    @content;
+  }
 }
 
+// ✨ GLOBAL STYLES
+body {
+  background-color: #f9fbfd;
+  color: #2e3a59;
+  font-family: $base-font-family;
+  transition: background-color 0.3s ease;
+}
 
+a {
+  color: $color-link;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
 
-// Import partials from `sass_dir` (defaults to `_sass`)
+  &:hover {
+    color: $color-link-hover;
+    text-decoration: underline;
+  }
+}
+
+// ✨ Rounded and shadowy cards
+.col-box, .post, .post-list li, .pagination, .profile {
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  padding: 1.2rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  }
+}
+
+// ✨ Buttons and links
+button, .post-link, .pagination a {
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  transition: all 0.3s ease-in-out;
+}
+
+.post-link:hover, .pagination a:hover {
+  background-color: #e6f0fa;
+  color: #2c3e50;
+}
+
+// ✨ Header styling
+header {
+  background-color: $header-bg;
+  color: $header-fg;
+  padding: 1rem;
+  border-radius: 0 0 20px 20px;
+}
+
+// ✅ Import theme structure
 @import
-        "base",
-        "animate",
-        "layout",
-        "syntax-highlighting",
-        "easybook"
-;
+  "base",
+  "animate",
+  "layout",
+  "syntax-highlighting",
+  "easybook";
