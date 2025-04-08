@@ -9,12 +9,13 @@ description: >
 email: chantelatta@gmail.com
 author: Chantelle
 avatar: "https://github.com/ChantelleAA/ChantelleAA.github.io/blob/gh-pages/Chantelle.jpeg?raw=true"
-profile: Machine Learning Engineer and educator with a background in mathematics. Passionate about helping others understand code, data, and machine learning in simple and practical ways.
+profile: Machine Learning Engineer helping others understand code and machine learning through clear, practical insights.
 
 profile_links:
   Email: "mailto:chantelatta@gmail.com"
   GitHub: "https://github.com/ChantelleAA"
   LinkedIn: "http://www.linkedin.com/in/chantelleaa"
+  Resume: "/Resume/"
 
 # Comment Service (Disqus or 多说)
 #disqus_shortname: xxx
