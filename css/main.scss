@@ -136,6 +136,25 @@ header {
   border-radius: 0 0 24px 24px;
 }
 
+// Global text selection color
+::selection {
+  background: #e8e2f1;
+  color: #2e2c2f;
+}
+
+//Postcard hover links
+.post-card-link,
+.post-card-link:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-card-link:hover {
+  color: $color-link-hover;
+  text-decoration: none;
+}
+
+
 // Theme imports
 @import
   "base",
