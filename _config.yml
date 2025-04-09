@@ -26,9 +26,9 @@ excerpt_separator: <!--more-->
 header:
   links:
     About: /about/
-    Category: /category/
+    Blog: /category/
     Resume: /Resume/
-    Donate: https://laobubu.net/donate.html
+    Projects: /projects/
 
 permalink: /archivers/:title
 plugins:
