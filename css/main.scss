@@ -52,6 +52,19 @@ body {
   padding-bottom: 2rem;
 }
 
+// scroll behaviour and page fade
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+body.loaded {
+  opacity: 1;
+}
 
 // Global link styles
 a,
