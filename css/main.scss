@@ -52,6 +52,17 @@ body {
   padding-bottom: 2rem;
 }
 
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+
 // scroll behaviour and page fade
 html {
   scroll-behavior: smooth;
