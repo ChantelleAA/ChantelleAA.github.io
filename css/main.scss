@@ -42,12 +42,16 @@ $header-fg: $color-text;
 
 // Global base
 body {
-  background: linear-gradient(145deg, #fdfdfc 0%, #f5f3fa 100%);
+  background-color: #fdfdfc;
+  background-image: url("data:image/svg+xml;utf8,<svg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='1' cy='1' r='1' fill='%23dcd6e8'/></svg>");
+  background-repeat: repeat;
+  background-size: 40px 40px;
   color: $color-text;
   font-family: $base-font-family;
   transition: background-color 0.3s ease;
   padding-bottom: 2rem;
 }
+
 
 // Global link styles
 a,
