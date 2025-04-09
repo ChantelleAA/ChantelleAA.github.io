@@ -19,10 +19,9 @@ $content-width: 800px;
 $on-palm: 600px;
 $on-laptop: 800px;
 
-// Color palette — Lavender + Blush
+// Lavender-only palette
 $color-primary: #c9bbdf;
 $color-primary-hover: #9e91c7;
-$color-accent: #f2cfd3;
 $color-text: #2e2c2f;
 $color-muted: #888;
 
@@ -34,14 +33,14 @@ $header-bg-hover: $color-primary-hover;
 $header-link: #ffffff;
 $header-fg: $color-text;
 
-// Mixin for responsive design
+// Responsive mixin
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;
   }
 }
 
-// Base styles
+// Global base
 body {
   background-color: #fdfdfc;
   color: $color-text;
@@ -61,7 +60,7 @@ a {
   }
 }
 
-// Layout elements: boxes, posts, pagination
+// Core layout containers
 .col-box, .post, .post-list li, .pagination, .profile {
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
@@ -70,13 +69,22 @@ a {
   transition: all 0.3s ease;
 }
 
+// Card hover – no color change, only soft lift
 .post-list li:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 22px rgba(0, 0, 0, 0.08);
-  background-color: $color-accent;
 }
 
-// Buttons and post links
+// Make full card clickable (structure comes in index.html)
+.post-card-link {
+  display: block;
+  color: inherit;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
+// Buttons and pagination
 button, .post-link, .pagination a {
   border-radius: 10px;
   padding: 0.5em 1em;
@@ -88,7 +96,7 @@ button, .post-link, .pagination a {
   color: #fff;
 }
 
-// Sidebar contact links
+// Contact links
 .contact-links {
   text-align: center;
   font-size: 0.95rem;
@@ -111,43 +119,16 @@ button, .post-link, .pagination a {
   }
 }
 
-// Sidebar quote block
-.sidebar-vibe {
-  font-size: 0.95rem;
-  margin-top: 1rem;
-  color: #999;
+// Page title
+.page-heading {
+  font-size: 2rem;
+  font-weight: 600;
   text-align: center;
-
-  em {
-    font-style: italic;
-  }
+  margin-bottom: 2rem;
+  color: $color-primary-hover;
 }
 
-// Sidebar topics list
-.sidebar-tags {
-  margin-top: 1rem;
-
-  strong {
-    display: block;
-    margin-bottom: 0.3rem;
-    font-size: 0.9rem;
-    color: #555;
-  }
-
-  ul {
-    list-style: none;
-    padding-left: 0;
-    font-size: 0.85rem;
-    color: #777;
-    line-height: 1.5;
-
-    li {
-      margin-bottom: 0.25rem;
-    }
-  }
-}
-
-// Header styles
+// Header
 header {
   background-color: $header-bg;
   color: $header-fg;
@@ -155,7 +136,7 @@ header {
   border-radius: 0 0 24px 24px;
 }
 
-// Import core theme structure
+// Theme imports
 @import
   "base",
   "animate",
