@@ -23,7 +23,29 @@
 <script>
   window.addEventListener("DOMContentLoaded", function () {
     document.body.classList.add("loaded");
+
+    // Delay navigation for fade effect
+    document.querySelectorAll('a[href]').forEach(function (link) {
+      const url = new URL(link.href);
+      const current = new URL(window.location.href);
+
+      // Only internal links, same domain
+      if (url.origin === current.origin && !url.hash && !url.href.includes('mailto')) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = this.href;
+
+          document.body.classList.remove("loaded");
+          document.body.classList.add("fade-out");
+
+          setTimeout(() => {
+            window.location.href = target;
+          }, 250);
+        });
+      }
+    });
   });
 </script>
+
 
 </head>
