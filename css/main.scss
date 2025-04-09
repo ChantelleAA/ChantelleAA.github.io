@@ -219,6 +219,15 @@ button,
   color: $color-primary-hover;
 }
 
+// Typing intro title
+#type-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: $color-primary-hover;
+  margin-bottom: 1rem;
+  min-height: 3rem;
+}
+
 // Header
 header {
   background-color: $header-bg;
