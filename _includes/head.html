@@ -4,66 +4,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{% if page.title %}{{ page.title }} « {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-<!--   add favicons -->
+
+  <!-- Favicons -->
   <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
-<link rel="manifest" href="{{ '/assets/img/site.webmanifest' | relative_url }}">
-<!--   description -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/assets/img/site.webmanifest' | relative_url }}">
+
+  <!-- Meta Description -->
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
 
-  <!-- ✅ Font Awesome for favicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-FS+sTfwbSKbVmFZgPhjw/98eQUU2MwrCev7eYYvO4V6Mms4C7+4VfHL0wOXyy2JhDjGIm7n2svjWSA9TP4+Xqw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome (without integrity) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <!-- Page transitions + Typing animation -->
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      document.body.classList.add("loaded");
 
-<!--   add transitions -->
-<script>
-  window.addEventListener("DOMContentLoaded", function () {
-    document.body.classList.add("loaded");
+      // Delay navigation for fade effect
+      document.querySelectorAll('a[href]').forEach(function (link) {
+        const url = new URL(link.href);
+        const current = new URL(window.location.href);
 
-    // Delay navigation for fade effect
-    document.querySelectorAll('a[href]').forEach(function (link) {
-      const url = new URL(link.href);
-      const current = new URL(window.location.href);
+        if (url.origin === current.origin && !url.hash && !url.href.includes('mailto')) {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = this.href;
 
-      // Only internal links, same domain
-      if (url.origin === current.origin && !url.hash && !url.href.includes('mailto')) {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = this.href;
+            document.body.classList.remove("loaded");
+            document.body.classList.add("fade-out");
 
-          document.body.classList.remove("loaded");
-          document.body.classList.add("fade-out");
+            setTimeout(() => {
+              window.location.href = target;
+            }, 250);
+          });
+        }
+      });
 
-          setTimeout(() => {
-            window.location.href = target;
-          }, 250);
-        });
+      // Typing animation
+      const el = document.getElementById("type-title");
+      if (el) {
+        const text = "Hey there, I’m Chantelle";
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            el.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 60);
+          }
+        }
+
+        setTimeout(type, 300);
       }
     });
-  });
-
-    // Typing animation for homepage title
-    const el = document.getElementById("type-title");
-    if (el) {
-      const text = "Hey there, I’m Chantelle";
-      let index = 0;
-
-      function type() {
-        if (index < text.length) {
-          el.innerHTML += text.charAt(index);
-          index++;
-          setTimeout(type, 60);
-        }
-      }
-
-      setTimeout(type, 300);
-    }
-  });
-</script>
-
-
+  </script>
 </head>
