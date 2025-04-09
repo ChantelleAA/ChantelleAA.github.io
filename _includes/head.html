@@ -45,6 +45,24 @@
       }
     });
   });
+
+    // Typing animation for homepage title
+    const el = document.getElementById("type-title");
+    if (el) {
+      const text = "Hey there, I’m Chantelle";
+      let index = 0;
+
+      function type() {
+        if (index < text.length) {
+          el.innerHTML += text.charAt(index);
+          index++;
+          setTimeout(type, 60);
+        }
+      }
+
+      setTimeout(type, 300);
+    }
+  });
 </script>
 
 
