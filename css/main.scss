@@ -41,16 +41,20 @@ $header-fg: $color-text;
 }
 
 // Global base
-body {
-  background-color: #fdfdfc;
-  background-image: url("data:image/svg+xml;utf8,<svg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='2' cy='2' r='2' fill='%239e91c7'/></svg>");
-  background-repeat: repeat;
-  background-size: 30px 30px;
-  color: $color-text;
-  font-family: $base-font-family;
-  transition: background-color 0.3s ease;
-  padding-bottom: 2rem;
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/assets/img/background-wave1.png') no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.05;
+  z-index: -1;
+  pointer-events: none;
 }
+
 
 
 
