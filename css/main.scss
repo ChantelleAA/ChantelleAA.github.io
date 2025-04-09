@@ -7,12 +7,12 @@
 
 // Font settings
 $base-font-family: 'Poppins', sans-serif;
-$base-font-size:   16px;
-$small-font-size:  $base-font-size * 0.875;
+$base-font-size: 16px;
+$small-font-size: $base-font-size * 0.875;
 $base-line-height: 1.6;
 
 $code-font-family: Menlo, Monaco, Consolas, monospace;
-$code-font-size:   15px;
+$code-font-size: 15px;
 
 // Layout breakpoints
 $content-width: 800px;
@@ -61,12 +61,16 @@ a:hover,
 a:focus,
 a:active {
   color: $color-link-hover;
-  text-decoration: underline;
+  text-decoration: none;
   background: transparent;
 }
 
 // Core layout containers
-.col-box, .post, .post-list li, .pagination, .profile {
+.col-box,
+.post,
+.post-list li,
+.pagination,
+.profile {
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
   background-color: #ffffff;
@@ -74,27 +78,28 @@ a:active {
   transition: all 0.3s ease;
 }
 
-// Card hover – no color change, only soft lift
-.post-list li:hover {
+// Homepage and Sidebar post card lift
+.home .post-list li:hover,
+.col-box .post-list li:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 22px rgba(0, 0, 0, 0.08);
   background: none;
 }
 
-// Sidebar post list link hover fix
+// Post list link styling
 .post-list a {
   color: $color-link;
   text-decoration: none;
-  transition: color 0.1s ease;
+  transition: color 0.2s ease;
 }
 
 .post-list a:hover {
   color: $color-link-hover;
   background: transparent;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-// Make full card clickable (structure comes in index.html)
+// Make full card clickable
 .post-card-link,
 .post-card-link:visited {
   display: block;
@@ -109,14 +114,53 @@ a:active {
   text-decoration: none;
 }
 
+.post-card-link:hover .post-title {
+  color: $color-link-hover;
+  text-decoration: none;
+}
+
+// Elegant post title styling
+.post-title {
+  background: none !important;
+  padding: 0 !important;
+  margin-bottom: 1rem;
+  border-radius: 0;
+  box-shadow: none;
+  color: $color-text;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.post-title::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: transparent;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.post-title:hover::after {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
 // Buttons and pagination
-button, .post-link, .pagination a {
+button,
+.post-link,
+.pagination a {
   border-radius: 10px;
   padding: 0.5em 1em;
   transition: all 0.3s ease-in-out;
 }
 
-.post-link:hover, .pagination a:hover {
+.post-link:hover,
+.pagination a:hover {
   background-color: $color-primary;
   color: #fff;
 }
@@ -165,37 +209,6 @@ header {
 ::selection {
   background: #e8e2f1;
   color: $color-text;
-}
-
-// Elegant post title styling
-.post-title {
-  background: none !important;
-  padding: 0 !important;
-  margin-bottom: 1rem;
-  border-radius: 0;
-  box-shadow: none;
-  color: $color-text;
-  position: relative;
-  display: inline-block;
-  transition: color 0.3s ease;
-}
-
-.post-title::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: $color-primary;
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out;
-}
-
-.post-title:hover::after {
-  visibility: visible;
-  transform: scaleX(1);
 }
 
 // Theme imports
