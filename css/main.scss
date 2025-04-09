@@ -141,7 +141,7 @@ a:active {
   text-decoration: none;
 }
 
-// Elegant post title styling
+// Unified and elegant post title styling
 .post-title {
   background: none !important;
   padding: 0 !important;
@@ -149,9 +149,16 @@ a:active {
   border-radius: 0;
   box-shadow: none;
   color: $color-text;
+  font-size: 2.25rem;
+  font-weight: 600;
   position: relative;
   display: inline-block;
   transition: color 0.3s ease;
+}
+
+.post-title:hover {
+  color: $color-link-hover;
+  text-decoration: none;
 }
 
 .post-title::after {
@@ -170,6 +177,17 @@ a:active {
 .post-title:hover::after {
   visibility: visible;
   transform: scaleX(1);
+  background-color: $color-primary-hover;
+}
+
+// Fix page headers (remove lavender background flap on about/resume/etc.)
+.page h1,
+.page-header h1,
+.page .post-title {
+  background: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
 }
 
 // Buttons and pagination
@@ -256,24 +274,6 @@ header {
   height: 20px;
   border-radius: 4px;
 }
-
-.post-title {
-  color: $color-text;
-  font-size: 2.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  background: none !important;
-  padding: 0 !important;
-  border-radius: 0;
-  box-shadow: none;
-  display: inline-block;
-  transition: color 0.3s ease;
-}
-
-.post-title:hover {
-  color: $color-link-hover;
-}
-
 
 // Global text selection color
 ::selection {
