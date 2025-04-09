@@ -66,6 +66,11 @@ body.loaded {
   opacity: 1;
 }
 
+body.fade-out {
+  opacity: 0 !important;
+  transition: opacity 0.3s ease-in-out;
+}
+
 // Global link styles
 a,
 a:visited {
