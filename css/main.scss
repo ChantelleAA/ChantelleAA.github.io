@@ -227,6 +227,28 @@ header {
   border-radius: 0 0 24px 24px;
 }
 
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: $color-link;
+  font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.site-branding:hover {
+  color: $color-link-hover;
+  transform: scale(1.03);
+}
+
+.site-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+
 // Global text selection color
 ::selection {
   background: #e8e2f1;
