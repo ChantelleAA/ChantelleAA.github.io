@@ -3,9 +3,9 @@
 ---
 @charset "utf-8";
 
-// 🌸 FONT SETUP
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+// Font settings
 $base-font-family: 'Poppins', sans-serif;
 $base-font-size:   16px;
 $small-font-size:  $base-font-size * 0.875;
@@ -14,14 +14,15 @@ $base-line-height: 1.6;
 $code-font-family: Menlo, Monaco, Consolas, monospace;
 $code-font-size:   15px;
 
-$content-width:    800px;
-$on-palm:          600px;
-$on-laptop:        800px;
+// Layout breakpoints
+$content-width: 800px;
+$on-palm: 600px;
+$on-laptop: 800px;
 
-// 🎨 COLOR PALETTE — Lavender + Blush
-$color-primary: #c9bbdf;           // lavender
-$color-primary-hover: #9e91c7;     // lavender deep
-$color-accent: #f2cfd3;            // blush
+// Color palette — Lavender + Blush
+$color-primary: #c9bbdf;
+$color-primary-hover: #9e91c7;
+$color-accent: #f2cfd3;
 $color-text: #2e2c2f;
 $color-muted: #888;
 
@@ -33,14 +34,14 @@ $header-bg-hover: $color-primary-hover;
 $header-link: #ffffff;
 $header-fg: $color-text;
 
-// ✨ MIXIN
+// Mixin for responsive design
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;
   }
 }
 
-// 🌐 GLOBAL STYLES
+// Base styles
 body {
   background-color: #fdfdfc;
   color: $color-text;
@@ -60,7 +61,7 @@ a {
   }
 }
 
-// 🌸 Rounded and shadowy cards
+// Layout elements: boxes, posts, pagination
 .col-box, .post, .post-list li, .pagination, .profile {
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
@@ -72,10 +73,10 @@ a {
 .post-list li:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 22px rgba(0, 0, 0, 0.08);
-  background-color: $color-accent; // blush on hover
+  background-color: $color-accent;
 }
 
-// ✨ Buttons and links
+// Buttons and post links
 button, .post-link, .pagination a {
   border-radius: 10px;
   padding: 0.5em 1em;
@@ -87,7 +88,7 @@ button, .post-link, .pagination a {
   color: #fff;
 }
 
-// ✨ Sidebar Contact Links
+// Sidebar contact links
 .contact-links {
   text-align: center;
   font-size: 0.95rem;
@@ -110,7 +111,43 @@ button, .post-link, .pagination a {
   }
 }
 
-// ✨ Header
+// Sidebar quote block
+.sidebar-vibe {
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  color: #999;
+  text-align: center;
+
+  em {
+    font-style: italic;
+  }
+}
+
+// Sidebar topics list
+.sidebar-tags {
+  margin-top: 1rem;
+
+  strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.85rem;
+    color: #777;
+    line-height: 1.5;
+
+    li {
+      margin-bottom: 0.25rem;
+    }
+  }
+}
+
+// Header styles
 header {
   background-color: $header-bg;
   color: $header-fg;
@@ -118,7 +155,7 @@ header {
   border-radius: 0 0 24px 24px;
 }
 
-// ✅ Import theme structure
+// Import core theme structure
 @import
   "base",
   "animate",
