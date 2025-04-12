@@ -6,7 +6,7 @@ categories: [intro, reflections]
 excerpt: "Machine learning engineer and educator sharing insights from the journey—from math to code, from classrooms to models."
 ---
 
-A few months later, I started tutoring students in math and writing Python and R scripts that broke more often than they worked. Now, I’m a machine learning engineer helping others break through the fog of code and concepts.
+A few months ago, I started tutoring students in math and writing Python and R scripts that broke more often than they worked. Now, I’m a machine learning engineer helping others break through the fog of code and concepts.
 
 This blog is a new kind of classroom for me—a space where I reflect, explain, and grow through practice and writing.
 
