@@ -5,15 +5,16 @@ permalink: /Resume/
 ---
 
 # Chantelle Amoako-Atta  
-**Machine Learning Engineer | Educator | Researcher**  
-[LinkedIn](https://www.linkedin.com/in/chantelleaa) | [GitHub](https://github.com/ChantelleAA) | Email: chantelatta@gmail.com  
+**Machine Learning Engineer | Data Scientist | Educator | AI Researcher | AI Consultant**  
+[LinkedIn](https://www.linkedin.com/in/chantelleaa) | [GitHub](https://github.com/ChantelleAA) | Email: chantelatta@gmail.com | Website: [link](chantelleAA.github.io)
 
 ---
 
-## 🎓 Education
+## Education
 
 **Lappeenranta University of Technology (LUT), Finland**  
-*Double Degree MSc in Data-Centric Engineering* (2023 – 2024)  
+*Double Degree MSc in Data-Centric Engineering* (2023 – 2024) 
+- Final Grade: 4/5
 - Thesis: *Playing Oware Nam-nam with Deep Q-Networks*
 
 **African Institute for Mathematical Sciences (AIMS), Rwanda**  
@@ -23,19 +24,20 @@ permalink: /Resume/
 
 **University of Ghana**  
 *BA in Mathematics with Economics (First Class)* (2017 – 2021)  
-- Final Project: *Canonical Quantization of Free Φ⁴ Scalar Fields*
+- Final Grade: 3.6 / 4.0 (First Class Honours)
+- Dissertation: *Canonical Quantization of Free Φ⁴ Scalar Fields*
 
 ---
 
-## 💻 Technical Skills
+## Technical Skills
 
-- **Languages/Tools**: Python, MATLAB, R, SQL, CUDA, Git
-- **Libraries**: TensorFlow, PyTorch, Django, Scikit-learn, CuPy, LangChain
+- **Languages/Tools**: Python, MATLAB, R, SQL, CUDA, Git, HTML
+- **Libraries**: TensorFlow, PyTorch, Django, Scikit-learn, CuPy, LangChain, Gradio
 - **Other**: Microsoft Office, LaTeX, Canva, Adobe Photoshop
 
 ---
 
-## 👩🏽‍💼 Experience
+## Experience
 
 **Cape Wesley Consult** – *Machine Learning Engineer (Remote)* (Nov 2024 – Present)  
 - Built GPT-based sentiment models using LangChain for social media analysis  
@@ -55,7 +57,7 @@ permalink: /Resume/
 
 ---
 
-## 🧪 Selected Projects
+## Selected Projects
 
 **Case Mediator Matching System (Ishango AI Hackathon)**  
 - Built a Django-based case scheduling system with NLP and transformer models  
@@ -71,7 +73,7 @@ permalink: /Resume/
 
 ---
 
-## 🏆 Awards & Programs
+## Awards & Programs
 
 - AIMS–Imperial Global Fellows Program (2024)  
 - LUT University Masters Scholarship (2024)  
@@ -80,9 +82,10 @@ permalink: /Resume/
 
 ---
 
-## 🎤 Conferences & Engagements
+## Conferences & Engagements
 
-- MICCAI 2024 – Presented work on brain tumor segmentation  
+- New York University Abu Dhabi NYUAD Quantum Computing Hackathon (2025)
+- MICCAI 2024 – Presented work on brain tumor segmentation  (2024)
 - Ghana Data Science Summit, IndabaX Ghana (2024)  
 - Mathematical Biology Workshop – AIMS Ghana (2024)
 
