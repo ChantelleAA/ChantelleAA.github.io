@@ -6,7 +6,7 @@ permalink: /Resume/
 
 # Chantelle Amoako-Atta  
 **Machine Learning Engineer | Data Scientist | Educator | AI Researcher | AI Consultant**  
-[LinkedIn](https://www.linkedin.com/in/chantelleaa) | [GitHub](https://github.com/ChantelleAA) | Email: chantelatta@gmail.com | Website: [link](https://chantelleAA.github.io)
+[LinkedIn](https://www.linkedin.com/in/chantelleaa) | [GitHub](https://github.com/ChantelleAA) | [Email](chantelatta@gmail.com) | [Website](https://chantelleAA.github.io)
 
 ---
 
