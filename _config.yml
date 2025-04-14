@@ -25,6 +25,7 @@ excerpt_separator: <!--more-->
 
 header:
   links:
+    Home: /index/
     About: /about/
     Blog: /category/
     Resume: /Resume/
