@@ -29,7 +29,7 @@ Tech: stable-baselines
 ---
 
 ### 🗓️ Matching_and_Scheduling_System
-Used classical ML algorithms to predict arrhythmias from physiological signals.  
+A python-based matching and scheduling system created to connect clients with mediators based on their availability, expertise, and other relevant criteria. 
 Tech: django, NLTK, langchain
 [GitHub Repo](https://github.com/ChantelleAA/Matching_and_Scheduling_System)
 
