@@ -35,7 +35,7 @@ plugins:
  - jekyll-paginate
  - jekyll-gist
  - jemoji
-  - jekyll-sitemap
+ - jekyll-sitemap
   
 # Build settings
 paginate: 5
