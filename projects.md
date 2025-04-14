@@ -23,14 +23,14 @@ Created Python notebooks, simple scrapers, and visualizers to help teach program
 
 ### 🎮 Playing Oware Nam-Nam with Deep Q-Networks
 Trained DQN and DDQN to play Oware Nam-Nam against a random player and a human player (implemented in Python).  
-Tech: stable-baselines 
+Tech: stable-baselines  
 [GitHub Repo](https://github.com/ChantelleAA/Reinforcement_Learning_Oware)
 
 ---
 
 ### 🗓️ Matching_and_Scheduling_System
 A python-based matching and scheduling system created to connect clients with mediators based on their availability, expertise, and other relevant criteria. 
-Tech: django, NLTK, langchain
+Tech: django, NLTK, langchain  
 [GitHub Repo](https://github.com/ChantelleAA/Matching_and_Scheduling_System)
 
 ---
