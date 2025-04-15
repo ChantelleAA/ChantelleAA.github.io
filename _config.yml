@@ -28,7 +28,7 @@ header:
     Home: /
     About: /about/
     Blog: /category/
-    Resume: /Resume/
+    # Resume: /Resume/
     Projects: /projects/
 
 permalink: /archivers/:title
