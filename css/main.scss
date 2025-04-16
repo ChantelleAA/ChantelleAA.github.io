@@ -194,6 +194,9 @@ a:active {
   box-shadow: 0 2px 10px rgba(156, 136, 196, 0.2); // soft lavender glow
 }
 
+.col-box + .col-box {
+  margin-top: 1.5rem;
+}
 
 // Buttons and pagination
 button,
