@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Introduction to Gradio (How to easily deploy functions or ML models in Python)"
+title: "Gradio Part 1: Introduction to Gradio (How to easily deploy functions or ML models in Python)"
 date: 2025-04-14
 categories: [intro, tutorials]
 excerpt: "Gradio is a Python library that allows you to quickly create customizable web interfaces for your machine learning models, data analyses, or any Python function."
