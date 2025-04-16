@@ -143,10 +143,6 @@ a:active {
   margin-left: 0 !important;
 }
 
-.sidebar .post-list li {
-  margin-bottom: 0.75rem;
-}
-
 // Make full card clickable
 .post-card-link,
 .post-card-link:visited {
@@ -308,6 +304,10 @@ header {
 
 .post-list li::marker {
   content: none !important;
+}
+
+.sidebar .post-list li {
+  margin-bottom: 0.98rem;
 }
 
 // Theme imports
