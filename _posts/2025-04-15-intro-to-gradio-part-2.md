@@ -1,15 +1,13 @@
 ---
 layout: post
-title: "Gradio Part 2: Predict All 16 MBTI Personality Types from Text Using Transformers"
+title: "Gradio Part 2: Build and Share a Fun ML App to Reveal Someone's Personality by How They Write"
 date: 2025-04-16
 categories: [ml, tutorials]
 excerpt: "Create and share a machine learning personality prediction app with Gradio."
 ---
 
 
-# Gradio Part 2: Predict All 16 MBTI Personality Types from Text Using Transformers
-
-In [Part 1](./2025-04-14-introduction-to-gradio.md), we turned a simple function into a web app using Gradio. In this part, we go deeper: we’ll train a real **text classification model on a psychological dataset**, wrap it with Gradio, and let users type about themselves to see which **MBTI personality type** they might be.
+In [Part 1](./2025-04-14-intro-to-gradio-part-1.md), we turned a simple function into a web app using Gradio. In this part, we go deeper: we’ll train a real **text classification model on a psychological dataset**, wrap it with Gradio, and let users type about themselves to see which **MBTI personality type** they might be.
 
 And this time, we’re not just guessing **Introvert vs Extrovert**. We’re going for all **16 MBTI types**—like INTP, ENFJ, ISFP, etc.
 
@@ -21,6 +19,8 @@ By the end of this guide, you’ll know how to:
 - Show predictions with **confidence scores**
 - Share your app publicly in seconds
 
+Click here to follow on Colab:
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ChantelleAA/ChantelleAA.github.io/blob/gh-pages/_posts/notebooks/gradio2/mbti_gradio_app.ipynb)
 
 ## Step 1: Download the Dataset
 
