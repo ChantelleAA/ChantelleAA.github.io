@@ -132,10 +132,6 @@ a:active {
   text-decoration: none;
 }
 
-.post-list li {
-  margin-bottom: 0.75rem;
-}
-
 .sidebar .post-list,
 .post-list {
   list-style: none !important;
@@ -306,9 +302,11 @@ header {
   content: none !important;
 }
 
-.sidebar .post-list li {
-  margin-bottom: 0.98rem;
+.sidebar .post-list li,
+.col-box .post-list li {
+  margin-bottom: 0.75rem;
 }
+
 
 // Theme imports
 @import
