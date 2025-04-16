@@ -118,10 +118,8 @@ a:active {
 .home .post-list li:hover,
 .col-box .post-list li:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   background: none;
-  margin-bottom: 2.0rem;
-  padding: 1.4rem;
 }
 
 // Post list link styling
