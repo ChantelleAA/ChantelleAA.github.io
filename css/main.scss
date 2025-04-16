@@ -123,6 +123,10 @@ a:active {
   background: none;
 }
 
+.home .post-list li {
+  margin-bottom: 1.5rem;
+}
+
 // Post list link styling
 .post-list a {
   color: $color-link;
