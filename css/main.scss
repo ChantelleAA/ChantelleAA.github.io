@@ -295,6 +295,9 @@ header {
   margin-bottom: 1.5rem;
 }
 
+.post-list li::marker {
+  content: none !important;
+}
 
 // Theme imports
 @import
