@@ -101,7 +101,6 @@ a:active {
 // Core layout containers
 .col-box,
 .post,
-.post-list li,
 .pagination,
 .profile {
   border-radius: 14px;
@@ -109,6 +108,10 @@ a:active {
   background-color: #ffffff;
   padding: 1.2rem;
   transition: all 0.3s ease;
+}
+
+.col-box .post-list li {
+  margin-bottom: 0.75rem;
 }
 
 // Homepage and Sidebar post card lift
