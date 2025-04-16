@@ -3,7 +3,7 @@ layout: post
 title: "Gradio Part 2: Predict All 16 MBTI Personality Types from Text Using Transformers"
 date: 2025-04-16
 categories: [ml, tutorials]
-excerpt: "Turn a powerful Hugging Face Transformer model into a public personality prediction app using real MBTI data. Learn every step—from dataset to deployment with Gradio."
+excerpt: "Create and share a machine learning personality prediction app with Gradio."
 ---
 
 
