@@ -132,6 +132,13 @@ a:active {
   text-decoration: none;
 }
 
+.sidebar .post-list,
+.post-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
 // Make full card clickable
 .post-card-link,
 .post-card-link:visited {
