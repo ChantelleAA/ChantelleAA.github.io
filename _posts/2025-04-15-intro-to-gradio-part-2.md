@@ -26,11 +26,6 @@ Click here to follow on Colab:
 
 We'll use the MBTI Personality Dataset from Kaggle. To help others access it directly without needing a Kaggle account, here’s how to download it from an alternate public source.
 
-You can use this link:
-```
-https://raw.githubusercontent.com/nikbearbrown/MBTI/master/mbti_1.csv
-```
-
 Let's start with loading and exploring the dataset.
 
 ```python
@@ -50,7 +45,6 @@ df['posts'] = df['posts'].apply(lambda x: x.replace('|||', ' '))
 print("Unique types:", df['type'].unique())
 ```
 
-**Suggested visual:** Insert a screenshot of a table showing a few rows of the dataset.
 
 ---
 
@@ -65,7 +59,6 @@ MBTI stands for Myers-Briggs Type Indicator. It classifies people into 16 person
 
 For example, someone who is analytical and reserved might be **INTP**, while someone empathetic and sociable might be **ENFJ**.
 
-**Suggested visual:** Add a chart or image showing the 4 dichotomies and how they combine into 16 types.
 
 ---
 
