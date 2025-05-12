@@ -13,7 +13,7 @@ Start blogging with a simple but powerful theme.
 - **Profile** including your links and avatar on the sidebar.
 - *And more...*
 
-[Me](https://github.com/ChantelleAA/ChantelleAA.github.io/blob/gh-pages/Chantelle.jpeg)
+![Me](https://github.com/ChantelleAA/ChantelleAA.github.io/blob/gh-pages/Chantelle.jpeg)
 
 ## Install
 
