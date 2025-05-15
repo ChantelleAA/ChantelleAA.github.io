@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Introduction to Python in 6 Lessons"
+title: "Introduction to Python in 6 Lessons - Part 1"
 date: 2025-05-13
-categories: [python, tutorial]
+categories: [python, tutorial, mini-project]
 excerpt: "In this lesson we’ll write a simple Python program to convert temperatures (Fahrenheit to Celsius) while learning core concepts...This project gives immediate results: you type a number, the program prints the converted temperature."
 ---
 
