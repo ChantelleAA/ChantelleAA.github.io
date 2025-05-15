@@ -3,7 +3,7 @@ layout: post
 title: "Introduction to Python in 6 Lessons - Part 2"
 date: 2025-05-13
 categories: [python, tutorial, mini-project]
-excerpt: "In this lesson we’ll write a simple Python program to convert temperatures (Fahrenheit to Celsius) while learning core concepts...This project gives immediate results: you type a number, the program prints the converted temperature."
+excerpt: "In this second lesson of our Python beginner series, we’ll build a simple calculator that performs basic arithmetic: addition, subtraction, multiplication, and division. This hands-on project introduces two powerful tools in Python: conditional statements (if, elif, else) and functions."
 ---
 
 # Create a Simple Calculator – Learn Conditionals and Functions
