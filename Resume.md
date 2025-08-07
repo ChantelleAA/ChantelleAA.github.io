@@ -6,7 +6,7 @@ permalink: /Resume/
 
 # Chantelle Amoako-Atta
 
-**PhD Candidate in AI for Decarbonization | Machine Learning Engineer | NLP & Computer Vision Specialist | AI Researcher & Educator**
+**PhD Candidate in AI for Decarbonization • Machine Learning Engineer • NLP & Computer Vision Specialist • AI Researcher & Educator**
 
 [chantelatta@gmail.com](mailto:chantelatta@gmail.com) • [LinkedIn](https://linkedin.com/in/chantelleaa) • [GitHub](https://github.com/ChantelleAA) • [Website & Blog](https://chantelleaa.github.io) • +233 550-986-002
 
