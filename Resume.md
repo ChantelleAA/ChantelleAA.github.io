@@ -7,11 +7,11 @@ permalink: /Resume/
 # **Chantelle Amoako-Atta**
 **PhD Candidate in AI for Decarbonization • Machine Learning Engineer • NLP & Computer Vision Specialist • AI Educator**
 
-[Email](mailto:chantelatta@gmail.com) • [LinkedIn](https://linkedin.com/in/chantelleaa) • [GitHub](https://github.com/ChantelleAA) • [Portfolio](https://chantelleaa.github.io) • +233 550-986-002
+✉️ [Email](mailto:chantelatta@gmail.com) • 🔗 [LinkedIn](https://linkedin.com/in/chantelleaa) • 💻 [GitHub](https://github.com/ChantelleAA) • 🌐 [Portfolio](https://chantelleaa.github.io) • 📱 +233 550-986-002
 
 ---
 
-## 🔎 Professional Summary
+## 📄 Professional Summary
 AI researcher and educator applying machine learning, NLP, and computer vision to sustainability, education, and healthcare. Built production-style prototypes, mentored a hackathon-winning team, and delivered graduate-level instruction. Focused on accessible, ethical, and impactful AI.
 
 ---
@@ -35,7 +35,7 @@ AI researcher and educator applying machine learning, NLP, and computer vision t
 
 ---
 
-## 🧰 Core Skills
+## 🛠 Core Skills
 - **Programming:** Python (Advanced), MATLAB (Intermediate), R (Intermediate), CUDA (Intermediate), SQL (Intermediate)  
 - **Frameworks/Libraries:** TensorFlow, PyTorch, Django, LangChain, Hugging Face Transformers  
 - **Specialization:** NLP, Computer Vision, Deep Learning, GPU Computing, Educational Technology  
@@ -71,8 +71,8 @@ AI researcher and educator applying machine learning, NLP, and computer vision t
 
 ---
 
-## 🧪 Selected Projects
-- **Quantathon Judging Platform** (Jul 2025) — Django system for real-time judging; mentored winning team on quantum-inspired malaria drug discovery  
+## 🔬 Selected Projects
+- **Quantathon Judging Platform** (Jul 2025) — Django system for real-time hackathon judging; mentored winning team on quantum-inspired malaria drug discovery  
 - **TLR Helper** (Jun 2025) — Curriculum-aligned discovery platform for Ghanaian teachers; advanced filtering + Pinterest API integration  
 - **Election Prediction System** (Nov 2024 – Jan 2025) — Transformer-based sentiment pipeline using Twitter data  
 - **Banking Sector Classification** (Nov 2024 – Jul 2025) — NLP model for sector reporting in the banking context  
@@ -82,7 +82,7 @@ AI researcher and educator applying machine learning, NLP, and computer vision t
 
 ---
 
-## 🏆 Awards & Recognition
+## 🏅 Awards & Recognition
 - Met Éireann PhD Scholarship — University College Dublin (2025)  
 - 1st Place & Best SDG-Aligned Solution — AIMS Quantathon 2025 (Mentor)  
 - LUT University Masters Scholarship (2024)  
@@ -92,7 +92,7 @@ AI researcher and educator applying machine learning, NLP, and computer vision t
 
 ---
 
-## 🎤 Conferences & Workshops
+## 📢 Conferences & Workshops
 - AIMS QTedu Workshop & Quantathon (2025)  
 - Mathematics & Statistics for Data Science & AI Conference, UG (2025)  
 - Ghana NLP Learn + Connect Session (2025)  
