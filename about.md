@@ -4,14 +4,14 @@ title: About
 permalink: /about/
 ---
 
-Hi, I’m Chantelle Amoako-Atta—a machine learning engineer and educator with a background in mathematical sciences and data-centric engineering.
+Hi, I’m Chantelle Amoako-Atta. I am a machine learning engineer, AI researcher and educator with a strong foundation in mathematical sciences and data-centric engineering. My work sits at the intersection of research and practical application, where I turn complex ideas into solutions that are both impactful and accessible.
 
-My journey started with a deep love for mathematics and has evolved into a purposeful exploration of how data and AI can be used to solve real-world problems. Over the years, I’ve worked on projects ranging from brain tumor segmentation in medical imaging to energy consumption forecasting and cardiac arrhythmia classification using machine learning.
+I began with a deep love for mathematics, and that curiosity has grown into a commitment to using AI to address real-world challenges. I have contributed to projects in medical imaging, election prediction, curriculum-aligned educational technology, and GPU-accelerated machine learning. I enjoy designing systems that work in practice, not just in theory, and guiding others to do the same.
 
-I build with tools like Python, TensorFlow, and CUDA for GPU computing. I also enjoy creating intuitive systems with Django and simplifying complex concepts for others—whether that’s through mentoring, teaching, or writing.
+I build with tools like Python, PyTorch, TensorFlow, and CUDA for high-performance computing, and I create intuitive applications with frameworks like Django. Teaching and mentoring are central to my work. I take pride in helping others move from uncertainty to confidence, whether through structured training, one-on-one guidance, or public speaking.
 
-This blog is a space where I share what I’m building, explain how I approach challenges, and break down concepts in machine learning and programming—especially for those transitioning into tech from non-traditional paths.
+This site is where I share what I am working on, how I think through challenges, and insights from my journey in AI. My goal is to demystify complex concepts and encourage those who might not see themselves in tech to realise they can belong and excel here.
 
-When I'm not coding or guiding students, I enjoy a good game of Oware or walking quiet nature trails.
+Outside of work, I enjoy quiet walks in nature, learning new strategies in Oware, and connecting with people who share a love for curiosity and purposeful growth.
 
-Thanks for visiting—feel free to explore, learn, and reach out.
+Thank you for visiting. I hope you find something here that informs, inspires, or sparks an idea worth pursuing.
