@@ -2,7 +2,7 @@
 {% else %}
 
 <!-- Modern Comments Section -->
-<section class="comments-section">
+<section class="comments-section" id="comments-section">
   <div class="comments-header">
     <h3 class="comments-title">
       <i class="fa-solid fa-comments"></i>
@@ -13,8 +13,8 @@
 
   <!-- Disqus Comments -->
   {% if site.disqus_shortname %}
-  <div class="comments-container disqus-container">
-    <div class="loading-comments">
+  <div class="comments-container disqus-container" id="disqus-container">
+    <div class="loading-comments disqus-loading">
       <div class="loading-spinner">
         <i class="fa-solid fa-spinner fa-spin"></i>
       </div>
@@ -23,25 +23,30 @@
     <div id="disqus_thread"></div>
     
     <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = '{{ page.url | absolute_url }}';
-        this.page.identifier = '{{ page.id | default: page.url }}';
-        this.page.title = '{{ page.title | escape }}';
-      };
-      
-      (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://{{ site.disqus_shortname }}.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
+      // Prevent multiple Disqus loads
+      if (!window.DISQUS_LOADED) {
+        window.DISQUS_LOADED = true;
         
-        // Hide loading indicator when comments load
-        s.onload = function() {
-          const loading = document.querySelector('.loading-comments');
-          if (loading) loading.style.display = 'none';
+        var disqus_config = function () {
+          this.page.url = '{{ page.url | absolute_url }}';
+          this.page.identifier = '{{ page.id | default: page.url }}';
+          this.page.title = '{{ page.title | escape }}';
         };
         
-        (d.head || d.body).appendChild(s);
-      })();
+        (function() {
+          var d = document, s = d.createElement('script');
+          s.src = 'https://{{ site.disqus_shortname }}.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          
+          // Hide loading indicator when comments load
+          s.onload = function() {
+            const loading = document.querySelector('.disqus-loading');
+            if (loading) loading.style.display = 'none';
+          };
+          
+          (d.head || d.body).appendChild(s);
+        })();
+      }
     </script>
     
     <noscript>
@@ -55,8 +60,8 @@
 
   <!-- Duoshuo Comments (Legacy Support) -->
   {% if site.duoshuo_shortname %}
-  <div class="comments-container duoshuo-container">
-    <div class="loading-comments">
+  <div class="comments-container duoshuo-container" id="duoshuo-container">
+    <div class="loading-comments duoshuo-loading">
       <div class="loading-spinner">
         <i class="fa-solid fa-spinner fa-spin"></i>
       </div>
@@ -73,22 +78,27 @@
     
     <!-- 多说公共JS代码 start -->
     <script type="text/javascript">
-      var duoshuoQuery = {short_name:"{{ site.duoshuo_shortname }}"};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';
-        ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
+      // Prevent multiple Duoshuo loads
+      if (!window.DUOSHUO_LOADED) {
+        window.DUOSHUO_LOADED = true;
         
-        // Hide loading indicator when comments load
-        ds.onload = function() {
-          const loading = document.querySelector('.loading-comments');
-          if (loading) loading.style.display = 'none';
-        };
-        
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
+        var duoshuoQuery = {short_name:"{{ site.duoshuo_shortname }}"};
+        (function() {
+          var ds = document.createElement('script');
+          ds.type = 'text/javascript';
+          ds.async = true;
+          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+          ds.charset = 'UTF-8';
+          
+          // Hide loading indicator when comments load
+          ds.onload = function() {
+            const loading = document.querySelector('.duoshuo-loading');
+            if (loading) loading.style.display = 'none';
+          };
+          
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+      }
     </script>
     <!-- 多说公共JS代码 end -->
   </div>
@@ -106,14 +116,18 @@
           <i class="fa-solid fa-envelope"></i>
           Email Me
         </a>
+        {% if site.profile_links.GitHub %}
         <a href="{{ site.profile_links.GitHub }}" class="contact-option" target="_blank" rel="noopener">
           <i class="fa-brands fa-github"></i>
           GitHub Issues
         </a>
+        {% endif %}
+        {% if site.profile_links.LinkedIn %}
         <a href="{{ site.profile_links.LinkedIn }}" class="contact-option" target="_blank" rel="noopener">
           <i class="fa-brands fa-linkedin-in"></i>
           LinkedIn
         </a>
+        {% endif %}
       </div>
     </div>
   </div>
