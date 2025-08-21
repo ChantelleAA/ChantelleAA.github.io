@@ -3,13 +3,13 @@ title: Chantelle Amoako-Atta
 url: "http://ChantelleAA.github.io"
 baseurl: ""
 description: >
-  Machine Learning Engineer exploring and sharing insights in code, data, and teaching—bringing clarity to complex ideas through thoughtful writing.
+  PhD researcher and ML engineer teaching Python through hands-on projects. Learn to code by building real applications—from calculators to text analytics tools.
 
 # Your information
 email: chantelatta@gmail.com
-author: Chantelle
+author: Chantelle Amoako-Atta
 avatar: "https://github.com/ChantelleAA/ChantelleAA.github.io/blob/gh-pages/Chantelle.jpeg?raw=true"
-profile: Machine Learning Engineer helping others understand code and machine learning through clear, practical insights.
+profile: PhD researcher in AI for Decarbonization and machine learning engineer. Teaching Python and data science through practical, project-based approaches.
 
 profile_links:
   Email: "mailto:chantelatta@gmail.com"
@@ -26,12 +26,13 @@ excerpt_separator: <!--more-->
 header:
   links:
     Home: /
+    Python Course: /#course-overview
     About: /about/
-    Blog: /category/
-    # Resume: /Resume/
     Projects: /projects/
+    Blog: /category/
 
 permalink: /archivers/:title
+
 plugins:
  - jekyll-paginate
  - jekyll-gist
@@ -41,7 +42,6 @@ plugins:
 # Build settings
 paginate: 5
 paginate_path: "page:num"
-
 highlighter: rouge
 markdown: kramdown
 
