@@ -1903,6 +1903,49 @@ pre::-webkit-scrollbar-thumb {
     margin-bottom: 1.5rem;
   }
 
+.resume-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+  justify-content: center;
+}
+
+.resume-contact-link,
+.resume-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  
+  &::after {
+    display: none;
+  }
+  
+  i {
+    color: white;
+  }
+}
+
+.resume-contact-link:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: white;
+}
+
+.resume-phone {
+  background: var(--text-muted);
+  color: white;
+}
+
   .contact-options {
     display: flex;
     justify-content: center;
@@ -1922,6 +1965,8 @@ pre::-webkit-scrollbar-thumb {
     font-weight: 500;
     transition: all 0.3s ease;
     font-size: 0.9rem;
+    &::after { display: none; }
+    text-decoration: none !important;
   }
 
   .contact-option:hover {
