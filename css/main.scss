@@ -1440,25 +1440,25 @@ pre::-webkit-scrollbar-thumb {
   &.email {
     background: linear-gradient(135deg, #ea4335, #d33b2c);
     color: white;
-    &:hover { transform: translateY(-3px) scale(1.1); }
+    &:hover { transform: translateY(-3px) scale(0.9); }
   }
   
   &.github {
     background: linear-gradient(135deg, #333, #000);
     color: white;
-    &:hover { transform: translateY(-3px) scale(1.1); }
+    &:hover { transform: translateY(-3px) scale(0.9); }
   }
   
   &.linkedin {
     background: linear-gradient(135deg, #0077b5, #005885);
     color: white;
-    &:hover { transform: translateY(-3px) scale(1.1); }
+    &:hover { transform: translateY(-3px) scale(0.9); }
   }
   
   &.resume {
     background: linear-gradient(135deg, var(--accent-color), #f59e0b);
     color: var(--text-primary);
-    &:hover { transform: translateY(-3px) scale(1.1); }
+    &:hover { transform: translateY(-3px) scale(0.9); }
   }
 }
 
