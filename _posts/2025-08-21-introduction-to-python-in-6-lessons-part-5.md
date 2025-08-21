@@ -4,6 +4,7 @@ title: "Introduction to Python in 6 Lessons - Part 5"
 date: 2025-08-21
 categories: [python, tutorial, mini-project]
 excerpt: "From essays to tweets, most of the world’s data is text. In this lesson you’ll learn how to clean, count, and analyze words in Python and even save results to a file while building the foundation for real-world text analytics and NLP."
+comments: true
 ---
 
 # Analyze Text – Strings and Basic File Handling**
