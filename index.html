@@ -138,7 +138,9 @@ layout: default
   </div>
 
   <!-- Recent Articles -->
-{% assign other_posts = site.posts | where_exp: "post", "post.title contains 'Introduction to Python' != true" %}  <div class="articles-section">
+{% assign other_posts = site.posts | where_exp: "post", "post.title contains 'Introduction to Python' != true" %}  
+ {% if other_posts.size > 0 %}
+  <div class="articles-section">
     <h2 class="section-title">Latest Technical Writing</h2>
     <div class="article-list">
       {% for post in other_posts limit:3 %}
