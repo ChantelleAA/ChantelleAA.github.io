@@ -1,36 +1,201 @@
 {% if page.nocomments %}
 {% else %}
-{% if site.disqus_shortname %}
-<div class="post-comments">
-  <div id="disqus_thread"></div>
-  <script type="text/javascript">
-      var disqus_shortname = '{{ site.disqus_shortname }}'; // required: replace example with your forum shortname
-      (function() {
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-  </script>
-</div>
-{% endif %}
-{% if site.duoshuo_shortname %}
-<div class="post-comments">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+
+<!-- Modern Comments Section -->
+<section class="comments-section">
+  <div class="comments-header">
+    <h3 class="comments-title">
+      <i class="fa-solid fa-comments"></i>
+      Discussion & Feedback
+    </h3>
+    <p class="comments-subtitle">Share your thoughts, ask questions, or help others learn!</p>
+  </div>
+
+  <!-- Disqus Comments -->
+  {% if site.disqus_shortname %}
+  <div class="comments-container disqus-container">
+    <div class="loading-comments">
+      <div class="loading-spinner">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+      </div>
+      <p>Loading comments...</p>
+    </div>
+    <div id="disqus_thread"></div>
+    
     <script type="text/javascript">
-    var duoshuoQuery = {short_name:"{{ site.duoshuo_shortname }}"};
+      var disqus_config = function () {
+        this.page.url = '{{ page.url | absolute_url }}';
+        this.page.identifier = '{{ page.id | default: page.url }}';
+        this.page.title = '{{ page.title | escape }}';
+      };
+      
       (function() {
-      	var ds = document.createElement('script');
-      	ds.type = 'text/javascript';ds.async = true;
-      	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      	ds.charset = 'UTF-8';
-      	(document.getElementsByTagName('head')[0] 
-      	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+        var d = document, s = d.createElement('script');
+        s.src = 'https://{{ site.disqus_shortname }}.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        
+        // Hide loading indicator when comments load
+        s.onload = function() {
+          const loading = document.querySelector('.loading-comments');
+          if (loading) loading.style.display = 'none';
+        };
+        
+        (d.head || d.body).appendChild(s);
       })();
-      </script>
+    </script>
+    
+    <noscript>
+      <div class="noscript-message">
+        <i class="fa-solid fa-exclamation-triangle"></i>
+        <p>Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.</p>
+      </div>
+    </noscript>
+  </div>
+  {% endif %}
+
+  <!-- Duoshuo Comments (Legacy Support) -->
+  {% if site.duoshuo_shortname %}
+  <div class="comments-container duoshuo-container">
+    <div class="loading-comments">
+      <div class="loading-spinner">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+      </div>
+      <p>加载评论中...</p>
+    </div>
+    
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" 
+         data-thread-key="{{ page.id }}" 
+         data-title="{{ page.title }}" 
+         data-url="{{ page.url | absolute_url }}">
+    </div>
+    <!-- 多说评论框 end -->
+    
+    <!-- 多说公共JS代码 start -->
+    <script type="text/javascript">
+      var duoshuoQuery = {short_name:"{{ site.duoshuo_shortname }}"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        
+        // Hide loading indicator when comments load
+        ds.onload = function() {
+          const loading = document.querySelector('.loading-comments');
+          if (loading) loading.style.display = 'none';
+        };
+        
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script>
     <!-- 多说公共JS代码 end -->
-</div>
-{% endif %}
-{% endif %}
+  </div>
+  {% endif %}
+
+  <!-- Fallback: No Comments Configured -->
+  {% unless site.disqus_shortname or site.duoshuo_shortname %}
+  <div class="comments-placeholder">
+    <div class="placeholder-content">
+      <i class="fa-solid fa-comment-dots"></i>
+      <h4>Comments Coming Soon!</h4>
+      <p>I'm working on setting up a commenting system. In the meantime, feel free to reach out via:</p>
+      <div class="contact-options">
+        <a href="mailto:{{ site.email }}" class="contact-option">
+          <i class="fa-solid fa-envelope"></i>
+          Email Me
+        </a>
+        <a href="{{ site.profile_links.GitHub }}" class="contact-option" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github"></i>
+          GitHub Issues
+        </a>
+        <a href="{{ site.profile_links.LinkedIn }}" class="contact-option" target="_blank" rel="noopener">
+          <i class="fa-brands fa-linkedin-in"></i>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endunless %}
+
+  <!-- Community Guidelines -->
+  <div class="community-guidelines">
+    <details class="guidelines-details">
+      <summary class="guidelines-summary">
+        <i class="fa-solid fa-heart"></i>
+        Community Guidelines
+      </summary>
+      <div class="guidelines-content">
+        <ul>
+          <li><strong>Be respectful:</strong> Treat everyone with kindness and respect</li>
+          <li><strong>Stay on topic:</strong> Keep discussions relevant to the post content</li>
+          <li><strong>Help others:</strong> Share knowledge and assist fellow learners</li>
+          <li><strong>Ask questions:</strong> No question is too basic - we're all learning!</li>
+          <li><strong>Share resources:</strong> Link to helpful tutorials, tools, or articles</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</section>
+
+<style>
+  /* Comments Section Styles */
+  .comments-section {
+    margin-top: 4rem;
+    padding: 2rem 0;
+    border-top: 2px solid rgba(37, 99, 235, 0.1);
+  }
+
+  .comments-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .comments-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .comments-title i {
+    color: var(--primary-color);
+  }
+
+  .comments-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .comments-container {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .loading-comments {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+  }
+
+  .loading-spinner {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .noscript-message {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(239, 68, 68, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(239, 68,
