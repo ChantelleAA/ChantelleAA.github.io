@@ -120,5 +120,3 @@ AI researcher and educator applying machine learning, NLP, and computer vision t
 ---
 
 *Portfolio & project details: [chantelleaa.github.io](https://chantelleaa.github.io)*
-
-{% include comment.html %}
