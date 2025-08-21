@@ -57,60 +57,24 @@ layout: default
     <p class="section-subtitle">Each lesson teaches core concepts while building a complete application. Progress from basic syntax to data analysis—with working code you can modify and expand.</p>
     
     <div class="lesson-grid">
-      {% assign python_posts = site.posts | where_exp: "post", "post.title contains 'Introduction to Python'" | sort: 'title' %}
+      {% assign python_posts = site.posts | where_exp: "post", "post.categories contains 'python-course'" | sort: 'order' %}
       {% for post in python_posts %}
         <div class="lesson-card">
           <div class="lesson-header">
-            <span class="lesson-number">
-              {% if post.title contains 'Part 1' %}Lesson 1{% endif %}
-              {% if post.title contains 'Part 2' %}Lesson 2{% endif %}
-              {% if post.title contains 'Part 3' %}Lesson 3{% endif %}
-              {% if post.title contains 'Part 4' %}Lesson 4{% endif %}
-              {% if post.title contains 'Part 5' %}Lesson 5{% endif %}
-              {% if post.title contains 'Part 6' %}Lesson 6{% endif %}
-            </span>
-            <span class="lesson-difficulty">
-              {% if post.title contains 'Part 1' or post.title contains 'Part 2' %}Beginner{% endif %}
-              {% if post.title contains 'Part 3' or post.title contains 'Part 4' %}Intermediate{% endif %}
-              {% if post.title contains 'Part 5' or post.title contains 'Part 6' %}Advanced{% endif %}
-            </span>
+            <span class="lesson-number">Lesson {{ post.order | default: forloop.index }}</span>
+            <span class="lesson-difficulty">{{ post.difficulty | default: 'Beginner' }}</span>
           </div>
           
-          <h3 class="lesson-title">
-            {% if post.title contains 'Part 1' %}Build a Temperature Converter{% endif %}
-            {% if post.title contains 'Part 2' %}Create a Smart Calculator{% endif %}
-            {% if post.title contains 'Part 3' %}Code a Number Guessing Game{% endif %}
-            {% if post.title contains 'Part 4' %}Design a To-Do List Manager{% endif %}
-            {% if post.title contains 'Part 5' %}Develop a Text Analytics Tool{% endif %}
-            {% if post.title contains 'Part 6' %}{{ post.title | split: ' - ' | last }}{% endif %}
-          </h3>
+          <h3 class="lesson-title">{{ post.lesson_title | default: post.title }}</h3>
 
-          <div class="lesson-concepts">
-            {% if post.title contains 'Part 1' %}Variables • Input/Output • Math Operations{% endif %}
-            {% if post.title contains 'Part 2' %}Functions • Conditionals • Error Handling{% endif %}
-            {% if post.title contains 'Part 3' %}Loops • Random Numbers • User Interaction{% endif %}
-            {% if post.title contains 'Part 4' %}Lists • Data Management • Menu Systems{% endif %}
-            {% if post.title contains 'Part 5' %}File I/O • String Processing • Data Analysis{% endif %}
-            {% if post.title contains 'Part 6' %}Advanced Topics • Integration • Best Practices{% endif %}
-          </div>
+          <div class="lesson-concepts">{{ post.concepts | default: 'Core Python Concepts' }}</div>
           
           <div class="lesson-description">
-            {% if post.content contains site.excerpt_separator or post.content != post.excerpt %}
-              {{ post.excerpt | strip_html | truncatewords: 20 }}
-            {% else %}
-              {{ post.content | lstrip | split: "\n" | first | strip_html | truncatewords: 20 }}
-            {% endif %}
+            {{ post.excerpt | strip_html | truncatewords: 20 }}
           </div>
           
           <div class="lesson-footer">
-            <span class="lesson-time">
-              {% if post.title contains 'Part 1' %}15-20 min{% endif %}
-              {% if post.title contains 'Part 2' %}20-25 min{% endif %}
-              {% if post.title contains 'Part 3' %}25-30 min{% endif %}
-              {% if post.title contains 'Part 4' %}30-35 min{% endif %}
-              {% if post.title contains 'Part 5' %}35-40 min{% endif %}
-              {% if post.title contains 'Part 6' %}40-45 min{% endif %}
-            </span>
+            <span class="lesson-time">{{ post.duration | default: '20-25 min' }}</span>
             <a href="{{ post.url | prepend: site.baseurl }}" class="lesson-link">Start Lesson →</a>
           </div>
         </div>
@@ -138,31 +102,26 @@ layout: default
   </div>
 
   <!-- Recent Articles -->
-  {% comment %} Filter out Python course posts {% endcomment %}
-  {% assign other_posts = "" | split: "" %}
-  {% for post in site.posts %}
-    {% unless post.title contains 'Introduction to Python' %}
-      {% assign other_posts = other_posts | push: post %}
-    {% endunless %}
-  {% endfor %}
+  {% assign other_posts = site.posts | where_exp: "post", "post.categories contains 'python-course'" | size %}
+  {% assign total_posts = site.posts | size %}
   
-  {% if other_posts.size > 0 %}
+  {% if total_posts > other_posts %}
   <div class="articles-section">
     <h2 class="section-title">Latest Technical Writing</h2>
     <div class="article-list">
-      {% for post in other_posts limit:3 %}
-        <article class="article-card">
-          <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-          <div class="article-meta">{{ post.date | date: "%B %-d, %Y" }}</div>
-          <div class="article-excerpt">
-            {% if post.content contains site.excerpt_separator or post.content != post.excerpt %}
-              {{ post.excerpt | strip_html | truncatewords: 25 }}
-            {% else %}
-              {{ post.content | lstrip | split: "\n" | first | strip_html | truncatewords: 25 }}
-            {% endif %}
-          </div>
-          <a href="{{ post.url | prepend: site.baseurl }}" class="read-more">Read Article →</a>
-        </article>
+      {% for post in site.posts limit:6 %}
+        {% unless post.categories contains 'python-course' %}
+          {% if forloop.index <= 3 %}
+            <article class="article-card">
+              <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+              <div class="article-meta">{{ post.date | date: "%B %-d, %Y" }}</div>
+              <div class="article-excerpt">
+                {{ post.excerpt | strip_html | truncatewords: 25 }}
+              </div>
+              <a href="{{ post.url | prepend: site.baseurl }}" class="read-more">Read Article →</a>
+            </article>
+          {% endif %}
+        {% endunless %}
       {% endfor %}
     </div>
   </div>
