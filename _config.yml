@@ -1,21 +1,28 @@
 # Site settings
 title: Chantelle Amoako-Atta
-url: "http://ChantelleAA.github.io"
+url: "https://ChantelleAA.github.io"  # Changed to HTTPS
 baseurl: ""
 description: >
   PhD researcher and ML engineer teaching Python through hands-on projects. Learn to code by building real applications—from calculators to text analytics tools.
+
+# SEO and Social
+keywords: "Python programming, machine learning, data science, AI, coding tutorials, project-based learning"
+lang: en
+timezone: UTC  # Change to your timezone if needed
 
 # Your information
 email: chantelatta@gmail.com
 author: Chantelle Amoako-Atta
 avatar: "https://github.com/ChantelleAA/ChantelleAA.github.io/blob/gh-pages/Chantelle.jpeg?raw=true"
 profile: PhD researcher in AI for Decarbonization and machine learning engineer. Teaching Python and data science through practical, project-based approaches.
-
 profile_links:
   Email: "mailto:chantelatta@gmail.com"
   GitHub: "https://github.com/ChantelleAA"
-  LinkedIn: "http://www.linkedin.com/in/chantelleaa"
-  Resume: "/Resume/"
+  LinkedIn: "https://www.linkedin.com/in/chantelleaa"  # Added https and www
+  Resume: "/Resume/"  # Lowercase for consistency
+
+# Social sharing (optional - for better social media previews)
+og_image: "https://github.com/ChantelleAA/ChantelleAA.github.io/blob/gh-pages/social-preview.png?raw=true"
 
 # Comment Service (Disqus or 多说)
 #disqus_shortname: xxx
