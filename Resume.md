@@ -7,7 +7,23 @@ permalink: /Resume/
 # **Chantelle Amoako-Atta**
 **PhD Candidate in AI for Decarbonization • Machine Learning Engineer • NLP & Computer Vision Specialist • AI Educator**
 
-✉️ [Email](mailto:chantelatta@gmail.com) • 🔗 [LinkedIn](https://linkedin.com/in/chantelleaa) • 💻 [GitHub](https://github.com/ChantelleAA) • 🌐 [Portfolio](https://chantelleaa.github.io) • 📱 +233 550-986-002
+<div class="resume-contact">
+  <a href="mailto:chantelatta@gmail.com" class="resume-contact-link">
+    <i class="fa-solid fa-envelope"></i> Email
+  </a>
+  <a href="https://linkedin.com/in/chantelleaa" class="resume-contact-link" target="_blank">
+    <i class="fa-brands fa-linkedin"></i> LinkedIn
+  </a>
+  <a href="https://github.com/ChantelleAA" class="resume-contact-link" target="_blank">
+    <i class="fa-brands fa-github"></i> GitHub
+  </a>
+  <a href="https://chantelleaa.github.io" class="resume-contact-link" target="_blank">
+    <i class="fa-solid fa-globe"></i> Portfolio
+  </a>
+  <span class="resume-phone">
+    <i class="fa-solid fa-phone"></i> +233 550-986-002
+  </span>
+</div>
 
 ---
 
@@ -103,3 +119,5 @@ AI researcher and educator applying machine learning, NLP, and computer vision t
 ---
 
 *Portfolio & project details: [chantelleaa.github.io](https://chantelleaa.github.io)*
+
+{% include comment.html %}
