@@ -4,6 +4,7 @@ title: "Introduction to Python in 6 Lessons - Part 2"
 date: 2025-05-13
 categories: [python, tutorial, mini-project]
 excerpt: "In this second lesson of our Python beginner series, we’ll build a simple calculator that performs basic arithmetic: addition, subtraction, multiplication, and division. This hands-on project introduces two powerful tools in Python: conditional statements (if, elif, else) and functions."
+comments: true
 ---
 
 # Create a Simple Calculator – Learn Conditionals and Functions
