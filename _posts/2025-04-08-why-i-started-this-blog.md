@@ -4,6 +4,7 @@ title: "Why I Started This Blog: Code, Clarity, and Curiosity"
 date: 2025-04-08
 categories: [intro, reflections]
 excerpt: "Machine learning engineer and educator sharing insights from the journey—from math to code, from classrooms to models."
+comments: true
 ---
 
 A few months ago, I started tutoring students in math and writing Python and R scripts that broke more often than they worked. Now, I’m a machine learning engineer helping others break through the fog of code and concepts.
