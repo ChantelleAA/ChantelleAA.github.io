@@ -1,6 +1,16 @@
 {% if page.nocomments %}
 {% else %}
 
+<!-- DEBUG INFO -->
+<div style="background: #f0f0f0; padding: 10px; margin: 10px 0; font-family: monospace;">
+  <strong>DEBUG INFO:</strong><br>
+  Site URL: {{ site.url }}<br>
+  Page URL: {{ page.url | absolute_url }}<br>
+  Page ID: {{ page.id | default: page.url }}<br>
+  Disqus Shortname: {{ site.disqus_shortname }}<br>
+  Page Title: {{ page.title | escape }}
+</div>
+
 <!-- Modern Comments Section -->
 <section class="comments-section" id="comments-section">
   <div class="comments-header">
@@ -23,6 +33,14 @@
     <div id="disqus_thread"></div>
     
     <script type="text/javascript">
+      // Debug log
+      console.log('Disqus Config:', {
+        url: '{{ page.url | absolute_url }}',
+        identifier: '{{ page.id | default: page.url }}',
+        title: '{{ page.title | escape }}',
+        shortname: '{{ site.disqus_shortname }}'
+      });
+      
       // Prevent multiple Disqus loads
       if (!window.DISQUS_LOADED) {
         window.DISQUS_LOADED = true;
@@ -38,10 +56,16 @@
           s.src = 'https://{{ site.disqus_shortname }}.disqus.com/embed.js';
           s.setAttribute('data-timestamp', +new Date());
           
-          // Hide loading indicator when comments load
+          // Hide loading indicator and log success
           s.onload = function() {
+            console.log('Disqus script loaded successfully');
             const loading = document.querySelector('.disqus-loading');
             if (loading) loading.style.display = 'none';
+          };
+          
+          // Log errors
+          s.onerror = function() {
+            console.error('Failed to load Disqus script');
           };
           
           (d.head || d.body).appendChild(s);
@@ -56,100 +80,12 @@
       </div>
     </noscript>
   </div>
-  {% endif %}
-
-  <!-- Duoshuo Comments (Legacy Support) -->
-  {% if site.duoshuo_shortname %}
-  <div class="comments-container duoshuo-container" id="duoshuo-container">
-    <div class="loading-comments duoshuo-loading">
-      <div class="loading-spinner">
-        <i class="fa-solid fa-spinner fa-spin"></i>
-      </div>
-      <p>加载评论中...</p>
-    </div>
-    
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" 
-         data-thread-key="{{ page.id }}" 
-         data-title="{{ page.title }}" 
-         data-url="{{ page.url | absolute_url }}">
-    </div>
-    <!-- 多说评论框 end -->
-    
-    <!-- 多说公共JS代码 start -->
-    <script type="text/javascript">
-      // Prevent multiple Duoshuo loads
-      if (!window.DUOSHUO_LOADED) {
-        window.DUOSHUO_LOADED = true;
-        
-        var duoshuoQuery = {short_name:"{{ site.duoshuo_shortname }}"};
-        (function() {
-          var ds = document.createElement('script');
-          ds.type = 'text/javascript';
-          ds.async = true;
-          ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-          ds.charset = 'UTF-8';
-          
-          // Hide loading indicator when comments load
-          ds.onload = function() {
-            const loading = document.querySelector('.duoshuo-loading');
-            if (loading) loading.style.display = 'none';
-          };
-          
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
-        })();
-      }
-    </script>
-    <!-- 多说公共JS代码 end -->
+  {% else %}
+  <div style="background: #ffeeee; padding: 15px; border: 1px solid #ff0000;">
+    <strong>ERROR:</strong> No Disqus shortname configured in _config.yml
   </div>
   {% endif %}
 
-  <!-- Fallback: No Comments Configured -->
-  {% unless site.disqus_shortname or site.duoshuo_shortname %}
-  <div class="comments-placeholder">
-    <div class="placeholder-content">
-      <i class="fa-solid fa-comment-dots"></i>
-      <h4>Comments Coming Soon!</h4>
-      <p>I'm working on setting up a commenting system. In the meantime, feel free to reach out via:</p>
-      <div class="contact-options">
-        <a href="mailto:{{ site.email }}" class="contact-option">
-          <i class="fa-solid fa-envelope"></i>
-          Email Me
-        </a>
-        {% if site.profile_links.GitHub %}
-        <a href="{{ site.profile_links.GitHub }}" class="contact-option" target="_blank" rel="noopener">
-          <i class="fa-brands fa-github"></i>
-          GitHub Issues
-        </a>
-        {% endif %}
-        {% if site.profile_links.LinkedIn %}
-        <a href="{{ site.profile_links.LinkedIn }}" class="contact-option" target="_blank" rel="noopener">
-          <i class="fa-brands fa-linkedin-in"></i>
-          LinkedIn
-        </a>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-  {% endunless %}
-
-  <!-- Community Guidelines -->
-  <div class="community-guidelines">
-    <details class="guidelines-details">
-      <summary class="guidelines-summary">
-        <i class="fa-solid fa-heart"></i>
-        Community Guidelines
-      </summary>
-      <div class="guidelines-content">
-        <ul>
-          <li><strong>Be respectful:</strong> Treat everyone with kindness and respect</li>
-          <li><strong>Stay on topic:</strong> Keep discussions relevant to the post content</li>
-          <li><strong>Help others:</strong> Share knowledge and assist fellow learners</li>
-          <li><strong>Ask questions:</strong> No question is too basic - we're all learning!</li>
-          <li><strong>Share resources:</strong> Link to helpful tutorials, tools, or articles</li>
-        </ul>
-      </div>
-    </details>
-  </div>
+  <!-- Rest of your comments code... -->
 </section>
 {% endif %}
