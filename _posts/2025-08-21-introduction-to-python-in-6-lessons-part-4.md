@@ -3,7 +3,7 @@ layout: post
 title: "Introduction to Python in 6 Lessons - Part 4"
 date: 2025-08-21
 categories: [python, tutorial, mini-project]
-excerpt: ""
+excerpt: "Ever wished your code could keep track of your tasks? In this lesson you’ll build a simple to-do list app with Python lists by adding, viewing, and removing tasks while learning how to organize multiple pieces of data efficiently."
 ---
 
 # Manage a To-Do List – Lists and Basic Data Structures
