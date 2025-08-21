@@ -1,8 +1,187 @@
-<footer class="footer">
-<div class="wrapper">
-&copy; {{ site.time | date: '%Y' }} {{ site.author }}
-</div>
+<footer class="premium-footer">
+  <div class="footer-wrapper">
+    <!-- Main Footer Content -->
+    <div class="footer-main">
+      <div class="footer-section footer-brand">
+        <div class="footer-logo">
+          <img src="{{ '/assets/img/favicon.ico' | relative_url }}" alt="Logo" class="footer-logo-img">
+          <div class="footer-brand-text">
+            <h3>{{ site.author }}</h3>
+            <p>AI Researcher & Python Teacher</p>
+          </div>
+        </div>
+        <p class="footer-description">
+          Teaching Python and machine learning through hands-on projects. 
+          Join thousands of students learning to code by building real applications.
+        </p>
+        <div class="footer-social">
+          <a href="mailto:{{ site.email }}" class="footer-social-link email" title="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="{{ site.profile_links.GitHub }}" class="footer-social-link github" title="GitHub" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="{{ site.profile_links.LinkedIn }}" class="footer-social-link linkedin" title="LinkedIn" target="_blank" rel="noopener">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="/feed.xml" class="footer-social-link rss" title="RSS Feed">
+            <i class="fa-solid fa-rss"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Python Course</h4>
+        <ul class="footer-links">
+          <li><a href="/#course-overview">Course Overview</a></li>
+          <li><a href="/category/python-course/">All Lessons</a></li>
+          <li><a href="#newsletter">Get Updates</a></li>
+          <li><a href="/projects/">Course Projects</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul class="footer-links">
+          <li><a href="/about/">About Chantelle</a></li>
+          <li><a href="/projects/">All Projects</a></li>
+          <li><a href="/category/">Technical Blog</a></li>
+          <li><a href="{{ site.profile_links.Resume }}">Resume/CV</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Start</h4>
+        <div class="footer-cta">
+          <p>Ready to start coding?</p>
+          <a href="/#course-overview" class="footer-cta-btn">
+            <i class="fa-solid fa-rocket"></i>
+            Start Learning Python
+          </a>
+          <div class="footer-stats">
+            <div class="footer-stat">
+              <strong>500+</strong>
+              <span>Students</span>
+            </div>
+            <div class="footer-stat">
+              <strong>6</strong>
+              <span>Lessons</span>
+            </div>
+            <div class="footer-stat">
+              <strong>100%</strong>
+              <span>Free</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <div class="copyright">
+          <p>&copy; {{ site.time | date: '%Y' }} {{ site.author }}. All rights reserved.</p>
+          <p class="footer-tagline">Built with ❤️ and Jekyll • Hosted on GitHub Pages</p>
+        </div>
+        <div class="footer-legal">
+          <a href="/privacy/">Privacy</a>
+          <a href="/terms/">Terms</a>
+          <a href="/sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTop" title="Back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
 </footer>
 
-<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$']]}});</script>
+<!-- Enhanced Scripts -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      displayMath: [['$$','$$'], ['\\[','\\]']],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script>
+  // Scroll to top functionality
+  window.addEventListener('DOMContentLoaded', function() {
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    if (scrollToTopBtn) {
+      // Show/hide button based on scroll position
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          scrollToTopBtn.classList.add('visible');
+        } else {
+          scrollToTopBtn.classList.remove('visible');
+        }
+      });
+
+      // Smooth scroll to top
+      scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // Enhanced newsletter form functionality
+    const newsletterForms = document.querySelectorAll('.newsletter-form, .newsletter-form-sidebar');
+    newsletterForms.forEach(form => {
+      const button = form.querySelector('button, .subscribe-btn, .subscribe-btn-sidebar');
+      if (button) {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          const email = form.querySelector('input[type="email"]').value;
+          
+          if (email && email.includes('@')) {
+            // Simple success feedback
+            const originalText = this.innerHTML;
+            this.innerHTML = '<i class="fa-solid fa-check"></i> Subscribed!';
+            this.style.background = '#10b981';
+            
+            setTimeout(() => {
+              this.innerHTML = originalText;
+              this.style.background = '';
+              form.querySelector('input[type="email"]').value = '';
+            }, 3000);
+          } else {
+            // Error feedback
+            const input = form.querySelector('input[type="email"]');
+            input.style.borderColor = '#ef4444';
+            input.setAttribute('placeholder', 'Please enter a valid email');
+            
+            setTimeout(() => {
+              input.style.borderColor = '';
+              input.setAttribute('placeholder', 'Enter your email address');
+            }, 3000);
+          }
+        });
+      }
+    });
+
+    // Add loading states for external links
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+      link.addEventListener('click', function() {
+        const icon = this.querySelector('i');
+        if (icon) {
+          const originalClass = icon.className;
+          icon.className = 'fa-solid fa-spinner fa-spin';
+          setTimeout(() => {
+            icon.className = originalClass;
+          }, 2000);
+        }
+      });
+    });
+  });
+</script>
+
 <script src="{{ "/js/easybook.js" | prepend: site.baseurl }}"></script>
