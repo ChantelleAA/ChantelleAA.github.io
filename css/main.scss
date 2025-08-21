@@ -314,31 +314,29 @@ header {
 .col-box .post-list li {
   margin-bottom: 0.75rem;
 }
-// Override default code block style
-pre, code {
-  background-color: #2d2d2d !important; // soft lavender-white background
-  color: #2e2c2f !important; // your theme's main text color
-  font-family: $code-font-family;
-  font-size: $code-font-size;
-  padding: 0.75rem 1rem;
-  border-radius: 12px;
-  overflow-x: auto;
-  line-height: 1.5;
-  box-shadow: inset 0 0 0 1px rgba(201, 187, 223, 0.2); // subtle border
-}
 
-// Inline code styling
-code {
-  background-color: #1e1e1e !important;
-  padding: 0.2em 0.4em;
-  border-radius: 6px;
-}
+// pre, code {
+//   background-color: #2d2d2d !important; // soft lavender-white background
+//   color: #2e2c2f !important; // your theme's main text color
+//   font-family: $code-font-family;
+//   font-size: $code-font-size;
+//   padding: 0.75rem 1rem;
+//   border-radius: 12px;
+//   overflow-x: auto;
+//   line-height: 1.5;
+//   box-shadow: inset 0 0 0 1px rgba(201, 187, 223, 0.2); // subtle border
+// }
 
-// Code block (pre > code)
-pre > code {
-  display: block;
-  white-space: pre-wrap;
-}
+// code {
+//   background-color: #1e1e1e !important;
+//   padding: 0.2em 0.4em;
+//   border-radius: 6px;
+// }
+
+// pre > code {
+//   display: block;
+//   white-space: pre-wrap;
+// }
 
 // Prevent scrollbars from being too harsh
 pre::-webkit-scrollbar {
