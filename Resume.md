@@ -2,6 +2,7 @@
 layout: page
 title: Resume
 permalink: /Resume/
+comments: true
 ---
 
 # **Chantelle Amoako-Atta**
