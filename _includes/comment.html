@@ -1,15 +1,6 @@
 {% if page.nocomments %}
 {% else %}
 
-<!-- DEBUG INFO -->
-<div style="background: #f0f0f0; padding: 10px; margin: 10px 0; font-family: monospace;">
-  <strong>DEBUG INFO:</strong><br>
-  Site URL: {{ site.url }}<br>
-  Page URL: {{ page.url | absolute_url }}<br>
-  Page ID: {{ page.id | default: page.url }}<br>
-  Disqus Shortname: {{ site.disqus_shortname }}<br>
-  Page Title: {{ page.title | escape }}
-</div>
 
 <!-- Modern Comments Section -->
 <section class="comments-section" id="comments-section">
