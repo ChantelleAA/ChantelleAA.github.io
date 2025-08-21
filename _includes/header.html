@@ -1,16 +1,85 @@
 <div class="header-placeholder"></div>
-<header class="header">
-  <div class="wrapper">
-    <div id="sidebar-toggle">TOC</div>
-    <a class="site-title site-branding" href="{{ site.baseurl }}/">
-      <img src="{{ '/assets/img/favicon.ico' | relative_url }}" alt="Logo" class="site-logo">
-      {{ site.title }}
-    </a>
-    <nav class="site-nav">
-      {% for link in site.header.links %}{% assign url = link[1] %}
-        {% assign urlchk = url | split: "/" %}{% if urlchk[0] == '' and urlchk[1] != '' %}{% assign uprefix = site.baseurl %}{% else %}{% assign uprefix = ''%}{% endif %}
-        <a class="page-link" href="{{ url | prepend: uprefix }}">{{ link[0] }}</a>
-      {% endfor %}
+<header class="premium-header">
+  <div class="header-wrapper">
+    <div class="header-content">
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Brand/Logo -->
+      <a class="site-branding-premium" href="{{ site.baseurl }}/">
+        <div class="logo-container">
+          <img src="{{ '/assets/img/favicon.ico' | relative_url }}" alt="Logo" class="site-logo-premium">
+          <div class="brand-text">
+            <span class="brand-name">{{ site.title }}</span>
+            <span class="brand-tagline">AI Researcher & Python Teacher</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="site-nav-premium">
+        {% for link in site.header.links %}{% assign url = link[1] %}
+          {% assign urlchk = url | split: "/" %}{% if urlchk[0] == '' and urlchk[1] != '' %}{% assign uprefix = site.baseurl %}{% else %}{% assign uprefix = ''%}{% endif %}
+          <a class="nav-link-premium" href="{{ url | prepend: uprefix }}">
+            {% if link[0] == 'Home' %}
+              <i class="fa-solid fa-house"></i>
+            {% elsif link[0] == 'Python Course' %}
+              <i class="fa-brands fa-python"></i>
+            {% elsif link[0] == 'About' %}
+              <i class="fa-solid fa-user"></i>
+            {% elsif link[0] == 'Projects' %}
+              <i class="fa-solid fa-folder-open"></i>
+            {% elsif link[0] == 'Blog' %}
+              <i class="fa-solid fa-pen-to-square"></i>
+            {% endif %}
+            <span>{{ link[0] }}</span>
+          </a>
+        {% endfor %}
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <button class="toc-toggle-btn" id="sidebar-toggle" title="Table of Contents">
+          <i class="fa-solid fa-list"></i>
+        </button>
+        <a href="#course-overview" class="cta-header-btn">
+          <i class="fa-solid fa-rocket"></i>
+          <span>Start Learning</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobile-nav">
+      <div class="mobile-nav-content">
+        {% for link in site.header.links %}{% assign url = link[1] %}
+          {% assign urlchk = url | split: "/" %}{% if urlchk[0] == '' and urlchk[1] != '' %}{% assign uprefix = site.baseurl %}{% else %}{% assign uprefix = ''%}{% endif %}
+          <a class="mobile-nav-link" href="{{ url | prepend: uprefix }}">
+            {% if link[0] == 'Home' %}
+              <i class="fa-solid fa-house"></i>
+            {% elsif link[0] == 'Python Course' %}
+              <i class="fa-brands fa-python"></i>
+            {% elsif link[0] == 'About' %}
+              <i class="fa-solid fa-user"></i>
+            {% elsif link[0] == 'Projects' %}
+              <i class="fa-solid fa-folder-open"></i>
+            {% elsif link[0] == 'Blog' %}
+              <i class="fa-solid fa-pen-to-square"></i>
+            {% endif %}
+            <span>{{ link[0] }}</span>
+          </a>
+        {% endfor %}
+        <div class="mobile-nav-footer">
+          <a href="#course-overview" class="mobile-cta-btn">
+            <i class="fa-solid fa-rocket"></i>
+            Start Learning Python
+          </a>
+        </div>
+      </div>
     </nav>
   </div>
 </header>
