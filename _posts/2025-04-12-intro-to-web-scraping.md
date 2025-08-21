@@ -4,6 +4,7 @@ title: "3 Ways I’ve Learned to Scrape the Web (and When to Use Each One)"
 date: 2025-04-12
 categories: [intro, tutorials]
 excerpt: "Scraping the web doesn’t have to be hard here are some of the tools that make it easy and efficient"
+comments: true
 ---
 
 ### 3 Ways I’ve Learned to Scrape the Web (and When to Use Each One)
