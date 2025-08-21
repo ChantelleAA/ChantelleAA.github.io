@@ -4,6 +4,7 @@ title: "Gradio Part 2: Build and Share a Fun ML App to Reveal Someone's Personal
 date: 2025-04-16
 categories: [ml, tutorials]
 excerpt: "Create and share a machine learning personality prediction app with Gradio."
+comments: true
 ---
 
 
