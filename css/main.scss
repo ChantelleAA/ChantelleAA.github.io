@@ -1911,39 +1911,207 @@ pre::-webkit-scrollbar-thumb {
   justify-content: center;
 }
 
+// Resume contact section
+.resume-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+  justify-content: center;
+}
+
 .resume-contact-link,
 .resume-phone {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: var(--primary-color);
-  color: white;
-  text-decoration: none;
-  border-radius: 20px;
-  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
   font-size: 0.9rem;
-  transition: all 0.3s ease;
+  text-decoration: none !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
   
-  &::after {
-    display: none;
+  // Force white text and remove underlines
+  color: white !important;
+  
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    color: white !important;
+    text-decoration: none !important;
   }
   
+  // Remove any underline animations
+  &::after {
+    display: none !important;
+  }
+  
+  // Ensure icons are white
   i {
-    color: white;
+    color: white !important;
+    font-size: 1em;
+    width: 16px;
+    text-align: center;
   }
 }
 
-.resume-contact-link:hover {
-  background: var(--primary-hover);
-  transform: translateY(-2px);
-  text-decoration: none;
-  color: white;
+// Individual button styles
+.resume-contact-link {
+  background: var(--primary-color);
+  
+  &:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+  }
+  
+  // Email button
+  &[href*="mailto"] {
+    background: linear-gradient(135deg, #ea4335, #d33b2c);
+    &:hover {
+      background: linear-gradient(135deg, #d33b2c, #b52d20);
+      box-shadow: 0 8px 25px rgba(234, 67, 53, 0.4);
+    }
+  }
+  
+  // LinkedIn button
+  &[href*="linkedin"] {
+    background: linear-gradient(135deg, #0077b5, #005885);
+    &:hover {
+      background: linear-gradient(135deg, #005885, #004665);
+      box-shadow: 0 8px 25px rgba(0, 119, 181, 0.4);
+    }
+  }
+  
+  // GitHub button
+  &[href*="github"] {
+    background: linear-gradient(135deg, #333, #000);
+    &:hover {
+      background: linear-gradient(135deg, #000, #111);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+  }
+  
+  // Portfolio button
+  &[href*="chantelleaa.github.io"] {
+    background: linear-gradient(135deg, var(--accent-color), #f59e0b);
+    color: var(--text-primary) !important;
+    
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--text-primary) !important;
+    }
+    
+    &:hover {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+    }
+    
+    i {
+      color: var(--text-primary) !important;
+    }
+  }
 }
 
 .resume-phone {
   background: var(--text-muted);
-  color: white;
+  color: white !important;
+  cursor: default;
+  
+  &:hover {
+    background: var(--text-secondary);
+    transform: translateY(-1px);
+  }
+  
+  i {
+    color: white !important;
+  }
+}
+
+// Contact options (for comments section fallback)
+.contact-options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contact-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--primary-color);
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    color: white !important;
+    text-decoration: none !important;
+  }
+  
+  &::after { 
+    display: none !important; 
+  }
+  
+  i {
+    color: white !important;
+  }
+  
+  &:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .resume-contact {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .resume-contact-link,
+  .resume-phone {
+    width: 200px;
+    justify-content: center;
+  }
+  
+  .contact-options {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-option {
+    width: 200px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-contact {
+    gap: 0.75rem;
+  }
+  
+  .resume-contact-link,
+  .resume-phone {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.85rem;
+    width: 180px;
+  }
 }
 .contact-options {
   display: flex;
