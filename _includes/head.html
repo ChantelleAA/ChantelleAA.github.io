@@ -1,78 +1,215 @@
 <head>
-
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TN6NYDX17L"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-TN6NYDX17L');
   </script>
   
+  <!-- Essential Meta Tags -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <!-- Primary Meta Tags -->
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} - {{ site.description | truncatewords: 10 }}{% endif %}</title>
+  <meta name="title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="keywords" content="{% if page.keywords %}{{ page.keywords }}{% else %}{{ site.keywords | default: 'Python programming, machine learning, data science, AI, coding tutorials' }}{% endif %}">
+  <meta name="author" content="{{ site.author }}">
+  <meta name="robots" content="index, follow">
 
-  <title>{% if page.title %}{{ page.title }} « {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.og_image | default: site.avatar | absolute_url }}{% endif %}">
 
-  <!-- Favicons -->
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="{{ page.url | absolute_url }}">
+  <meta property="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="twitter:image" content="{% if page.image %}{{ page.image | absolute_url }}{% else %}{{ site.og_image | default: site.avatar | absolute_url }}{% endif %}">
+
+  <!-- Favicons and Icons -->
   <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/img/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/img/favicon-16x16.png' | relative_url }}">
   <link rel="manifest" href="{{ '/assets/img/site.webmanifest' | relative_url }}">
+  <meta name="theme-color" content="#2563eb">
 
-  <!-- Meta Description -->
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
-
-  <!-- Font Awesome (without integrity) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
 
-  <!-- Page transitions + Typing animation -->
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | absolute_url }}" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "{% if page.layout == 'post' %}BlogPosting{% else %}WebSite{% endif %}",
+      "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
+      "description": "{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}",
+      "url": "{{ page.url | absolute_url }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ site.author }}",
+        "url": "{{ site.url }}",
+        "jobTitle": "PhD AI Researcher & ML Engineer",
+        "alumniOf": "University",
+        "knowsAbout": ["Machine Learning", "Python Programming", "Data Science", "AI Research"]
+      }{% if page.layout == 'post' %},
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.url | absolute_url }}"
+      }{% endif %}
+    }
+  </script>
+
+  <!-- Performance and UX Optimizations -->
   <script>
+    // Critical path CSS loading optimization
     window.addEventListener("DOMContentLoaded", function () {
+      // Add loaded class for animations
       document.body.classList.add("loaded");
-
-      // Delay navigation for fade effect
+      
+      // Smooth page transitions
       document.querySelectorAll('a[href]').forEach(function (link) {
-        const url = new URL(link.href);
+        const url = new URL(link.href, window.location.origin);
         const current = new URL(window.location.href);
-
-        if (url.origin === current.origin && !url.hash && !url.href.includes('mailto')) {
+        
+        if (url.origin === current.origin && !url.hash && !url.href.includes('mailto') && !url.href.includes('tel:')) {
           link.addEventListener("click", function (e) {
             e.preventDefault();
             const target = this.href;
-
             document.body.classList.remove("loaded");
             document.body.classList.add("fade-out");
-
             setTimeout(() => {
               window.location.href = target;
-            }, 250);
+            }, 300);
           });
         }
       });
 
-      // Typing animation
+      // Enhanced typing animation
       const el = document.getElementById("type-title");
       if (el) {
-        const text = "Hey there, I’m Chantelle";
+        const text = "Hey there, I'm Chantelle";
         let index = 0;
-
+        el.innerHTML = '';
+        
         function type() {
           if (index < text.length) {
             el.innerHTML += text.charAt(index);
             index++;
-            setTimeout(type, 60);
+            setTimeout(type, 80);
+          } else {
+            // Add cursor blink effect
+            el.innerHTML += '<span class="cursor">|</span>';
           }
         }
-
-        setTimeout(type, 300);
+        setTimeout(type, 500);
       }
+
+      // Mobile menu functionality
+      const mobileToggle = document.getElementById('mobile-toggle');
+      const mobileNav = document.getElementById('mobile-nav');
+      
+      if (mobileToggle && mobileNav) {
+        mobileToggle.addEventListener('click', function() {
+          this.classList.toggle('active');
+          mobileNav.classList.toggle('active');
+          document.body.classList.toggle('mobile-nav-open');
+        });
+
+        // Close mobile nav when clicking on links
+        mobileNav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            document.body.classList.remove('mobile-nav-open');
+          });
+        });
+      }
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements for animation
+      document.querySelectorAll('.lesson-card, .approach-card, .article-card').forEach(el => {
+        observer.observe(el);
+      });
+    });
+
+    // Preload critical pages
+    window.addEventListener('load', function() {
+      const criticalPages = ['/#course-overview', '/about/', '/projects/'];
+      criticalPages.forEach(page => {
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = page;
+        document.head.appendChild(link);
+      });
     });
   </script>
+
+  <!-- CSS Custom Properties for Dynamic Theming -->
+  <style>
+    :root {
+      --header-height: 80px;
+    }
+    
+    .cursor {
+      animation: blink 1s infinite;
+      color: var(--primary-color);
+    }
+    
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+    
+    .animate-in {
+      animation: slideInUp 0.6s ease-out forwards;
+    }
+    
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
