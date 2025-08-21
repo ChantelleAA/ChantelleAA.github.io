@@ -138,8 +138,15 @@ layout: default
   </div>
 
   <!-- Recent Articles -->
-{% assign other_posts = site.posts | where_exp: "post", "post.title contains 'Introduction to Python' != true" %}  
- {% if other_posts.size > 0 %}
+  {% comment %} Filter out Python course posts {% endcomment %}
+  {% assign other_posts = "" | split: "" %}
+  {% for post in site.posts %}
+    {% unless post.title contains 'Introduction to Python' %}
+      {% assign other_posts = other_posts | push: post %}
+    {% endunless %}
+  {% endfor %}
+  
+  {% if other_posts.size > 0 %}
   <div class="articles-section">
     <h2 class="section-title">Latest Technical Writing</h2>
     <div class="article-list">
