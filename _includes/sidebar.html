@@ -1,43 +1,113 @@
-<div class="col-box col-box-author">
-  <img class="avatar" src="{{ site.avatar }}" alt="{{ site.author }}">
-  <div class="col-box-title name">{{ site.author }}</div>
-  <p>{{ site.profile }}</p>
-
-  <p class="contact-links">
-    <a href="mailto:chantelatta@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a> |
-    <a href="https://github.com/ChantelleAA"><i class="fa-brands fa-github"></i> GitHub</a> |
-    <a href="https://linkedin.com/in/chantelleaa"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a> |
-    <a href="/Resume/"><i class="fa-solid fa-file-lines"></i> Resume</a>
-  </p>
-
-<!--   <div class="sidebar-vibe">
-    <p><em>“Clarity is a form of kindness.”</em></p>
+<!-- Premium Author Card -->
+<div class="author-card">
+  <div class="author-image-container">
+    <img class="author-avatar" src="{{ site.avatar }}" alt="{{ site.author }}">
+    <div class="status-indicator"></div>
   </div>
-
-  <div class="sidebar-tags">
-    <strong>Topics I Write About:</strong>
-    <ul>
-      <li>Machine Learning & AI</li>
-      <li>Python & Debugging</li>
-      <li>Data Science Projects</li>
-      <li>Explaining Code Simply</li>
-      <li>Learning & Teaching</li>
-    </ul>
-  </div>
-</div> -->
-
-<!-- Clean vertical spacing -->
-<div style="margin-top: 1.5rem;"></div>
   
-<div class="col-box">
-  <div class="col-box-title">Newest Posts</div>
-  <ul class="post-list">
-    {% for post in site.posts limit:5 %}
-      <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+  <div class="author-info">
+    <h3 class="author-name">{{ site.author }}</h3>
+    <p class="author-title">PhD AI Researcher & ML Engineer</p>
+    <p class="author-bio">{{ site.profile }}</p>
+    
+    <div class="author-stats">
+      <div class="stat-item">
+        <span class="stat-number">6</span>
+        <span class="stat-label">Lessons</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Students</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">5</span>
+        <span class="stat-label">Projects</span>
+      </div>
+    </div>
+    
+    <div class="social-links">
+      <a href="mailto:chantelatta@gmail.com" class="social-link email" title="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+      <a href="https://github.com/ChantelleAA" class="social-link github" title="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/chantelleaa" class="social-link linkedin" title="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <a href="/Resume/" class="social-link resume" title="Resume">
+        <i class="fa-solid fa-file-lines"></i>
+      </a>
+    </div>
+  </div>
 </div>
 
-<div class="col-box post-toc hide">
-  <div class="col-box-title">TOC</div>
+<!-- Teaching Philosophy Card -->
+<div class="philosophy-card">
+  <div class="card-icon">
+    <i class="fa-solid fa-lightbulb"></i>
+  </div>
+  <h4>Teaching Philosophy</h4>
+  <p><em>"Learn by building. Every concept connects to a project you'll complete, debug, and improve."</em></p>
+</div>
+
+<!-- Quick Skills Overview -->
+<div class="skills-card">
+  <h4>Expertise Areas</h4>
+  <div class="skill-tags">
+    <span class="skill-tag ai">AI Research</span>
+    <span class="skill-tag ml">Machine Learning</span>
+    <span class="skill-tag python">Python</span>
+    <span class="skill-tag data">Data Science</span>
+    <span class="skill-tag climate">Climate Tech</span>
+  </div>
+</div>
+
+<!-- Latest Posts with Enhanced Design -->
+<div class="posts-card">
+  <div class="card-header">
+    <h4>Latest Lessons & Articles</h4>
+    <a href="/category/" class="view-all">View All</a>
+  </div>
+  <div class="post-list-modern">
+    {% assign latest_posts = site.posts | slice: 0, 4 %}
+    {% for post in latest_posts %}
+      <a href="{{ post.url | prepend: site.baseurl }}" class="post-item-modern">
+        <div class="post-meta">
+          {% if post.categories contains 'python-course' %}
+            <span class="post-type course">Course</span>
+          {% else %}
+            <span class="post-type article">Article</span>
+          {% endif %}
+          <span class="post-date">{{ post.date | date: "%b %d" }}</span>
+        </div>
+        <h5 class="post-title-modern">{{ post.title | truncatewords: 8 }}</h5>
+        <p class="post-excerpt-modern">{{ post.excerpt | strip_html | truncatewords: 12 }}</p>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Newsletter Signup Card -->
+<div class="newsletter-card">
+  <div class="newsletter-icon">
+    <i class="fa-solid fa-paper-plane"></i>
+  </div>
+  <h4>Stay Updated</h4>
+  <p>Get new Python lessons and ML insights delivered to your inbox.</p>
+  <div class="newsletter-form-sidebar">
+    <input type="email" placeholder="Your email" class="email-input-sidebar">
+    <button class="subscribe-btn-sidebar">
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+  <span class="newsletter-note-sidebar">No spam, unsubscribe anytime</span>
+</div>
+
+<!-- Table of Contents (Dynamic) -->
+<div class="toc-card hide" id="toc-sidebar">
+  <h4>Table of Contents</h4>
+  <div class="toc-content">
+    <!-- TOC will be generated by JavaScript -->
+  </div>
 </div>
