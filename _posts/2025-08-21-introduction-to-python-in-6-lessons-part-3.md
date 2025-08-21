@@ -4,6 +4,7 @@ title: "Introduction to Python in 6 Lessons - Part 3"
 date: 2025-08-21
 categories: [python, tutorial, mini-project]
 excerpt: "Turn Python into a game partner! In this lesson, you’ll build a fun Guess-the-Number game and learn how loops, randomness, and logic make your code think and respond."
+comments: true
 ---
 
 # Build a Guess-the-Number Game – Loops and Randomness
