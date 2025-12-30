@@ -2,9 +2,14 @@
 layout: post
 title: "Introduction to Python in 6 Lessons - Part 1"
 date: 2025-05-13
-categories: [python, tutorial, mini-project]
+categories: [python-course, python, tutorial, mini-project]
 excerpt: "In this lesson we’ll write a simple Python program to convert temperatures (Fahrenheit to Celsius) while learning core concepts...This project gives immediate results: you type a number, the program prints the converted temperature."
 comments: true
+order: 1
+difficulty: "Beginner"
+lesson_title: "Your First Project – A Temperature Converter"
+concepts: "Variables, input/output, basic arithmetic, type conversion"
+duration: "20-25 min"
 ---
 
 # Python Lesson 1: Your First Project – A Temperature Converter
