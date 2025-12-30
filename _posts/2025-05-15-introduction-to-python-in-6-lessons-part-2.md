@@ -2,9 +2,14 @@
 layout: post
 title: "Introduction to Python in 6 Lessons - Part 2"
 date: 2025-05-13
-categories: [python, tutorial, mini-project]
+categories: [python-course, python, tutorial, mini-project]
 excerpt: "In this second lesson of our Python beginner series, we’ll build a simple calculator that performs basic arithmetic: addition, subtraction, multiplication, and division. This hands-on project introduces two powerful tools in Python: conditional statements (if, elif, else) and functions."
 comments: true
+order: 2
+difficulty: "Beginner"
+lesson_title: "Create a Simple Calculator – Learn Conditionals and Functions"
+concepts: "Conditional statements, functions, user input validation"
+duration: "20-25 min"
 ---
 
 # Create a Simple Calculator – Learn Conditionals and Functions

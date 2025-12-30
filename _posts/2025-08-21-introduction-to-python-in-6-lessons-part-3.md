@@ -2,9 +2,14 @@
 layout: post
 title: "Introduction to Python in 6 Lessons - Part 3"
 date: 2025-08-21
-categories: [python, tutorial, mini-project]
+categories: [python-course, python, tutorial, mini-project]
 excerpt: "Turn Python into a game partner! In this lesson, you’ll build a fun Guess-the-Number game and learn how loops, randomness, and logic make your code think and respond."
 comments: true
+order: 3
+difficulty: "Beginner"
+lesson_title: "Build a Guess-the-Number Game – Loops and Randomness"
+concepts: "While loops, random module, comparison operators, control flow"
+duration: "20-25 min"
 ---
 
 # Build a Guess-the-Number Game – Loops and Randomness

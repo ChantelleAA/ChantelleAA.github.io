@@ -21,9 +21,6 @@ comments: true
   <a href="https://chantelleaa.github.io" class="resume-contact-link" target="_blank">
     <i class="fa-solid fa-globe"></i> Portfolio
   </a>
-  <span class="resume-phone">
-    <i class="fa-solid fa-phone"></i> +233 550-986-002
-  </span>
 </div>
 
 ---

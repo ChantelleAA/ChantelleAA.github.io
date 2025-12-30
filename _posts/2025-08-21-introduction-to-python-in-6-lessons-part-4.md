@@ -2,9 +2,14 @@
 layout: post
 title: "Introduction to Python in 6 Lessons - Part 4"
 date: 2025-08-21
-categories: [python, tutorial, mini-project]
+categories: [python-course, python, tutorial, mini-project]
 excerpt: "Ever wished your code could keep track of your tasks? In this lesson you’ll build a simple to-do list app with Python lists by adding, viewing, and removing tasks while learning how to organize multiple pieces of data efficiently."
 comments: true
+order: 4
+difficulty: "Beginner"
+lesson_title: "Manage a To-Do List – Lists and Basic Data Structures"
+concepts: "Lists, list methods, indexing, iteration, menu-driven programs"
+duration: "20-25 min"
 ---
 
 # Manage a To-Do List – Lists and Basic Data Structures

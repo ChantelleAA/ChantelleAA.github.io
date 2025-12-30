@@ -2,9 +2,14 @@
 layout: post
 title: "Introduction to Python in 6 Lessons - Part 5"
 date: 2025-08-21
-categories: [python, tutorial, mini-project]
+categories: [python-course, python, tutorial, mini-project]
 excerpt: "From essays to tweets, most of the world’s data is text. In this lesson you’ll learn how to clean, count, and analyze words in Python and even save results to a file while building the foundation for real-world text analytics and NLP."
 comments: true
+order: 5
+difficulty: "Beginner"
+lesson_title: "Analyze Text – Strings and Basic File Handling"
+concepts: "String methods, file I/O, text processing, word counting, data persistence"
+duration: "20-25 min"
 ---
 
 # Analyze Text – Strings and Basic File Handling**

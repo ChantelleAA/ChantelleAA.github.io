@@ -13,7 +13,7 @@ timezone: UTC  # Change to your timezone if needed
 # Your information
 email: chantelatta@gmail.com
 author: Chantelle Amoako-Atta
-avatar: "https://github.com/ChantelleAA/ChantelleAA.github.io/blob/gh-pages/Chantelle.jpeg?raw=true"
+avatar: "/Chantelle.jpeg"
 profile: PhD researcher in AI for Decarbonization and machine learning engineer. Teaching Python and data science through practical, project-based approaches.
 profile_links:
   Email: "mailto:chantelatta@gmail.com"
@@ -22,7 +22,7 @@ profile_links:
   Resume: "/Resume/"  # Lowercase for consistency
 
 # Social sharing (optional - for better social media previews)
-og_image: "https://github.com/ChantelleAA/ChantelleAA.github.io/blob/gh-pages/social-preview.png?raw=true"
+# og_image: "https://github.com/ChantelleAA/ChantelleAA.github.io/blob/gh-pages/social-preview.png?raw=true"  # TODO: Create a proper Open Graph preview image (1200x630px)
 
 # Comment Service (Disqus or 多说)
 disqus_shortname: https-chantelleaa-github-io
@@ -34,6 +34,7 @@ header:
   links:
     Home: /
     Python Course: /#course-overview
+    Portfolio: /portfolio/
     About: /about/
     Projects: /projects/
     Blog: /category/
