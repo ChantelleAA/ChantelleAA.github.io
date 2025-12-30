@@ -13,7 +13,7 @@ Have you ever written a really cool function or built a machine learning model t
 
 Enter **Gradio**, an amazing Python library that lets you turn your Python functions into fully interactive web applications **in just a few lines of code**. Whether you're building a model demo, a utility tool, or just something fun, Gradio helps you create and share your work effortlessly.
 
-What makes it truly special is this: Not only can you launch your app locally on your machine, but Gradio also gives you a **public link, so **anyone from anywhere** can try your app, even if they don’t have Python installed. It’s like sharing your code, but without the headache of packaging or deploying it manually.
+What makes it truly special is this: Not only can you launch your app locally on your machine, but Gradio also gives you a **public link**, so **anyone from anywhere** can try your app, even if they don’t have Python installed. It’s like sharing your code, but without the headache of packaging or deploying it manually.
 
 Let’s look at how simple and powerful it is by building and deploying a tiny app together.
 
