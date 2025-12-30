@@ -25,12 +25,12 @@ comments: true
 
 ---
 
-## 📄 Professional Summary
+## Professional Summary
 AI researcher and machine learning engineer specializing in climate AI, NLP, and computer vision. Currently pursuing PhD in AI for climate-resilient offshore wind energy at University College Dublin. Extensive experience building production ML systems, teaching data science, and mentoring emerging AI talent across Africa. Track record of leading technical projects from research to deployment in education, healthcare, and political analytics.
 
 ---
 
-## 🎓 Education
+## Education
 
 **PhD in AI for Decarbonization (Decarb-AI iScholar)**  
 *University College Dublin, Ireland* | Sep. 2025 - Present  
@@ -56,7 +56,7 @@ AI researcher and machine learning engineer specializing in climate AI, NLP, and
 
 ---
 
-## 🛠 Core Skills
+## Core Skills
 
 **Programming Languages:**  
 Python (Advanced), MATLAB (Intermediate), R (Intermediate), CUDA (Intermediate), SQL (Intermediate)
@@ -87,7 +87,7 @@ Microsoft Office (Advanced), LibreOffice (Intermediate)
 
 ---
 
-## 💼 Professional Experience
+## Professional Experience
 
 **Lead AI/ML Engineer**  
 *Kola Market* | Dec. 2025 - Present  
@@ -209,7 +209,7 @@ Mastercard Foundation Transition Training Programme
 
 ---
 
-## 🏅 Awards and Recognition
+## Awards and Recognition
 
 - Met Eireann PhD Scholarship, University College Dublin (Sep. 2025)
 - 1st Place & Best SDG-Aligned Solution (Sustainability) - AIMS Quantathon 2025 (Team Qualaria Mentor) (Jul. 2025)
