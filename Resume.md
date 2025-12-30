@@ -222,7 +222,7 @@ Mastercard Foundation Transition Training Programme
 
 ---
 
-## 🌍 Leadership and Community
+## Leadership and Community
 
 - Member of GhanaNLP Community (Jun. 2025 - Present)
 - Deputy Sponsorship Committee Head - Divas in AI (Mar. 2025 - Present)
