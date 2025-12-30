@@ -1,0 +1,396 @@
+// ===================================
+// DESIGN SYSTEM - Design Tokens
+// ===================================
+
+// Typography Scale
+$font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-family-code: 'JetBrains Mono', Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+// Font sizes (type scale)
+$font-size-xs: 0.75rem;    // 12px
+$font-size-sm: 0.875rem;   // 14px
+$font-size-base: 1rem;     // 16px
+$font-size-lg: 1.125rem;   // 18px
+$font-size-xl: 1.25rem;    // 20px
+$font-size-2xl: 1.5rem;    // 24px
+$font-size-3xl: 1.875rem;  // 30px
+$font-size-4xl: 2.25rem;   // 36px
+$font-size-5xl: 3rem;      // 48px
+$font-size-6xl: 3.75rem;   // 60px
+
+// Font weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// Line heights
+$line-height-none: 1;
+$line-height-tight: 1.25;
+$line-height-snug: 1.375;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.625;
+$line-height-loose: 2;
+
+// Letter spacing
+$letter-spacing-tighter: -0.05em;
+$letter-spacing-tight: -0.025em;
+$letter-spacing-normal: 0;
+$letter-spacing-wide: 0.025em;
+$letter-spacing-wider: 0.05em;
+$letter-spacing-widest: 0.1em;
+
+// Color Palette
+// Primary colors
+$color-primary-50: #eff6ff;
+$color-primary-100: #dbeafe;
+$color-primary-200: #bfdbfe;
+$color-primary-300: #93c5fd;
+$color-primary-400: #60a5fa;
+$color-primary-500: #3b82f6;  // Main primary
+$color-primary-600: #2563eb;  // Primary hover
+$color-primary-700: #1d4ed8;
+$color-primary-800: #1e40af;
+$color-primary-900: #1e3a8a;
+
+// Secondary colors (Cyan)
+$color-secondary-50: #ecfeff;
+$color-secondary-100: #cffafe;
+$color-secondary-200: #a5f3fc;
+$color-secondary-300: #67e8f9;
+$color-secondary-400: #22d3ee;
+$color-secondary-500: #06b6d4;  // Main secondary
+$color-secondary-600: #0891b2;
+$color-secondary-700: #0e7490;
+$color-secondary-800: #155e75;
+$color-secondary-900: #164e63;
+
+// Accent colors (Amber)
+$color-accent-50: #fffbeb;
+$color-accent-100: #fef3c7;
+$color-accent-200: #fde68a;
+$color-accent-300: #fcd34d;
+$color-accent-400: #fbbf24;
+$color-accent-500: #f59e0b;  // Main accent
+$color-accent-600: #d97706;
+$color-accent-700: #b45309;
+$color-accent-800: #92400e;
+$color-accent-900: #78350f;
+
+// Neutral colors (Slate)
+$color-neutral-50: #f8fafc;
+$color-neutral-100: #f1f5f9;
+$color-neutral-200: #e2e8f0;
+$color-neutral-300: #cbd5e1;
+$color-neutral-400: #94a3b8;
+$color-neutral-500: #64748b;
+$color-neutral-600: #475569;
+$color-neutral-700: #334155;
+$color-neutral-800: #1e293b;
+$color-neutral-900: #0f172a;
+
+// Semantic colors
+$color-success-light: #d1fae5;
+$color-success: #10b981;
+$color-success-dark: #059669;
+
+$color-warning-light: #fef3c7;
+$color-warning: #f59e0b;
+$color-warning-dark: #d97706;
+
+$color-error-light: #fee2e2;
+$color-error: #ef4444;
+$color-error-dark: #dc2626;
+
+$color-info-light: #dbeafe;
+$color-info: #3b82f6;
+$color-info-dark: #2563eb;
+
+// Background colors
+$color-bg-primary: #ffffff;
+$color-bg-secondary: #f8fafc;
+$color-bg-tertiary: #f1f5f9;
+$color-bg-accent: #eff6ff;
+
+// Text colors
+$color-text-primary: #0f172a;
+$color-text-secondary: #475569;
+$color-text-tertiary: #64748b;
+$color-text-disabled: #94a3b8;
+$color-text-inverse: #ffffff;
+
+// Border colors
+$color-border-light: #f1f5f9;
+$color-border-medium: #e2e8f0;
+$color-border-dark: #cbd5e1;
+$color-border-focus: #3b82f6;
+
+// Spacing Scale (8px grid system)
+$spacing-0: 0;
+$spacing-1: 0.25rem;   // 4px
+$spacing-2: 0.5rem;    // 8px
+$spacing-3: 0.75rem;   // 12px
+$spacing-4: 1rem;      // 16px
+$spacing-5: 1.25rem;   // 20px
+$spacing-6: 1.5rem;    // 24px
+$spacing-7: 1.75rem;   // 28px
+$spacing-8: 2rem;      // 32px
+$spacing-10: 2.5rem;   // 40px
+$spacing-12: 3rem;     // 48px
+$spacing-16: 4rem;     // 64px
+$spacing-20: 5rem;     // 80px
+$spacing-24: 6rem;     // 96px
+$spacing-32: 8rem;     // 128px
+
+// Border Radius
+$radius-none: 0;
+$radius-sm: 0.25rem;    // 4px
+$radius-base: 0.5rem;   // 8px
+$radius-md: 0.75rem;    // 12px
+$radius-lg: 1rem;       // 16px
+$radius-xl: 1.5rem;     // 24px
+$radius-2xl: 2rem;      // 32px
+$radius-full: 9999px;
+
+// Shadow System
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+$shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+// Elevation shadows (semantic)
+$shadow-soft: 0 8px 32px rgba(31, 38, 135, 0.15);
+$shadow-medium: 0 12px 40px rgba(31, 38, 135, 0.25);
+$shadow-elevated: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+$shadow-intense: 0 30px 60px -15px rgba(0, 0, 0, 0.35);
+
+// Glassmorphism effects
+$glass-bg: rgba(255, 255, 255, 0.25);
+$glass-border: rgba(255, 255, 255, 0.18);
+$glass-blur: blur(20px);
+
+// Transition Timings
+$transition-fast: 150ms;
+$transition-normal: 300ms;
+$transition-slow: 500ms;
+$transition-slower: 700ms;
+
+// Easing functions
+$ease-in: cubic-bezier(0.4, 0, 1, 1);
+$ease-out: cubic-bezier(0, 0, 0.2, 1);
+$ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+$ease-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+$ease-spring: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+// Z-index Layers
+$z-index-dropdown: 100;
+$z-index-sticky: 200;
+$z-index-fixed: 300;
+$z-index-modal-backdrop: 400;
+$z-index-modal: 500;
+$z-index-popover: 600;
+$z-index-tooltip: 700;
+
+// Breakpoints
+$breakpoint-mobile: 320px;
+$breakpoint-mobile-lg: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-desktop-lg: 1280px;
+$breakpoint-wide: 1440px;
+$breakpoint-ultra: 1920px;
+
+// Container max-widths
+$container-sm: 640px;
+$container-md: 768px;
+$container-lg: 1024px;
+$container-xl: 1280px;
+$container-2xl: 1440px;
+
+// Grid columns
+$grid-columns: 12;
+$grid-gutter: $spacing-6;
+
+// Opacity values
+$opacity-0: 0;
+$opacity-5: 0.05;
+$opacity-10: 0.1;
+$opacity-20: 0.2;
+$opacity-30: 0.3;
+$opacity-40: 0.4;
+$opacity-50: 0.5;
+$opacity-60: 0.6;
+$opacity-70: 0.7;
+$opacity-80: 0.8;
+$opacity-90: 0.9;
+$opacity-95: 0.95;
+$opacity-100: 1;
+
+// ===================================
+// MIXINS
+// ===================================
+
+// Responsive breakpoints
+@mixin mobile {
+  @media (max-width: #{$breakpoint-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) and (max-width: #{$breakpoint-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin wide {
+  @media (min-width: $breakpoint-wide) {
+    @content;
+  }
+}
+
+@mixin media-max($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-min($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Glassmorphism effect
+@mixin glassmorphism($opacity: 0.25, $blur: 20px) {
+  background: rgba(255, 255, 255, $opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+// Hover lift effect
+@mixin hover-lift($distance: 8px) {
+  transition: all $transition-normal $ease-bounce;
+  &:hover {
+    transform: translateY(-$distance);
+    box-shadow: $shadow-elevated;
+  }
+}
+
+// Card style
+@mixin card-base {
+  background: $color-bg-primary;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-base;
+  padding: $spacing-6;
+  transition: all $transition-normal $ease-out;
+}
+
+// Focus ring
+@mixin focus-ring($color: $color-primary-500) {
+  outline: 3px solid $color;
+  outline-offset: 2px;
+}
+
+// Truncate text
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Line clamp
+@mixin line-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Visually hidden (screen reader only)
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Reset list
+@mixin reset-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// Button reset
+@mixin reset-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+// Flex center
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Absolute center
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Gradient text
+@mixin gradient-text($start, $end) {
+  background: linear-gradient(135deg, $start, $end);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Scrollbar styling
+@mixin custom-scrollbar($width: 8px, $track-color: $color-neutral-100, $thumb-color: $color-primary-500) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: $track-color;
+    border-radius: $radius-full;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: $thumb-color;
+    border-radius: $radius-full;
+    
+    &:hover {
+      background: darken($thumb-color, 10%);
+    }
+  }
+}
