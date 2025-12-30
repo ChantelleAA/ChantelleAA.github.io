@@ -1,0 +1,72 @@
+{% comment %}
+  Project Card Component
+  
+  Parameters:
+  - title: Project title
+  - description: Short description
+  - image: Image URL/path
+  - tech_stack: Array of technologies
+  - github_url: GitHub repository URL
+  - demo_url: Live demo URL
+  - category: Project category (research, web-app, ml-ai, education)
+  - metrics: Optional metrics (e.g., "87% accuracy improvement")
+  - featured: Boolean to mark as featured project
+{% endcomment %}
+
+<div class="project-card {% if include.featured %}project-card-featured{% endif %}">
+  {% if include.image %}
+  <div class="project-image">
+    <img src="{{ include.image }}" alt="{{ include.title }}" loading="lazy">
+    {% if include.category %}
+    <div class="project-category">
+      <span class="pill pill-primary">{{ include.category }}</span>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+  
+  <div class="project-content">
+    <h3 class="project-title">{{ include.title }}</h3>
+    
+    <p class="project-description">{{ include.description }}</p>
+    
+    {% if include.tech_stack %}
+    <div class="project-tech-stack">
+      {% assign tech_items = include.tech_stack | split: "," %}
+      {% assign visible_count = 4 %}
+      {% for tech in tech_items limit:visible_count %}
+        <span class="pill pill-sm pill-secondary">{{ tech | strip }}</span>
+      {% endfor %}
+      {% assign remaining = tech_items.size | minus: visible_count %}
+      {% if remaining > 0 %}
+        <span class="pill pill-sm pill-accent">+{{ remaining }} more</span>
+      {% endif %}
+    </div>
+    {% endif %}
+    
+    {% if include.metrics %}
+    <div class="project-metrics">
+      <div class="metric">
+        <i class="fa-solid fa-chart-line"></i>
+        <span>{{ include.metrics }}</span>
+      </div>
+    </div>
+    {% endif %}
+    
+    <div class="project-footer">
+      {% if include.demo_url %}
+      <a href="{{ include.demo_url }}" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+        <i class="fa-solid fa-external-link-alt"></i>
+        View Demo
+      </a>
+      {% endif %}
+      
+      {% if include.github_url %}
+      <a href="{{ include.github_url }}" class="btn btn-outline btn-sm" target="_blank" rel="noopener">
+        <i class="fa-brands fa-github"></i>
+        GitHub
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</div>

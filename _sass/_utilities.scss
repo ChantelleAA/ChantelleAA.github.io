@@ -1,0 +1,742 @@
+// ===================================
+// UTILITIES - Utility Classes
+// ===================================
+
+@import 'design-system';
+
+// ===================================
+// CONTAINER
+// ===================================
+
+.container {
+  width: 100%;
+  max-width: $container-xl;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $spacing-6;
+  padding-right: $spacing-6;
+  
+  @include mobile {
+    padding-left: $spacing-4;
+    padding-right: $spacing-4;
+  }
+}
+
+.container-sm {
+  max-width: $container-sm;
+}
+
+.container-md {
+  max-width: $container-md;
+}
+
+.container-lg {
+  max-width: $container-lg;
+}
+
+.container-xl {
+  max-width: $container-xl;
+}
+
+.container-2xl {
+  max-width: $container-2xl;
+}
+
+.container-fluid {
+  max-width: 100%;
+}
+
+// ===================================
+// SECTION SPACING
+// ===================================
+
+.section {
+  padding-top: $spacing-16;
+  padding-bottom: $spacing-16;
+  
+  @include mobile {
+    padding-top: $spacing-12;
+    padding-bottom: $spacing-12;
+  }
+}
+
+.section-sm {
+  padding-top: $spacing-12;
+  padding-bottom: $spacing-12;
+  
+  @include mobile {
+    padding-top: $spacing-8;
+    padding-bottom: $spacing-8;
+  }
+}
+
+.section-lg {
+  padding-top: $spacing-24;
+  padding-bottom: $spacing-24;
+  
+  @include mobile {
+    padding-top: $spacing-16;
+    padding-bottom: $spacing-16;
+  }
+}
+
+// ===================================
+// GRID UTILITIES
+// ===================================
+
+.grid {
+  display: grid;
+  gap: $grid-gutter;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+  
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+  
+  @include media-max($breakpoint-desktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+  
+  @include media-max($breakpoint-wide) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  @include media-max($breakpoint-desktop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gap-2 { gap: $spacing-2; }
+.gap-3 { gap: $spacing-3; }
+.gap-4 { gap: $spacing-4; }
+.gap-6 { gap: $spacing-6; }
+.gap-8 { gap: $spacing-8; }
+
+// ===================================
+// FLEX UTILITIES
+// ===================================
+
+.flex {
+  display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-auto {
+  flex: auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+// ===================================
+// SPACING UTILITIES
+// ===================================
+
+// Margin
+.m-0 { margin: $spacing-0; }
+.m-1 { margin: $spacing-1; }
+.m-2 { margin: $spacing-2; }
+.m-3 { margin: $spacing-3; }
+.m-4 { margin: $spacing-4; }
+.m-5 { margin: $spacing-5; }
+.m-6 { margin: $spacing-6; }
+.m-8 { margin: $spacing-8; }
+.m-10 { margin: $spacing-10; }
+.m-12 { margin: $spacing-12; }
+.m-16 { margin: $spacing-16; }
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.mt-0 { margin-top: $spacing-0; }
+.mt-1 { margin-top: $spacing-1; }
+.mt-2 { margin-top: $spacing-2; }
+.mt-3 { margin-top: $spacing-3; }
+.mt-4 { margin-top: $spacing-4; }
+.mt-5 { margin-top: $spacing-5; }
+.mt-6 { margin-top: $spacing-6; }
+.mt-8 { margin-top: $spacing-8; }
+.mt-10 { margin-top: $spacing-10; }
+.mt-12 { margin-top: $spacing-12; }
+.mt-16 { margin-top: $spacing-16; }
+
+.mr-0 { margin-right: $spacing-0; }
+.mr-1 { margin-right: $spacing-1; }
+.mr-2 { margin-right: $spacing-2; }
+.mr-3 { margin-right: $spacing-3; }
+.mr-4 { margin-right: $spacing-4; }
+.mr-5 { margin-right: $spacing-5; }
+.mr-6 { margin-right: $spacing-6; }
+.mr-8 { margin-right: $spacing-8; }
+
+.mb-0 { margin-bottom: $spacing-0; }
+.mb-1 { margin-bottom: $spacing-1; }
+.mb-2 { margin-bottom: $spacing-2; }
+.mb-3 { margin-bottom: $spacing-3; }
+.mb-4 { margin-bottom: $spacing-4; }
+.mb-5 { margin-bottom: $spacing-5; }
+.mb-6 { margin-bottom: $spacing-6; }
+.mb-8 { margin-bottom: $spacing-8; }
+.mb-10 { margin-bottom: $spacing-10; }
+.mb-12 { margin-bottom: $spacing-12; }
+.mb-16 { margin-bottom: $spacing-16; }
+
+.ml-0 { margin-left: $spacing-0; }
+.ml-1 { margin-left: $spacing-1; }
+.ml-2 { margin-left: $spacing-2; }
+.ml-3 { margin-left: $spacing-3; }
+.ml-4 { margin-left: $spacing-4; }
+.ml-5 { margin-left: $spacing-5; }
+.ml-6 { margin-left: $spacing-6; }
+.ml-8 { margin-left: $spacing-8; }
+
+// Padding
+.p-0 { padding: $spacing-0; }
+.p-1 { padding: $spacing-1; }
+.p-2 { padding: $spacing-2; }
+.p-3 { padding: $spacing-3; }
+.p-4 { padding: $spacing-4; }
+.p-5 { padding: $spacing-5; }
+.p-6 { padding: $spacing-6; }
+.p-8 { padding: $spacing-8; }
+.p-10 { padding: $spacing-10; }
+.p-12 { padding: $spacing-12; }
+
+.pt-0 { padding-top: $spacing-0; }
+.pt-1 { padding-top: $spacing-1; }
+.pt-2 { padding-top: $spacing-2; }
+.pt-3 { padding-top: $spacing-3; }
+.pt-4 { padding-top: $spacing-4; }
+.pt-5 { padding-top: $spacing-5; }
+.pt-6 { padding-top: $spacing-6; }
+.pt-8 { padding-top: $spacing-8; }
+
+.pr-0 { padding-right: $spacing-0; }
+.pr-1 { padding-right: $spacing-1; }
+.pr-2 { padding-right: $spacing-2; }
+.pr-3 { padding-right: $spacing-3; }
+.pr-4 { padding-right: $spacing-4; }
+.pr-5 { padding-right: $spacing-5; }
+.pr-6 { padding-right: $spacing-6; }
+.pr-8 { padding-right: $spacing-8; }
+
+.pb-0 { padding-bottom: $spacing-0; }
+.pb-1 { padding-bottom: $spacing-1; }
+.pb-2 { padding-bottom: $spacing-2; }
+.pb-3 { padding-bottom: $spacing-3; }
+.pb-4 { padding-bottom: $spacing-4; }
+.pb-5 { padding-bottom: $spacing-5; }
+.pb-6 { padding-bottom: $spacing-6; }
+.pb-8 { padding-bottom: $spacing-8; }
+
+.pl-0 { padding-left: $spacing-0; }
+.pl-1 { padding-left: $spacing-1; }
+.pl-2 { padding-left: $spacing-2; }
+.pl-3 { padding-left: $spacing-3; }
+.pl-4 { padding-left: $spacing-4; }
+.pl-5 { padding-left: $spacing-5; }
+.pl-6 { padding-left: $spacing-6; }
+.pl-8 { padding-left: $spacing-8; }
+
+// ===================================
+// TEXT UTILITIES
+// ===================================
+
+// Alignment
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+// Size
+.text-xs { font-size: $font-size-xs; }
+.text-sm { font-size: $font-size-sm; }
+.text-base { font-size: $font-size-base; }
+.text-lg { font-size: $font-size-lg; }
+.text-xl { font-size: $font-size-xl; }
+.text-2xl { font-size: $font-size-2xl; }
+.text-3xl { font-size: $font-size-3xl; }
+.text-4xl { font-size: $font-size-4xl; }
+.text-5xl { font-size: $font-size-5xl; }
+.text-6xl { font-size: $font-size-6xl; }
+
+// Weight
+.font-light { font-weight: $font-weight-light; }
+.font-normal { font-weight: $font-weight-normal; }
+.font-medium { font-weight: $font-weight-medium; }
+.font-semibold { font-weight: $font-weight-semibold; }
+.font-bold { font-weight: $font-weight-bold; }
+.font-extrabold { font-weight: $font-weight-extrabold; }
+
+// Style
+.italic { font-style: italic; }
+.not-italic { font-style: normal; }
+
+// Transform
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+.normal-case { text-transform: none; }
+
+// Decoration
+.underline { text-decoration: underline; }
+.line-through { text-decoration: line-through; }
+.no-underline { text-decoration: none; }
+
+// Line height
+.leading-none { line-height: $line-height-none; }
+.leading-tight { line-height: $line-height-tight; }
+.leading-snug { line-height: $line-height-snug; }
+.leading-normal { line-height: $line-height-normal; }
+.leading-relaxed { line-height: $line-height-relaxed; }
+.leading-loose { line-height: $line-height-loose; }
+
+// Letter spacing
+.tracking-tighter { letter-spacing: $letter-spacing-tighter; }
+.tracking-tight { letter-spacing: $letter-spacing-tight; }
+.tracking-normal { letter-spacing: $letter-spacing-normal; }
+.tracking-wide { letter-spacing: $letter-spacing-wide; }
+.tracking-wider { letter-spacing: $letter-spacing-wider; }
+.tracking-widest { letter-spacing: $letter-spacing-widest; }
+
+// Truncate
+.truncate {
+  @include truncate;
+}
+
+.line-clamp-1 {
+  @include line-clamp(1);
+}
+
+.line-clamp-2 {
+  @include line-clamp(2);
+}
+
+.line-clamp-3 {
+  @include line-clamp(3);
+}
+
+// Text colors
+.text-primary { color: $color-text-primary; }
+.text-secondary { color: $color-text-secondary; }
+.text-tertiary { color: $color-text-tertiary; }
+.text-muted { color: $color-text-tertiary; }
+.text-inverse { color: $color-text-inverse; }
+
+.text-brand-primary { color: $color-primary-600; }
+.text-brand-secondary { color: $color-secondary-600; }
+.text-accent { color: $color-accent-600; }
+
+.text-success { color: $color-success; }
+.text-warning { color: $color-warning; }
+.text-error { color: $color-error; }
+
+// Gradient text
+.text-gradient {
+  @include gradient-text($color-primary-600, $color-secondary-500);
+}
+
+.text-gradient-accent {
+  @include gradient-text($color-accent-600, $color-accent-400);
+}
+
+// ===================================
+// BACKGROUND UTILITIES
+// ===================================
+
+.bg-transparent { background-color: transparent; }
+.bg-primary { background-color: $color-bg-primary; }
+.bg-secondary { background-color: $color-bg-secondary; }
+.bg-tertiary { background-color: $color-bg-tertiary; }
+.bg-accent { background-color: $color-bg-accent; }
+
+.bg-brand-primary { background-color: $color-primary-600; }
+.bg-brand-secondary { background-color: $color-secondary-600; }
+.bg-accent-color { background-color: $color-accent-600; }
+
+.bg-success { background-color: $color-success; }
+.bg-warning { background-color: $color-warning; }
+.bg-error { background-color: $color-error; }
+
+.bg-gradient {
+  background: linear-gradient(135deg, $color-primary-600, $color-secondary-500);
+}
+
+.bg-gradient-accent {
+  background: linear-gradient(135deg, $color-accent-600, $color-accent-400);
+}
+
+// ===================================
+// BORDER UTILITIES
+// ===================================
+
+.border { border: 1px solid $color-border-medium; }
+.border-2 { border: 2px solid $color-border-medium; }
+.border-4 { border: 4px solid $color-border-medium; }
+
+.border-t { border-top: 1px solid $color-border-medium; }
+.border-r { border-right: 1px solid $color-border-medium; }
+.border-b { border-bottom: 1px solid $color-border-medium; }
+.border-l { border-left: 1px solid $color-border-medium; }
+
+.border-none { border: none; }
+
+.border-light { border-color: $color-border-light; }
+.border-medium { border-color: $color-border-medium; }
+.border-dark { border-color: $color-border-dark; }
+.border-primary { border-color: $color-primary-600; }
+
+// Radius
+.rounded-none { border-radius: $radius-none; }
+.rounded-sm { border-radius: $radius-sm; }
+.rounded { border-radius: $radius-base; }
+.rounded-md { border-radius: $radius-md; }
+.rounded-lg { border-radius: $radius-lg; }
+.rounded-xl { border-radius: $radius-xl; }
+.rounded-2xl { border-radius: $radius-2xl; }
+.rounded-full { border-radius: $radius-full; }
+
+// ===================================
+// SHADOW UTILITIES
+// ===================================
+
+.shadow-none { box-shadow: none; }
+.shadow-sm { box-shadow: $shadow-sm; }
+.shadow { box-shadow: $shadow-base; }
+.shadow-md { box-shadow: $shadow-md; }
+.shadow-lg { box-shadow: $shadow-lg; }
+.shadow-xl { box-shadow: $shadow-xl; }
+.shadow-2xl { box-shadow: $shadow-2xl; }
+.shadow-inner { box-shadow: $shadow-inner; }
+
+.shadow-soft { box-shadow: $shadow-soft; }
+.shadow-elevated { box-shadow: $shadow-elevated; }
+.shadow-intense { box-shadow: $shadow-intense; }
+
+// ===================================
+// DISPLAY UTILITIES
+// ===================================
+
+.block { display: block; }
+.inline-block { display: inline-block; }
+.inline { display: inline; }
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.grid { display: grid; }
+.hidden { display: none; }
+
+// ===================================
+// POSITION UTILITIES
+// ===================================
+
+.static { position: static; }
+.fixed { position: fixed; }
+.absolute { position: absolute; }
+.relative { position: relative; }
+.sticky { position: sticky; }
+
+// ===================================
+// OVERFLOW UTILITIES
+// ===================================
+
+.overflow-auto { overflow: auto; }
+.overflow-hidden { overflow: hidden; }
+.overflow-visible { overflow: visible; }
+.overflow-scroll { overflow: scroll; }
+
+.overflow-x-auto { overflow-x: auto; }
+.overflow-y-auto { overflow-y: auto; }
+.overflow-x-hidden { overflow-x: hidden; }
+.overflow-y-hidden { overflow-y: hidden; }
+
+// ===================================
+// OPACITY UTILITIES
+// ===================================
+
+.opacity-0 { opacity: $opacity-0; }
+.opacity-10 { opacity: $opacity-10; }
+.opacity-20 { opacity: $opacity-20; }
+.opacity-30 { opacity: $opacity-30; }
+.opacity-40 { opacity: $opacity-40; }
+.opacity-50 { opacity: $opacity-50; }
+.opacity-60 { opacity: $opacity-60; }
+.opacity-70 { opacity: $opacity-70; }
+.opacity-80 { opacity: $opacity-80; }
+.opacity-90 { opacity: $opacity-90; }
+.opacity-100 { opacity: $opacity-100; }
+
+// ===================================
+// WIDTH & HEIGHT UTILITIES
+// ===================================
+
+.w-full { width: 100%; }
+.w-auto { width: auto; }
+.w-screen { width: 100vw; }
+
+.h-full { height: 100%; }
+.h-auto { height: auto; }
+.h-screen { height: 100vh; }
+
+.max-w-sm { max-width: $container-sm; }
+.max-w-md { max-width: $container-md; }
+.max-w-lg { max-width: $container-lg; }
+.max-w-xl { max-width: $container-xl; }
+.max-w-2xl { max-width: $container-2xl; }
+.max-w-full { max-width: 100%; }
+
+// ===================================
+// CURSOR UTILITIES
+// ===================================
+
+.cursor-auto { cursor: auto; }
+.cursor-pointer { cursor: pointer; }
+.cursor-not-allowed { cursor: not-allowed; }
+.cursor-default { cursor: default; }
+
+// ===================================
+// POINTER EVENTS
+// ===================================
+
+.pointer-events-none { pointer-events: none; }
+.pointer-events-auto { pointer-events: auto; }
+
+// ===================================
+// SCREEN READER ONLY
+// ===================================
+
+.sr-only {
+  @include sr-only;
+}
+
+.not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+// ===================================
+// CARD UTILITIES
+// ===================================
+
+.card {
+  @include card-base;
+}
+
+.card-hover {
+  @include hover-lift;
+}
+
+.card-glass {
+  @include glassmorphism(0.95);
+}
+
+// ===================================
+// BADGE UTILITIES
+// ===================================
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-1 $spacing-2;
+  border-radius: $radius-sm;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wide;
+}
+
+.badge-primary {
+  background: $color-primary-600;
+  color: $color-text-inverse;
+}
+
+.badge-secondary {
+  background: $color-secondary-600;
+  color: $color-text-inverse;
+}
+
+.badge-success {
+  background: $color-success;
+  color: $color-text-inverse;
+}
+
+.badge-warning {
+  background: $color-warning;
+  color: $color-text-primary;
+}
+
+.badge-error {
+  background: $color-error;
+  color: $color-text-inverse;
+}
+
+// ===================================
+// PILL UTILITIES
+// ===================================
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-1;
+  padding: $spacing-1 $spacing-3;
+  border-radius: $radius-full;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+}
+
+.pill-primary {
+  background: $color-primary-100;
+  color: $color-primary-700;
+}
+
+.pill-secondary {
+  background: $color-secondary-100;
+  color: $color-secondary-700;
+}
+
+.pill-accent {
+  background: $color-accent-100;
+  color: $color-accent-700;
+}
+
+// ===================================
+// SKELETON LOADER
+// ===================================
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    $color-neutral-200 0%,
+    $color-neutral-300 50%,
+    $color-neutral-200 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+  border-radius: $radius-md;
+}
+
+.skeleton-text {
+  height: 1em;
+  margin-bottom: 0.5em;
+}
+
+.skeleton-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: $radius-full;
+}
+
+.skeleton-card {
+  height: 200px;
+}
+
+// ===================================
+// RESPONSIVE UTILITIES
+// ===================================
+
+@include mobile {
+  .mobile\:hidden { display: none; }
+  .mobile\:block { display: block; }
+  .mobile\:flex { display: flex; }
+  .mobile\:text-center { text-align: center; }
+}
+
+@include tablet {
+  .tablet\:hidden { display: none; }
+  .tablet\:block { display: block; }
+  .tablet\:flex { display: flex; }
+}
+
+@include desktop {
+  .desktop\:hidden { display: none; }
+  .desktop\:block { display: block; }
+  .desktop\:flex { display: flex; }
+}

@@ -3,9 +3,15 @@
 ---
 @charset "utf-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-// Premium font settings
+// Import Design System Foundation
+@import "design-system";
+@import "animations";
+@import "components";
+@import "utilities";
+
+// Legacy variables for backward compatibility
 $base-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 $base-font-size: 16px;
 $small-font-size: $base-font-size * 0.875;
@@ -14,7 +20,7 @@ $base-line-height: 1.6;
 $code-font-family: 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
 $code-font-size: 15px;
 
-// Layout breakpoints
+// Layout breakpoints (legacy)
 $content-width: 1200px;
 $on-palm: 600px;
 $on-laptop: 1024px;
