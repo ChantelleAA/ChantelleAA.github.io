@@ -1820,8 +1820,8 @@
   .pub-venue {
     display: inline-block;
     padding: $spacing-1 $spacing-2;
-    background: $color-accent-100;
-    color: $color-accent-700;
+    background: #d97706;
+    color: white;
     border-radius: $radius-sm;
     font-size: $font-size-xs;
     font-weight: $font-weight-semibold;
@@ -1969,8 +1969,8 @@
   .post-category {
     display: inline-block;
     padding: $spacing-1 $spacing-2;
-    background: $color-primary-100;
-    color: $color-primary-700;
+    background: #2c3e50;
+    color: white;
     border-radius: $radius-sm;
     font-size: $font-size-xs;
     font-weight: $font-weight-semibold;
@@ -2506,8 +2506,8 @@
       
       .workshop-badge {
         padding: $spacing-1 $spacing-2;
-        background: $color-accent-100;
-        color: $color-accent-700;
+        background: #d97706;
+        color: white;
         border-radius: $radius-sm;
         font-size: $font-size-xs;
         font-weight: $font-weight-semibold;
@@ -2544,8 +2544,8 @@
       
       .topic-pill {
         padding: $spacing-1 $spacing-2;
-        background: $color-primary-100;
-        color: $color-primary-700;
+        background: #2c3e50;
+        color: white;
         border-radius: $radius-sm;
         font-size: $font-size-xs;
         font-weight: $font-weight-medium;
