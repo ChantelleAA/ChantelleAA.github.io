@@ -10,7 +10,7 @@ comments: true
 
 In [Part 1](./2025-04-14-intro-to-gradio-part-1.md), we turned a simple function into a web app using Gradio. In this part, we go deeper: we’ll train a real **text classification model on a psychological dataset**, wrap it with Gradio, and let users type about themselves to see which **MBTI personality type** they might be.
 
-And this time, we’re not just guessing **Introvert vs Extrovert**. We’re going for all **16 MBTI types**—like INTP, ENFJ, ISFP, etc.
+And this time, we’re not just guessing **Introvert vs Extrovert**. We’re going for all **16 MBTI types**, like INTP, ENFJ, ISFP, etc.
 
 By the end of this guide, you’ll know how to:
 

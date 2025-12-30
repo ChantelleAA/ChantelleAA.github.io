@@ -6,7 +6,7 @@ permalink: /about/
 
 ## Who I Am
 
-Hi, I'm Chantelle Amoako-Atta, a PhD researcher in AI for Decarbonization at University College Dublin and Lead AI/ML Engineer at Kola Market. My work sits at the intersection of artificial intelligence, climate science, and real-world impact—from offshore wind optimization to credit scoring for small businesses across Africa.
+Hi, I'm Chantelle Amoako-Atta, a PhD researcher in AI for Decarbonization at University College Dublin and Lead AI/ML Engineer at Kola Market. My work sits at the intersection of artificial intelligence, climate science, and real-world impact, from offshore wind optimization to credit scoring for small businesses across Africa.
 
 ## My Journey
 
@@ -31,11 +31,11 @@ Teaching and mentoring are central to my work. I take pride in helping others mo
 ### Featured Projects
 
 Explore my work in detail on the **[Portfolio page](/portfolio/)**, including:
-- 🧑🏾‍⚖️ **Quantathon Judging App** – Django platform for hackathon management
-- 📘 **TLR Helper** – Educational resource discovery for Ghanaian teachers
-- 🧠 **Brain Tumor Segmentation** – Medical imaging research (MICCAI 2023)
-- 🤖 **NileEdge AI Assistant** – Privacy-first context-aware chatbot
-- 🌍 **GeoSeg Biodiversity** – Geospatial AI for environmental monitoring
+- **Quantathon Judging App** - Django platform for hackathon management
+- **TLR Helper** - Educational resource discovery for Ghanaian teachers
+- **Brain Tumor Segmentation** - Medical imaging research (MICCAI 2023)
+- **NileEdge AI Assistant** - Privacy-first context-aware chatbot
+- **GeoSeg Biodiversity** - Geospatial AI for environmental monitoring
 
 ## Why This Blog
 
@@ -43,7 +43,7 @@ This site is where I share what I am working on, how I think through challenges,
 
 ## My Goals
 
-My goal is to bridge cutting-edge AI research with practical applications that address real-world challenges—whether that's optimizing renewable energy systems, democratizing access to education technology, or building financial tools for underserved communities.
+My goal is to bridge cutting-edge AI research with practical applications that address real-world challenges, whether that's optimizing renewable energy systems, democratizing access to education technology, or building financial tools for underserved communities.
 
 ## Beyond Work
 
@@ -53,10 +53,10 @@ Outside of work, I enjoy quiet walks in nature, learning new strategies in Oware
 
 Want to collaborate on a project, discuss AI research, or explore teaching opportunities? I'd love to hear from you!
 
-- 📧 **Email:** [chantelatta@gmail.com](mailto:chantelatta@gmail.com)
-- 💼 **LinkedIn:** [linkedin.com/in/chantelleaa](https://linkedin.com/in/chantelleaa)
-- 💻 **GitHub:** [github.com/ChantelleAA](https://github.com/ChantelleAA)
-- 📚 **Portfolio:** [Full Portfolio](/portfolio/) | [Projects](/projects/)
-- ✍️ **Blog:** [Read my tutorials](/category/)
+- **Email:** [chantelatta@gmail.com](mailto:chantelatta@gmail.com)
+- **LinkedIn:** [linkedin.com/in/chantelleaa](https://linkedin.com/in/chantelleaa)
+- **GitHub:** [github.com/ChantelleAA](https://github.com/ChantelleAA)
+- **Portfolio:** [Full Portfolio](/portfolio/) | [Projects](/projects/)
+- **Blog:** [Read my tutorials](/category/)
 
 Thank you for visiting. I hope you find something here that informs, inspires, or sparks an idea worth pursuing.
