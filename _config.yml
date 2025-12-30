@@ -3,10 +3,10 @@ title: Chantelle Amoako-Atta
 url: "https://ChantelleAA.github.io"  # Changed to HTTPS
 baseurl: ""
 description: >
-  PhD researcher and ML engineer working at the intersection of AI, climate science, and education. From offshore wind optimization to building financial tools for African MSMEs, I build AI systems that solve real-world problems.
+  PhD researcher in AI for climate-resilient offshore wind at University College Dublin. Lead AI/ML Engineer at Kola Market building production systems for African markets. Advancing climate AI, NLP, computer vision, and geospatial ML.
 
 # SEO and Social
-keywords: "Python programming, machine learning, data science, AI, coding tutorials, project-based learning"
+keywords: "climate AI, machine learning engineer, NLP, computer vision, offshore wind, production ML, geospatial AI, PhD researcher"
 lang: en
 timezone: UTC  # Change to your timezone if needed
 
@@ -14,7 +14,7 @@ timezone: UTC  # Change to your timezone if needed
 email: chantelatta@gmail.com
 author: Chantelle Amoako-Atta
 avatar: "/Chantelle.jpeg"
-profile: PhD researcher in AI for Decarbonization at University College Dublin and Lead AI/ML Engineer. Specializing in climate AI, NLP, computer vision, and full-stack ML deployment. Teaching Python and data science across Africa.
+profile: PhD researcher in AI for climate-resilient offshore wind at University College Dublin (Met Eireann Scholarship). Lead AI/ML Engineer at Kola Market building production ML systems. Specializing in climate AI, NLP, computer vision, and geospatial ML. Teaching 200+ students across Africa.
 profile_links:
   Email: "mailto:chantelatta@gmail.com"
   GitHub: "https://github.com/ChantelleAA"
@@ -33,11 +33,11 @@ excerpt_separator: <!--more-->
 header:
   links:
     Home: /
-    Python Course: /#course-overview
-    Portfolio: /portfolio/
-    About: /about/
+    Research: /#research
     Projects: /projects/
-    Blog: /category/
+    Writing: /category/
+    About: /about/
+    Contact: mailto:chantelatta@gmail.com
 
 permalink: /archivers/:title
 
