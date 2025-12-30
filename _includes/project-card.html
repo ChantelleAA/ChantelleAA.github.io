@@ -4,13 +4,16 @@
   Parameters:
   - title: Project title
   - description: Short description
-  - image: Image URL/path
-  - tech_stack: Array of technologies
-  - github_url: GitHub repository URL
-  - demo_url: Live demo URL
-  - category: Project category (research, web-app, ml-ai, education)
-  - metrics: Optional metrics (e.g., "87% accuracy improvement")
-  - featured: Boolean to mark as featured project
+  - image: Image URL/path (optional)
+  - tech_stack: Comma-separated technologies
+  - github_url: GitHub repository URL (optional)
+  - demo_url: Live demo URL (optional)
+  - paper_url: Research paper URL (optional)
+  - category: Project category for filtering
+  - date: Project date
+  - impact: Impact metrics (optional)
+  - status: Project status (optional)
+  - featured: Boolean to mark as featured project (optional)
 {% endcomment %}
 
 <div class="project-card {% if include.featured %}project-card-featured{% endif %}">
@@ -19,7 +22,7 @@
     <img src="{{ include.image }}" alt="{{ include.title }}" loading="lazy">
     {% if include.category %}
     <div class="project-category">
-      <span class="pill pill-primary">{{ include.category }}</span>
+      <span class="pill pill-sm pill-primary">{{ include.category | split: ',' | first }}</span>
     </div>
     {% endif %}
   </div>
@@ -33,40 +36,57 @@
     {% if include.tech_stack %}
     <div class="project-tech-stack">
       {% assign tech_items = include.tech_stack | split: "," %}
-      {% assign visible_count = 4 %}
+      {% assign visible_count = 5 %}
       {% for tech in tech_items limit:visible_count %}
         <span class="pill pill-sm pill-secondary">{{ tech | strip }}</span>
       {% endfor %}
       {% assign remaining = tech_items.size | minus: visible_count %}
       {% if remaining > 0 %}
-        <span class="pill pill-sm pill-accent">+{{ remaining }} more</span>
+        <span class="pill pill-sm pill-accent">+{{ remaining }}</span>
       {% endif %}
     </div>
     {% endif %}
     
-    {% if include.metrics %}
+    {% if include.impact or include.status %}
     <div class="project-metrics">
       <div class="metric">
+        {% if include.impact %}
         <i class="fa-solid fa-chart-line"></i>
-        <span>{{ include.metrics }}</span>
+        <span>{{ include.impact }}</span>
+        {% elsif include.status %}
+        <i class="fa-solid fa-check-circle"></i>
+        <span>{{ include.status }}</span>
+        {% endif %}
       </div>
     </div>
     {% endif %}
     
     <div class="project-footer">
-      {% if include.demo_url %}
-      <a href="{{ include.demo_url }}" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
-        <i class="fa-solid fa-external-link-alt"></i>
-        View Demo
-      </a>
+      {% if include.date %}
+      <span class="project-date">
+        <i class="far fa-calendar"></i> {{ include.date }}
+      </span>
       {% endif %}
       
-      {% if include.github_url %}
-      <a href="{{ include.github_url }}" class="btn btn-outline btn-sm" target="_blank" rel="noopener">
-        <i class="fa-brands fa-github"></i>
-        GitHub
-      </a>
-      {% endif %}
+      <div class="project-actions">
+        {% if include.demo_url %}
+        <a href="{{ include.demo_url }}" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+          <i class="fa-solid fa-external-link-alt"></i> Demo
+        </a>
+        {% endif %}
+        
+        {% if include.github_url %}
+        <a href="{{ include.github_url }}" class="btn btn-outline btn-sm" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github"></i> Code
+        </a>
+        {% endif %}
+        
+        {% if include.paper_url %}
+        <a href="{{ include.paper_url }}" class="btn btn-outline btn-sm" target="_blank" rel="noopener">
+          <i class="fa-solid fa-file-pdf"></i> Paper
+        </a>
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>
