@@ -420,33 +420,33 @@
 
 // Tag colors
 .tag-primary {
-  background: $color-primary-100;
-  color: $color-primary-700;
+  background: #2c3e50;
+  color: white;
 }
 
 .tag-secondary {
-  background: $color-secondary-100;
-  color: $color-secondary-700;
+  background: #0e7490;
+  color: white;
 }
 
 .tag-accent {
-  background: $color-accent-100;
-  color: $color-accent-700;
+  background: #d97706;
+  color: white;
 }
 
 .tag-success {
-  background: $color-success-light;
-  color: $color-success-dark;
+  background: $color-success-dark;
+  color: white;
 }
 
 .tag-warning {
-  background: $color-warning-light;
-  color: $color-warning-dark;
+  background: $color-warning-dark;
+  color: white;
 }
 
 .tag-error {
-  background: $color-error-light;
-  color: $color-error-dark;
+  background: $color-error-dark;
+  color: white;
 }
 
 // Clickable tags
@@ -1638,8 +1638,8 @@
   
   .tech-pill {
     padding: $spacing-1 $spacing-3;
-    background: $color-primary-100;
-    color: $color-primary-700;
+    background: #2c3e50;
+    color: white;
     border-radius: $radius-full;
     font-size: $font-size-xs;
     font-weight: $font-weight-medium;

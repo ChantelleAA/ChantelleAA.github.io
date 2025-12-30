@@ -4,59 +4,529 @@ title: About
 permalink: /about/
 ---
 
-## Who I Am
+<style>
+.about-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 5rem 2rem 4rem;
+  margin: -2rem -2rem 3rem -2rem;
+  text-align: center;
+}
 
-Hi, I'm Chantelle Amoako-Atta, a PhD researcher in AI for Decarbonization at University College Dublin and Lead AI/ML Engineer at Kola Market. My work sits at the intersection of artificial intelligence, climate science, and real-world impact, from offshore wind optimization to credit scoring for small businesses across Africa.
+.hero-profile {
+  max-width: 200px;
+  margin: 0 auto 2rem;
+}
 
-## My Journey
+.hero-profile img {
+  width: 100%;
+  border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
 
-I began with a deep love for mathematics, and that curiosity has grown into a commitment to using AI to address real-world challenges. My current PhD research at University College Dublin focuses on AI for climate-resilient offshore wind energy in Ireland, funded by the Met Eireann PhD Scholarship. As Lead AI/ML Engineer at Kola Market, I'm building production ML systems including inventory recommendation engines, OCR for field sales, and credit-scoring for MSMEs.
+.about-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
 
-I recently taught Natural Language Processing at AIMS Ghana, where I also mentored Team Qualaria to victory in the 2025 AIMS Quantathon. My work with Cape Wesley Consult on election prediction using sentiment analysis achieved 20% improvement in accuracy. Through the FemAfricMaths/Divas in AI program, I mentor early-career African women in AI, serving as Deputy Sponsorship Committee Head.
+.about-hero .subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  opacity: 0.95;
+  margin-bottom: 1rem;
+}
 
-I've contributed to projects in medical imaging (MICCAI 2023 scholarship recipient), election prediction, curriculum-aligned educational technology for Ghanaian teachers, and GPU-accelerated machine learning. I enjoy designing systems that work in practice, not just in theory, and guiding others to do the same.
+.about-hero .tagline {
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: 0.9;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
 
-## What I Do
+.about-section {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+}
 
-I build with tools like Python, PyTorch, TensorFlow, and CUDA for high-performance computing, and I create intuitive applications with frameworks like Django, Flask, and FastAPI. My expertise spans:
+.about-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
 
-- **Climate AI and geospatial analysis:** Working with satellite imagery, Sentinel data, and geospatial tools for environmental monitoring and offshore wind optimization
-- **NLP and sentiment analysis:** Building transformer-based models for political analytics, text processing, and social media analysis
-- **Computer vision for medical imaging:** Developing segmentation models for brain tumor detection and healthcare applications
-- **Full-stack ML deployment:** Taking projects from research to production using Django, LangChain, and modern MLOps practices
-- **Teaching and mentoring across Africa:** Instructing Python, data science, and AI to over 200 students at universities and professional programs
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 1rem;
+}
 
-Teaching and mentoring are central to my work. I take pride in helping others move from uncertainty to confidence, whether through structured training, one-on-one guidance, or public speaking.
+.about-section ul {
+  list-style: none;
+  padding: 0;
+}
 
-### Featured Projects
+.about-section ul li {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
 
-Explore my work in detail on the **[Portfolio page](/portfolio/)**, including:
-- **Quantathon Judging App** - Django platform for hackathon management
-- **TLR Helper** - Educational resource discovery for Ghanaian teachers
-- **Brain Tumor Segmentation** - Medical imaging research (MICCAI 2023)
-- **NileEdge AI Assistant** - Privacy-first context-aware chatbot
-- **GeoSeg Biodiversity** - Geospatial AI for environmental monitoring
+.about-section ul li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
 
-## Why This Blog
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
 
-This site is where I share what I am working on, how I think through challenges, and insights from my journey in AI. My goal is to demystify complex concepts and encourage those who might not see themselves in tech to realise they can belong and excel here.
+.interest-item {
+  background: white;
+  border: 2px solid #e1e8ed;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
 
-## My Goals
+.interest-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border-color: #667eea;
+}
 
-My goal is to bridge cutting-edge AI research with practical applications that address real-world challenges, whether that's optimizing renewable energy systems, democratizing access to education technology, or building financial tools for underserved communities.
+.interest-item i {
+  font-size: 2.5rem;
+  color: #667eea;
+  margin-bottom: 0.75rem;
+}
 
-## Beyond Work
+.interest-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
 
-Outside of work, I enjoy quiet walks in nature, learning new strategies in Oware, and connecting with people who share a love for curiosity and purposeful growth.
+.education-timeline {
+  position: relative;
+  padding-left: 2rem;
+  margin: 2rem 0;
+}
 
-## Let's Connect
+.education-timeline:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #667eea;
+}
 
-Want to collaborate on a project, discuss AI research, or explore teaching opportunities? I'd love to hear from you!
+.education-item {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
 
-- **Email:** [chantelatta@gmail.com](mailto:chantelatta@gmail.com)
-- **LinkedIn:** [linkedin.com/in/chantelleaa](https://linkedin.com/in/chantelleaa)
-- **GitHub:** [github.com/ChantelleAA](https://github.com/ChantelleAA)
-- **Portfolio:** [Full Portfolio](/portfolio/) | [Projects](/projects/)
-- **Blog:** [Read my tutorials](/category/)
+.education-item:before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #667eea;
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px #667eea;
+}
 
-Thank you for visiting. I hope you find something here that informs, inspires, or sparks an idea worth pursuing.
+.education-item h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.25rem;
+}
+
+.education-item .degree {
+  font-size: 1rem;
+  color: #667eea;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.education-item .year {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.education-item p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.award-card {
+  background: white;
+  border: 2px solid #e1e8ed;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.award-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-color: #667eea;
+}
+
+.award-card i {
+  font-size: 2rem;
+  color: #f59e0b;
+  margin-bottom: 0.75rem;
+}
+
+.award-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.award-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.impact-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-box {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.stat-box .number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stat-box .label {
+  font-size: 0.95rem;
+  opacity: 0.95;
+  line-height: 1.4;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.cta-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+  border: none;
+  display: block;
+}
+
+.cta-section p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  background: white;
+  color: #667eea;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button.secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-button.secondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .about-hero .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .about-hero .tagline {
+    font-size: 1rem;
+  }
+  
+  .interests-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .awards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .impact-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="about-hero">
+  <div class="hero-profile">
+    <img src="{{ site.avatar }}" alt="Chantelle Amoako-Atta">
+  </div>
+  <h1>Chantelle Amoako-Atta</h1>
+  <p class="subtitle">PhD Researcher | ML Engineer | Educator</p>
+  <p class="tagline">Building AI systems for climate resilience, healthcare, and education across Africa and beyond</p>
+</div>
+
+<div class="about-section">
+  <h2>Who I Am</h2>
+  <p>
+    I'm a PhD researcher at University College Dublin working on AI for climate-resilient offshore wind energy, funded by the Met Eireann PhD Scholarship. I build machine learning systems that bridge the gap between research and real-world impact—from climate AI and geospatial analysis to NLP, computer vision, and healthcare applications.
+  </p>
+  <p>
+    My work spans three core areas: advancing climate AI research, building production ML systems that solve real problems, and teaching the next generation of African AI practitioners. I believe that impactful AI must be both technically excellent and deeply connected to the communities it serves.
+  </p>
+</div>
+
+<div class="about-section">
+  <h2>Current Work</h2>
+  <ul>
+    <li><strong>PhD Research at UCD:</strong> Developing AI systems for optimizing offshore wind energy production in Irish waters, focusing on climate resilience, predictive maintenance, and energy forecasting using machine learning and remote sensing</li>
+    <li><strong>Teaching & Mentorship:</strong> NLP lecturer at AIMS Ghana, teaching 200+ students across Africa in Python, data science, and AI. Deputy Sponsorship Committee Head for FemAfricMaths/Divas in AI program</li>
+    <li><strong>Research & Consulting:</strong> Collaborating on climate AI, geospatial ML, NLP projects across academia and industry. MICCAI 2023 scholarship recipient for brain tumor segmentation research</li>
+    <li><strong>Open Source & Community:</strong> Active contributor to Ghana NLP, building tools for Ghanaian languages and low-resource NLP</li>
+  </ul>
+</div>
+
+<div class="about-section">
+  <h2>Research Interests</h2>
+  <div class="interests-grid">
+    <div class="interest-item">
+      <i class="fa-solid fa-wind"></i>
+      <h3>Climate AI</h3>
+    </div>
+    <div class="interest-item">
+      <i class="fa-solid fa-map"></i>
+      <h3>Geospatial ML</h3>
+    </div>
+    <div class="interest-item">
+      <i class="fa-solid fa-language"></i>
+      <h3>NLP</h3>
+    </div>
+    <div class="interest-item">
+      <i class="fa-solid fa-eye"></i>
+      <h3>Computer Vision</h3>
+    </div>
+    <div class="interest-item">
+      <i class="fa-solid fa-heart-pulse"></i>
+      <h3>Healthcare AI</h3>
+    </div>
+    <div class="interest-item">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <h3>Education Tech</h3>
+    </div>
+  </div>
+</div>
+
+<div class="about-section">
+  <h2>Education</h2>
+  <div class="education-timeline">
+    <div class="education-item">
+      <h3>University College Dublin</h3>
+      <p class="degree">PhD in AI for Decarbonization (In Progress)</p>
+      <p class="year">2024 - Present</p>
+      <p>Met Eireann PhD Scholarship. Research focus: AI for climate-resilient offshore wind energy, predictive maintenance, and energy forecasting using machine learning and remote sensing.</p>
+    </div>
+    
+    <div class="education-item">
+      <h3>African Institute for Mathematical Sciences (AIMS) Rwanda</h3>
+      <p class="degree">MSc in Mathematical Sciences</p>
+      <p class="year">2019 - 2020</p>
+      <p>Thesis: Machine Learning for Cardiac Arrhythmia Classification. Specialized in statistical learning, optimization, and signal processing for healthcare diagnostics.</p>
+    </div>
+    
+    <div class="education-item">
+      <h3>Lappeenranta University of Technology, Finland</h3>
+      <p class="degree">MSc in Software Engineering and Digital Transformation</p>
+      <p class="year">2020 - 2022</p>
+      <p>Thesis: Playing Oware Nam-nam with Deep Q-Networks. Focus on reinforcement learning, game AI, and applying modern ML techniques to traditional games.</p>
+    </div>
+  </div>
+</div>
+
+<div class="about-section">
+  <h2>Recognition & Awards</h2>
+  <div class="awards-grid">
+    <div class="award-card">
+      <i class="fa-solid fa-award"></i>
+      <h3>Met Eireann PhD Scholarship</h3>
+      <p>Prestigious scholarship for AI research in climate and decarbonization at University College Dublin</p>
+    </div>
+    
+    <div class="award-card">
+      <i class="fa-solid fa-trophy"></i>
+      <h3>MICCAI 2023 Scholar</h3>
+      <p>International scholarship to present brain tumor segmentation research at premier medical imaging conference</p>
+    </div>
+    
+    <div class="award-card">
+      <i class="fa-solid fa-medal"></i>
+      <h3>Ishango AI Hackathon Winner</h3>
+      <p>Led team to victory building intelligent case-mediator matching system for legal disputes</p>
+    </div>
+    
+    <div class="award-card">
+      <i class="fa-solid fa-star"></i>
+      <h3>SIAM Hackathon Winner</h3>
+      <p>Led team to victory in Society for Industrial and Applied Mathematics competition</p>
+    </div>
+  </div>
+</div>
+
+<div class="about-section">
+  <h2>Teaching & Impact</h2>
+  <div class="impact-stats">
+    <div class="stat-box">
+      <span class="number">200+</span>
+      <span class="label">Students Taught</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">5</span>
+      <span class="label">Publications</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">15+</span>
+      <span class="label">Projects</span>
+    </div>
+    <div class="stat-box">
+      <span class="number">3</span>
+      <span class="label">Hackathon Wins</span>
+    </div>
+  </div>
+  <p>
+    Teaching is at the heart of my work. As an NLP lecturer at AIMS Ghana, I delivered an intensive 2-week graduate-level course covering modern NLP techniques. I've taught Python, data science, and machine learning to over 200 students across universities (AIMS, Adaire School of AI) and professional training programs. Through FemAfricMaths and Divas in AI, I mentor early-career African women in mathematics and AI, serving as Deputy Sponsorship Committee Head.
+  </p>
+  <p>
+    I also create and share educational resources—from GeoAI workshop materials on satellite imagery processing to Python learning notebooks used by hundreds of students. My goal is to make AI education accessible and empowering, especially for underrepresented communities in tech.
+  </p>
+</div>
+
+<div class="about-section">
+  <h2>Beyond Work</h2>
+  <p>
+    Outside of research and teaching, I enjoy quiet walks in nature, playing Oware (a traditional African board game that inspired my Master's thesis!), and connecting with people who share a love for curiosity and purposeful growth. I believe that the best ideas often come from unexpected conversations and diverse perspectives.
+  </p>
+</div>
+
+<div class="cta-section">
+  <h2>Let's Collaborate</h2>
+  <p>
+    I'm open to research collaborations, speaking engagements, consulting opportunities, and mentorship. Whether you're working on climate AI, building ML systems for social good, or looking for technical guidance—let's connect!
+  </p>
+  <div class="cta-buttons">
+    <a href="mailto:chantelatta@gmail.com" class="cta-button">
+      <i class="fa-solid fa-envelope"></i> Email Me
+    </a>
+    <a href="https://linkedin.com/in/chantelleaa" class="cta-button secondary" target="_blank" rel="noopener">
+      <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+    </a>
+    <a href="https://github.com/ChantelleAA" class="cta-button secondary" target="_blank" rel="noopener">
+      <i class="fa-brands fa-github"></i> View GitHub
+    </a>
+  </div>
+</div>
