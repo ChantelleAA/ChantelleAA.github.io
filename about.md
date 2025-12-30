@@ -6,7 +6,7 @@ permalink: /about/
 
 ## Who I Am
 
-Hi, I'm Chantelle Amoako-Atta, a PhD researcher in AI for Decarbonization at University College Dublin and Lead AI/ML Engineer at Kola Market. My work sits at the intersection of artificial intelligence, climate science, and real-world impact—from offshore wind optimization to credit scoring for small businesses across Africa.
+Hi, I'm Chantelle Amoako-Atta, a PhD researcher in AI for Decarbonization at University College Dublin and Lead AI/ML Engineer at Kola Market. My work sits at the intersection of artificial intelligence, climate science, and real-world impact, from offshore wind optimization to credit scoring for small businesses across Africa.
 
 ## My Journey
 
@@ -43,7 +43,7 @@ This site is where I share what I am working on, how I think through challenges,
 
 ## My Goals
 
-My goal is to bridge cutting-edge AI research with practical applications that address real-world challenges—whether that's optimizing renewable energy systems, democratizing access to education technology, or building financial tools for underserved communities.
+My goal is to bridge cutting-edge AI research with practical applications that address real-world challenges, whether that's optimizing renewable energy systems, democratizing access to education technology, or building financial tools for underserved communities.
 
 ## Beyond Work
 

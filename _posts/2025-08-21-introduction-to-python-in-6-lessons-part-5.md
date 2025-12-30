@@ -40,7 +40,7 @@ duration: "20-25 min"
 
 ## **Why Strings Matter**
 
-Most of the world’s data is **text** — books, emails, tweets, logs. As a programmer, you’ll often process text: searching for words, cleaning it, or counting it.
+Most of the world’s data is **text**, books, emails, tweets, logs. As a programmer, you’ll often process text: searching for words, cleaning it, or counting it.
 
 A **string** in Python is just text inside quotes:
 
@@ -132,7 +132,7 @@ with open("results.txt", "w") as f:
     f.write("Word count: " + str(word_count))
 ```
 
-👉 **Tip:** Always use `with open(...)` — it auto-closes files and prevents memory leaks.
+👉 **Tip:** Always use `with open(...)` - it auto-closes files and prevents memory leaks.
 
 ---
 

@@ -140,7 +140,7 @@ while guess != secret_number:
 
 * The variable `attempts` is our **memory** of how many guesses were made.
 * The loop’s condition `while guess != secret_number` ensures the game keeps running **until success**.
-* Feedback (`if/elif/else`) helps the user narrow down the possibilities — this is **binary search thinking**: cut the search space in half each time.
+* Feedback (`if/elif/else`) helps the user narrow down the possibilities - this is **binary search thinking**: cut the search space in half each time.
 
 👉 Intuition tip: If the number is between 1 and 100, a clever player can always guess it in at most **7 tries** by halving the range each time (like guessing 50 first, then 25 or 75, etc.).
 
