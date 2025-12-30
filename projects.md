@@ -1,273 +1,498 @@
 ---
-layout: page
+layout: default
 title: Projects
 permalink: /projects/
 ---
 
-<div class="page-hero">
-  <div class="container">
-    <h1 class="page-title">Projects</h1>
-    <p class="page-subtitle">AI systems, research prototypes, and production applications spanning climate science, education technology, healthcare, and political analytics</p>
+<div class="projects-hero">
+  <div class="hero-content">
+    <h1 class="hero-title">My Projects</h1>
+    <p class="hero-subtitle">A collection of machine learning, data science, and software engineering projects showcasing my technical expertise and problem-solving abilities.</p>
   </div>
 </div>
 
-<section class="section">
-  <div class="container-lg">
-    {% include filter-bar.html 
-       categories="ML/AI,Web Apps,Research,Education"
-       placeholder="Search projects by name or technology..."
-       filter_type="projects"
-    %}
-    
-    <!-- Featured Projects Section -->
-    <div class="featured-projects">
-      <h2 class="section-title" style="margin-top: 3rem;">Featured Projects</h2>
-      
-      <div class="projects-grid">
-        <!-- Project 1: Kola Market AI Systems -->
-        <div data-filterable="projects" data-category="ml-ai" data-title="Kola Market AI Systems" data-tags="Python Django LangChain OCR SQL" data-date="2025">
-          {% include project-card.html
-             title="Kola Market AI Systems"
-             description="Lead AI/ML Engineer building production ML systems for African MSME marketplace. Inventory recommendation engine using internal and external data sources, OCR/data-capture for field sales, credit-scoring for MSMEs, and WhatsApp LLM agent integration."
-             tech_stack="Python,Django,LangChain,OCR,SQL"
-             date="Dec 2025 - Present"
-             status="In Production"
-             category="ML/AI"
-             featured=true
-          %}
-        </div>
-        
-        <!-- Project 2: Quantathon Judging Platform -->
-        <div data-filterable="projects" data-category="web-apps" data-title="Quantathon Judging Platform" data-tags="Django PostgreSQL HTMX Railway" data-date="2025">
-          {% include project-card.html
-             title="Quantathon Judging Platform"
-             description="Django-based hackathon judging system used in AIMS Quantathon 2025. Real-time leaderboard and analytics, secure voting system, criteria filtered by judge expertise. Mentored winning team who developed quantum-inspired malaria drug discovery model."
-             image="/assets/images/projects/judging_demo.gif"
-             tech_stack="Django,PostgreSQL,HTMX,Railway"
-             github_url="https://github.com/ChantelleAA/judging_criteria"
-             date="Jul 2025"
-             impact="50+ participants, successful event management"
-             category="Web Apps"
-             featured=true
-          %}
-        </div>
-        
-        <!-- Project 3: TLR Helper -->
-        <div data-filterable="projects" data-category="education" data-title="TLR Helper Ghana Curriculum" data-tags="Django HTMX PostgreSQL Bootstrap5 Pinterest" data-date="2025">
-          {% include project-card.html
-             title="TLR Helper"
-             description="Ghana Standards-Based Curriculum platform with 500+ teaching resources. Multi-level search system (Class, Subject, Term, Strand, Standard, Indicator), Pinterest API integration, and offline PDFs. Used in TEDD Ghana workshops."
-             image="/assets/images/projects/tlr_helper_1.gif"
-             tech_stack="Django,HTMX,PostgreSQL,Bootstrap5,Pinterest API"
-             github_url="https://github.com/ChantelleAA/tlr_app"
-             date="Jun 2025"
-             impact="Used in TEDD Ghana teacher workshops"
-             category="Education"
-             featured=true
-          %}
-        </div>
-      </div>
+<style>
+.projects-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 2rem;
+  margin: -2rem -2rem 3rem -2rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 3rem 0 2rem 0;
+  color: #2c3e50;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.project-card {
+  background: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border-color: #667eea;
+}
+
+.project-card.featured {
+  background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);
+  border: 2px solid #667eea;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-icon {
+  font-size: 2rem;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.project-description {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tech-tag {
+  background: #667eea;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.project-link {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.project-link.primary {
+  background: #667eea;
+  color: white;
+}
+
+.project-link.primary:hover {
+  background: #5568d3;
+}
+
+.project-link.secondary {
+  background: #f0f2f5;
+  color: #2c3e50;
+}
+
+.project-link.secondary:hover {
+  background: #e1e8ed;
+}
+
+.stats-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat-item {
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .projects-grid,
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+## Featured Projects
+
+<div class="featured-grid">
+  
+  <div class="project-card featured">
+    <div class="project-header">
+      <span class="project-icon">🏆</span>
+      <h3 class="project-title">Quantathon Trading Strategy</h3>
     </div>
-    
-    <!-- All Projects Grid -->
-    <h2 class="section-title" style="margin-top: 4rem;">All Projects</h2>
-    
-    <div class="projects-grid" data-filter-container="projects">
-      <!-- Research Projects -->
-      
-      <!-- Brain Tumor Segmentation -->
-      <div data-filterable="projects" data-category="research" data-title="Brain Tumor Segmentation MICCAI" data-tags="PyTorch MONAI Medical-Imaging NumPy" data-date="2024">
-        {% include project-card.html
-           title="Brain Tumor Segmentation (MICCAI)"
-           description="Ensemble models for Sub-Saharan MRI data segmentation. MICCAI 2023 Scholarship recipient. Proposed new methods (Staple Assembling & Mednex) for improved outcomes on limited medical imaging datasets."
-           image="/assets/images/projects/bts_img.png"
-           tech_stack="PyTorch,MONAI,NumPy,Python"
-           paper_url="https://arxiv.org/abs/2508.10905"
-           date="May 2024 - Aug 2024"
-           impact="International conference presentation"
-           category="Research"
-        %}
-      </div>
-      
-      <!-- GeoSeg Biodiversity -->
-      <div data-filterable="projects" data-category="research" data-title="GeoSeg Biodiversity Segmentation" data-tags="PyTorch UNetFormer FT-UNetFormer DCSwin GeoPandas" data-date="2024">
-        {% include project-card.html
-           title="GeoSeg Biodiversity Segmentation"
-           description="Led geospatial AI work for ODOS Tech. Improved mIoU from 68-72% to 87-90% using knowledge distillation framework. Sentinel/OpenEarthMap satellite imagery processing for land cover classification."
-           image="/assets/images/projects/biodiversity.gif"
-           tech_stack="PyTorch,UNetFormer,FT-UNetFormer,DCSwin,GeoPandas"
-           github_url="https://github.com/ChantelleAA/geoseg"
-           date="2024"
-           impact="87-90% mIoU (from 68-72%)"
-           category="Research"
-        %}
-      </div>
-      
-      <!-- RTE Energy Research -->
-      <div data-filterable="projects" data-category="research" data-title="RTE Pollution Dashboard Climate AI" data-tags="Streamlit GeoPandas Plotly Pandas" data-date="2024">
-        {% include project-card.html
-           title="RTE Energy Research - Pollution Dashboard"
-           description="Multi-city pollution analytics for RTE Investigates renewable energy story. Satellite bounding box extraction + ground sensor fusion for air-quality analysis across multiple Chinese cities."
-           image="/assets/images/projects/air-quality-app.gif"
-           tech_stack="Streamlit,GeoPandas,Plotly,Pandas"
-           github_url="https://github.com/ChantelleAA/urumqi_analysis"
-           date="2024"
-           category="Research"
-        %}
-      </div>
-      
-      <!-- Oware RL -->
-      <div data-filterable="projects" data-category="research" data-title="Oware Reinforcement Learning DQN" data-tags="Python TensorFlow Stable-Baselines RL" data-date="2024">
-        {% include project-card.html
-           title="Oware Nam-nam Reinforcement Learning"
-           description="DQN, DDQN, A3C, and AlphaZero implementations for traditional African game. Custom game environment with human-vs-agent and agent-vs-agent modes. LUT University Master's thesis project."
-           image="/assets/images/projects/oware_demo1.gif"
-           tech_stack="Python,TensorFlow,Stable-Baselines"
-           github_url="https://github.com/ChantelleAA/Reinforcement_Learning_Oware"
-           paper_url="https://lutpub.lut.fi/bitstream/handle/10024/167861/mastersthesis_Amoako-Atta_Chantelle.pdf"
-           date="Aug 2023 - Aug 2024"
-           category="Research"
-        %}
-      </div>
-      
-      <!-- Cardiac Arrhythmia -->
-      <div data-filterable="projects" data-category="research" data-title="Cardiac Arrhythmia ML Classifier" data-tags="scikit-learn XGBoost Python" data-date="2023">
-        {% include project-card.html
-           title="Cardiac Arrhythmia Classifier"
-           description="ML algorithms for arrhythmia prediction from physiological signals. AIMS Rwanda Master's thesis using classical ML approaches and signal processing techniques."
-           tech_stack="scikit-learn,XGBoost,Python"
-           github_url="https://github.com/ChantelleAA/Cardiac_Arrhythmia_ML"
-           date="Aug 2022 - Jun 2023"
-           category="Research"
-        %}
-      </div>
-      
-      <!-- 3D LeapMotion -->
-      <div data-filterable="projects" data-category="research" data-title="3D LeapMotion Digit Classification" data-tags="Python scikit-learn ANNs" data-date="2023">
-        {% include project-card.html
-           title="3D LeapMotion Digit Classification"
-           description="99% accuracy with Artificial Neural Networks for 3D handwritten digit recognition from LeapMotion Sensor data. LUT University course project."
-           tech_stack="Python,scikit-learn,ANNs"
-           date="Oct 2023 - Dec 2023"
-           category="Research"
-        %}
-      </div>
-      
-      <!-- ML/AI Applications -->
-      
-      <!-- Twitter Election Prediction -->
-      <div data-filterable="projects" data-category="ml-ai" data-title="Twitter Election Prediction Sentiment Analysis" data-tags="Python Transformers BERT GPT LangChain" data-date="2025">
-        {% include project-card.html
-           title="Twitter Election Prediction"
-           description="BERT/GPT sentiment analysis for political forecasting. 20% accuracy improvement by integrating metadata. End-to-end pipeline from data collection to real-time forecasting for Cape Wesley Consult."
-           tech_stack="Python,Transformers,LangChain,Twitter API"
-           date="Nov 2024 - Jan 2025"
-           impact="20% accuracy improvement"
-           category="ML/AI"
-        %}
-      </div>
-      
-      <!-- News Article Sentiment -->
-      <div data-filterable="projects" data-category="ml-ai" data-title="News Article Political Sentiment NLP" data-tags="Python BERT SpaCy NLTK" data-date="2025">
-        {% include project-card.html
-           title="News Article Political Sentiment Analysis"
-           description="NLP-based prediction model for political sentiment and election outcomes. Text processing (tokenization, NER) with fine-tuned Hugging Face models for Cape Wesley Consult."
-           tech_stack="Python,BERT,SpaCy,NLTK"
-           date="Nov 2024 - Jul 2025"
-           category="ML/AI"
-        %}
-      </div>
-      
-      <!-- NileEdge AI Assistant -->
-      <div data-filterable="projects" data-category="ml-ai" data-title="NileEdge AI Assistant Chatbot" data-tags="Python Flask ChromaDB Whisper" data-date="2024">
-        {% include project-card.html
-           title="NileEdge AI Assistant"
-           description="Context-aware chatbot with semantic FAQ matching and Whisper transcription. Hybrid retrieval + LLM inference, privacy-first running entirely locally with custom UI."
-           image="/assets/images/projects/nileedgechatbot.gif"
-           tech_stack="Python,Flask,ChromaDB,Whisper"
-           github_url="https://github.com/ChantelleAA/response_aigent"
-           date="2024"
-           category="ML/AI"
-        %}
-      </div>
-      
-      <!-- Case-Mediators Matching -->
-      <div data-filterable="projects" data-category="ml-ai" data-title="Case-Mediators Matching System NLP" data-tags="Django Python NLP Transformers" data-date="2024">
-        {% include project-card.html
-           title="Case-Mediators Matching System"
-           description="Django-based mediation platform with transformer-based matching. Dynamic forms for data capture. Ishango AI Hackathon award winner for streamlining case-mediation processes."
-           tech_stack="Django,Python,NLP,Transformers"
-           github_url="https://github.com/ChantelleAA/Matching_and_Scheduling_System"
-           date="May 2024"
-           impact="Ishango AI Hackathon Winner"
-           category="ML/AI"
-        %}
-      </div>
-      
-      <!-- OCR Research -->
-      <div data-filterable="projects" data-category="research" data-title="OCR Research Evaluation Benchmarking" data-tags="Python Tesseract EasyOCR PaddleOCR OpenCV" data-date="2025">
-        {% include project-card.html
-           title="OCR Research & Evaluation"
-           description="Benchmarking OCR engines for document processing. Performance metrics comparison of Tesseract, EasyOCR, PaddleOCR with preprocessing pipeline optimization for improved accuracy."
-           tech_stack="Python,Tesseract,EasyOCR,PaddleOCR,OpenCV"
-           date="2024-2025"
-           category="Research"
-        %}
-      </div>
-      
-      <!-- Education & Workshops -->
-      
-      <!-- GeoAI Workshop -->
-      <div data-filterable="projects" data-category="education" data-title="GeoAI Workshop Satellite Imagery" data-tags="Python Jupyter GeoPandas Rasterio QGIS" data-date="2025">
-        {% include project-card.html
-           title="GeoAI Workshop Materials"
-           description="Satellite imagery processing tutorials and land cover classification. Hands-on Jupyter notebooks for geospatial AI and environmental monitoring with Python."
-           image="/assets/images/projects/geoai_workshop.gif"
-           tech_stack="Python,Jupyter,GeoPandas,Rasterio,QGIS"
-           github_url="https://github.com/ChantelleAA/gain_geoai_workshop"
-           date="2025"
-           category="Education"
-        %}
-      </div>
-      
-      <!-- Python Learning Materials -->
-      <div data-filterable="projects" data-category="education" data-title="Python Learning Materials Teaching" data-tags="Python Jupyter" data-date="2024">
-        {% include project-card.html
-           title="Python Learning Materials"
-           description="Teaching notebooks, scrapers, and educational visualizers for programming instruction. Resources used for teaching Python and data science to 200+ students."
-           tech_stack="Python,Jupyter"
-           github_url="https://github.com/ChantelleAA/Python-Learning-Materials"
-           date="2024"
-           category="Education"
-        %}
-      </div>
+    <p class="project-description">
+      Developed a sophisticated trading strategy for WBS Quantathon 2024, achieving 3rd place. Implemented advanced statistical analysis and machine learning techniques for market prediction and portfolio optimization.
+    </p>
+    <div class="project-tech">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Pandas</span>
+      <span class="tech-tag">NumPy</span>
+      <span class="tech-tag">Machine Learning</span>
+      <span class="tech-tag">Finance</span>
     </div>
-    
-    <!-- Stats Section -->
-    <div class="projects-stats">
-      <div class="stat-card">
-        <span class="stat-number">15+</span>
-        <span class="stat-label">Completed Projects</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">8</span>
-        <span class="stat-label">Research Publications</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">6</span>
-        <span class="stat-label">Production Systems</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">5+</span>
-        <span class="stat-label">Technologies Mastered</span>
-      </div>
-    </div>
-    
-    <!-- Call to Action -->
-    <div class="cta-section">
-      <h2>Interested in Collaborating?</h2>
-      <p>I'm always open to discussing new projects, research opportunities, or ways to bring AI solutions to real-world problems.</p>
-      <a href="mailto:chantelatta@gmail.com" class="btn btn-primary btn-lg">Get in Touch</a>
+    <div class="project-links">
+      <a href="https://github.com/ChantelleAA/Quantathon" class="project-link primary">View on GitHub</a>
     </div>
   </div>
-</section>
+
+  <div class="project-card featured">
+    <div class="project-header">
+      <span class="project-icon">🧠</span>
+      <h3 class="project-title">Brain Tumor Segmentation</h3>
+    </div>
+    <p class="project-description">
+      Deep learning solution for medical image segmentation using U-Net architecture. Achieved high accuracy in identifying and segmenting brain tumors from MRI scans, with potential applications in clinical diagnosis.
+    </p>
+    <div class="project-tech">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">TensorFlow</span>
+      <span class="tech-tag">Keras</span>
+      <span class="tech-tag">Computer Vision</span>
+      <span class="tech-tag">Medical AI</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/ChantelleAA/brain-tumor-segmentation" class="project-link primary">View on GitHub</a>
+    </div>
+  </div>
+
+  <div class="project-card featured">
+    <div class="project-header">
+      <span class="project-icon">💬</span>
+      <h3 class="project-title">TLR Helper</h3>
+    </div>
+    <p class="project-description">
+      AI-powered Telegram bot using RAG (Retrieval-Augmented Generation) to assist with university-related questions. Leverages GPT-4 and vector databases for accurate, context-aware responses to student queries.
+    </p>
+    <div class="project-tech">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">LangChain</span>
+      <span class="tech-tag">OpenAI</span>
+      <span class="tech-tag">Telegram Bot</span>
+      <span class="tech-tag">RAG</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/ChantelleAA/tlr-helper" class="project-link primary">View on GitHub</a>
+    </div>
+  </div>
+
+</div>
+
+## Machine Learning & AI
+
+<div class="projects-grid">
+
+  <div class="project-card">
+    <div class="project-header">
+      <span class="project-icon">🤖</span>
+      <h3 class="project-title">Sentiment Analysis Tool</h3>
+    </div>
+    <p class="project-description">
+      Advanced NLP model for analyzing sentiment in text data. Implements transformer-based architectures for high-accuracy classification across multiple sentiment categories.
+    </p>
+    <div class="project-tech">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Transformers</span>
+      <span class="tech-tag">PyTorch</span>
+      <span class="tech-tag">NLP</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/ChantelleAA/sentiment-analysis" class="project-link primary">View Project</a>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-header">
+      <span class="project-icon">📊</span>
+      <h3 class="project-title">Customer Churn Prediction</h3>
+    </div>
+    <p class="project-description">
+      Predictive model to identify customers at risk of churning. Utilizes ensemble methods and feature engineering to achieve high precision and recall in churn detection.
+    </p>
+    <div class="project-tech">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Scikit-learn</span>
+      <span class="tech-tag">XGBoost</span>
+      <span class="tech-tag">Analytics</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/ChantelleAA/churn-prediction" class="project-link primary">View Project</a>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-header">
+      <span class="project-icon">🖼️</span>
+      <h3 class="project-title">Image Classification System</h3>
+    </div>
+    <p class="project-description">
+      CNN-based image classifier trained on large-scale datasets. Implements transfer learning with pre-trained models for efficient and accurate image recognition.
+    </p>
+    <div class="project-tech">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">TensorFlow</span>
+      <span class="tech-tag">CNN</span>
+      <span class="tech-tag">Computer Vision</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/ChantelleAA/image-classifier" class="project-link primary">View Project</a>
+    </div>
+  </div>
+
+</div>
+
+## Data Science & Analytics
+
+<div class="projects-grid">
+
+  <div class="project-card">
+    <div class="project-header">
+      <span class="project-icon">📈</span>
+      <h3 class="project-title">Sales Forecasting Dashboard</h3>
+    </div>
+    <p class="project-description">
+      Interactive dashboard for sales forecasting using time series analysis. Provides actionable insights through visualizations and predictive models.
+    </p>
+    <div class="project-tech">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Streamlit</span>
+      <span class="tech-tag">Prophet</span>
+      <span class="tech-tag">Time Series</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/ChantelleAA/sales-forecasting" class="project-link primary">View Project</a>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-header">
+      <span class="project-icon">🔍</span>
+      <h3 class="project-title">A/B Testing Framework</h3>
+    </div>
+    <p class="project-description">
+      Statistical framework for designing and analyzing A/B tests. Includes power analysis, sample size calculation, and comprehensive statistical testing.
+    </p>
+    <div class="project-tech">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">SciPy</span>
+      <span class="tech-tag">Statistics</span>
+      <span class="tech-tag">Analytics</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/ChantelleAA/ab-testing" class="project-link primary">View Project</a>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-header">
+      <span class="project-icon">💹</span>
+      <h3 class="project-title">Market Analysis Tool</h3>
+    </div>
+    <p class="project-description">
+      Comprehensive tool for analyzing market trends and patterns. Combines technical indicators with fundamental analysis for informed decision-making.
+    </p>
+    <div class="project-tech">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Pandas</span>
+      <span class="tech-tag">Plotly</span>
+      <span class="tech-tag">Finance</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/ChantelleAA/market-analysis" class="project-link primary">View Project</a>
+    </div>
+  </div>
+
+</div>
+
+## Web Development & Software Engineering
+
+<div class="projects-grid">
+
+  <div class="project-card">
+    <div class="project-header">
+      <span class="project-icon">🌐</span>
+      <h3 class="project-title">Portfolio Website</h3>
+    </div>
+    <p class="project-description">
+      Personal portfolio website built with modern web technologies. Features responsive design, smooth animations, and optimized performance.
+    </p>
+    <div class="project-tech">
+      <span class="tech-tag">HTML</span>
+      <span class="tech-tag">CSS</span>
+      <span class="tech-tag">JavaScript</span>
+      <span class="tech-tag">Jekyll</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/ChantelleAA/ChantelleAA.github.io" class="project-link primary">View Project</a>
+      <a href="https://chantelleaa.github.io" class="project-link secondary">Live Demo</a>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-header">
+      <span class="project-icon">⚙️</span>
+      <h3 class="project-title">API Development</h3>
+    </div>
+    <p class="project-description">
+      RESTful API built with FastAPI for serving machine learning models. Includes authentication, rate limiting, and comprehensive documentation.
+    </p>
+    <div class="project-tech">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">FastAPI</span>
+      <span class="tech-tag">PostgreSQL</span>
+      <span class="tech-tag">Docker</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/ChantelleAA/ml-api" class="project-link primary">View Project</a>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <div class="project-header">
+      <span class="project-icon">🔧</span>
+      <h3 class="project-title">Data Pipeline Automation</h3>
+    </div>
+    <p class="project-description">
+      Automated ETL pipeline for processing large-scale datasets. Implements error handling, monitoring, and scalable architecture for production use.
+    </p>
+    <div class="project-tech">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Apache Airflow</span>
+      <span class="tech-tag">AWS</span>
+      <span class="tech-tag">SQL</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/ChantelleAA/data-pipeline" class="project-link primary">View Project</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="stats-section">
+  <h2 style="margin-bottom: 0.5rem; font-size: 2rem;">Project Statistics</h2>
+  <p style="opacity: 0.9; margin-bottom: 2rem;">A snapshot of my technical journey</p>
+  <div class="stats-grid">
+    <div class="stat-item">
+      <span class="stat-number">15+</span>
+      <span class="stat-label">Projects Completed</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">10+</span>
+      <span class="stat-label">Technologies Mastered</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">3rd</span>
+      <span class="stat-label">Place at WBS Quantathon</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">100%</span>
+      <span class="stat-label">Passion for Learning</span>
+    </div>
+  </div>
+</div>
+
+---
+
+<div style="text-align: center; margin-top: 4rem; padding: 2rem; background: #f8f9fa; border-radius: 8px;">
+  <p style="font-size: 1.1rem; color: #555; margin-bottom: 1rem;">
+    Interested in collaborating or learning more about my work?
+  </p>
+  <a href="/contact/" style="background: #667eea; color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.2s ease;">
+    Get In Touch
+  </a>
+</div>
