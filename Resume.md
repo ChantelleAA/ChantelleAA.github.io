@@ -89,15 +89,6 @@ Microsoft Office (Advanced), LibreOffice (Intermediate)
 
 ## Professional Experience
 
-**Lead AI/ML Engineer**  
-*Kola Market* | Dec. 2025 - Present  
-- Building inventory recommendation engine using internal and external data sources
-- Designing OCR and data-capture prototype for field sales operations
-- Developing credit-scoring logic for MSMEs (Micro, Small, and Medium Enterprises)
-- Integrating LLM-based decision systems with WhatsApp agent interface
-- Leading data consolidation and feature engineering across databases, CRM, and field reports
-- Producing dashboards and automated insights for internal teams
-
 **Lecturer and Tutor**  
 *African Institute for Mathematical Sciences, Ghana* | Aug. 2025 - Sep. 2025  
 Mastercard Foundation Transition Training Programme  

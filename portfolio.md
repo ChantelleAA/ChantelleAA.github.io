@@ -15,7 +15,7 @@ permalink: /portfolio/
           <span class="text-gradient">AI Researcher & ML Engineer</span>
         </h1>
         <p style="font-size: 1.25rem; color: var(--text-secondary, #475569); margin-bottom: 2rem; line-height: 1.6;">
-          PhD researcher in AI for climate-resilient offshore wind energy at University College Dublin (Met Eireann Scholar) and Lead AI/ML Engineer at Kola Market. Specializing in climate AI, NLP, computer vision, and building production ML systems that solve real-world challenges.
+          PhD researcher in AI for climate-resilient offshore wind energy at University College Dublin (Met Eireann Scholar). Specializing in climate AI, NLP, computer vision, and building production ML systems that solve real-world challenges in education, healthcare, and environmental monitoring.
         </p>
         <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
           <a href="#projects" class="btn btn-primary btn-lg">
@@ -137,32 +137,6 @@ permalink: /portfolio/
     %}
     
     <div class="grid grid-cols-3" data-filter-container="projects" style="margin-top: 2rem;">
-      
-      <!-- Project 0: Kola Market AI Systems -->
-      <div data-filterable="projects" data-category="ml-ai" data-title="Kola Market AI Systems" data-tags="Python Django LangChain OCR" data-date="2025">
-        <div class="project-card">
-          <div class="project-content" style="padding-top: 1.5rem;">
-            <h3 class="project-title">Kola Market AI Systems</h3>
-            
-            <p class="project-description">Lead AI/ML Engineer role building production ML systems for African MSME marketplace. Inventory recommendation engine using internal and external data sources, OCR/data-capture for field sales, credit-scoring logic for MSMEs, and WhatsApp LLM agent integration. Data consolidation across databases, CRM, and field reports with dashboards for automated insights.</p>
-            
-            <div class="project-tech-stack">
-              <span class="pill pill-sm pill-secondary">Python</span>
-              <span class="pill pill-sm pill-secondary">Django</span>
-              <span class="pill pill-sm pill-secondary">LangChain</span>
-              <span class="pill pill-sm pill-secondary">OCR</span>
-              <span class="pill pill-sm pill-secondary">SQL</span>
-            </div>
-            
-            <div class="project-metrics">
-              <div class="metric">
-                <i class="fa-solid fa-briefcase"></i>
-                <span>Dec. 2025 - Present</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       
       <!-- Project 1: Quantathon Judging App -->
       <div data-filterable="projects" data-category="web-apps" data-title="Quantathon Judging App" data-tags="Django PostgreSQL HTMX" data-date="2024">
