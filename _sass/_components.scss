@@ -1306,7 +1306,7 @@
     padding: 0 40px;
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
-    gap: 80px;
+    gap: $spacing-20;
     align-items: center;
     
     @media (max-width: 1440px) {
@@ -1328,31 +1328,31 @@
   }
   
   .hero-name {
-    font-size: 56px;
+    font-size: $font-size-5xl;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: $spacing-4;
     line-height: $line-height-tight;
     
     @media (max-width: 768px) {
-      font-size: 40px;
+      font-size: $font-size-4xl;
     }
   }
   
   .hero-tagline {
-    font-size: 24px;
-    margin-bottom: 24px;
+    font-size: $font-size-2xl;
+    margin-bottom: $spacing-6;
     font-weight: 500;
     opacity: 0.95;
     
     @media (max-width: 768px) {
-      font-size: 20px;
+      font-size: $font-size-xl;
     }
   }
   
   .hero-description {
-    font-size: 18px;
+    font-size: $font-size-lg;
     line-height: 1.7;
-    margin-bottom: 32px;
+    margin-bottom: $spacing-8;
     opacity: 0.9;
     max-width: 700px;
     
@@ -1364,8 +1364,8 @@
   
   .hero-actions {
     display: flex;
-    gap: 16px;
-    margin-bottom: 32px;
+    gap: $spacing-4;
+    margin-bottom: $spacing-8;
     
     @media (max-width: 1024px) {
       justify-content: center;
@@ -1379,7 +1379,7 @@
   
   .hero-social {
     display: flex;
-    gap: 16px;
+    gap: $spacing-4;
     
     @media (max-width: 1024px) {
       justify-content: center;
@@ -1397,7 +1397,7 @@
       max-width: 400px;
       aspect-ratio: 1;
       object-fit: cover;
-      border-radius: 20px;
+      border-radius: $radius-xl;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
       
       @media (max-width: 1024px) {
@@ -1423,7 +1423,7 @@
     padding: 0 40px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
+    gap: $spacing-8;
     
     @media (max-width: 1440px) {
       max-width: 1200px;
@@ -1528,7 +1528,7 @@
     padding: 0 $spacing-6;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: $spacing-6;
+    gap: $spacing-8;
     
     @media (max-width: 1200px) {
       grid-template-columns: repeat(2, 1fr);
@@ -1553,7 +1553,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: $radius-lg;
   
   &:hover {
     transform: translateY(-8px);
@@ -1563,10 +1563,10 @@
   
   .project-status {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: $spacing-4;
+    right: $spacing-4;
     padding: 6px 14px;
-    border-radius: 20px;
+    border-radius: $radius-full;
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
@@ -1607,33 +1607,33 @@
   }
   
   .project-content {
-    padding: 24px;
+    padding: $spacing-6;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
   }
   
   h3 {
-    font-size: 20px;
+    font-size: $font-size-xl;
     font-weight: 600;
     color: $color-text-primary;
-    margin-bottom: 12px;
+    margin-bottom: $spacing-3;
     line-height: 1.4;
   }
   
   > p {
-    font-size: 14px;
+    font-size: $font-size-sm;
     line-height: 1.6;
     color: $color-text-secondary;
-    margin-bottom: 16px;
+    margin-bottom: $spacing-4;
     flex-grow: 1;
   }
   
   .project-tech {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 16px;
+    gap: $spacing-2;
+    margin-bottom: $spacing-4;
   }
   
   .tech-pill {
@@ -1647,25 +1647,25 @@
   
   .project-links {
     display: flex;
-    gap: 12px;
+    gap: $spacing-3;
     align-items: center;
     margin-top: auto;
     flex-wrap: wrap;
-    padding-top: 16px;
+    padding-top: $spacing-4;
     border-top: 1px solid $color-border-light;
     
     a, .project-btn {
-      padding: 8px 16px;
+      padding: $spacing-2 $spacing-4;
       background: $color-bg-secondary;
       color: $color-text-primary;
-      border-radius: 8px;
+      border-radius: $radius-md;
       text-decoration: none;
       font-weight: 500;
-      font-size: 13px;
+      font-size: $font-size-sm;
       transition: all 0.3s ease;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: $spacing-2;
       
       &:hover {
         background: $color-primary-600;
@@ -1678,11 +1678,11 @@
     }
     
     .project-meta {
-      font-size: 13px;
+      font-size: $font-size-sm;
       color: $color-text-tertiary;
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      gap: $spacing-1;
       
       i {
         margin-right: 0;
@@ -1783,7 +1783,7 @@
     padding: 0 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: $spacing-8;
     
     @media (max-width: 1440px) {
       max-width: 1200px;
@@ -1930,7 +1930,7 @@
     padding: 0 40px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
+    gap: $spacing-8;
     
     @media (max-width: 1440px) {
       max-width: 1200px;
@@ -2087,7 +2087,7 @@
     padding: 0 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: $spacing-6;
     
     @media (max-width: 1440px) {
       max-width: 1200px;
