@@ -21,6 +21,105 @@
         color: #666;
     }
 }
+
+// Lesson Grid for Python Course (used on courses page)
+.lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+    
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+.lesson-card {
+    background: #fff;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        border-color: #2563eb;
+    }
+    
+    .lesson-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        
+        .lesson-number {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .lesson-difficulty {
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            background: #dbeafe;
+            color: #1e40af;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+    }
+    
+    .lesson-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #111827;
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+    
+    .lesson-concepts {
+        font-size: 0.875rem;
+        color: #6b7280;
+        margin-bottom: 12px;
+        font-weight: 500;
+    }
+    
+    .lesson-description {
+        font-size: 0.875rem;
+        color: #4b5563;
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+    
+    .lesson-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 16px;
+        border-top: 1px solid #e5e7eb;
+        
+        .lesson-time {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .lesson-link {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #2563eb;
+            text-decoration: none;
+            
+            &:hover {
+                color: #1e40af;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
 .post-list {
     margin: 0;
 	padding: 20px 40px;
