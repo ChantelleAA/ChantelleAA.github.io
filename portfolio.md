@@ -15,7 +15,7 @@ permalink: /portfolio/
           <span class="text-gradient">AI Researcher & ML Engineer</span>
         </h1>
         <p style="font-size: 1.25rem; color: var(--text-secondary, #475569); margin-bottom: 2rem; line-height: 1.6;">
-          PhD researcher specializing in AI for climate, applying machine learning to environmental systems and building practical solutions for real-world challenges.
+          PhD researcher in AI for climate-resilient offshore wind energy at University College Dublin (Met Eireann Scholar) and Lead AI/ML Engineer at Kola Market. Specializing in climate AI, NLP, computer vision, and building production ML systems that solve real-world challenges.
         </p>
         <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
           <a href="#projects" class="btn btn-primary btn-lg">
@@ -46,10 +46,10 @@ permalink: /portfolio/
 
 <!-- Stats Dashboard -->
 {% include stats-section.html 
-  stat1_number="12+"
+  stat1_number="15+"
   stat1_label="Projects Completed"
   stat1_icon="fa-solid fa-code-branch"
-  stat2_number="500+"
+  stat2_number="200+"
   stat2_label="Students Taught"
   stat2_icon="fa-solid fa-graduation-cap"
   stat3_number="3"
@@ -66,7 +66,7 @@ permalink: /portfolio/
     <div style="text-align: center; margin-bottom: 3rem;">
       <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">Current Research Focus</h2>
       <p style="font-size: 1.25rem; color: var(--text-secondary, #475569); max-width: 700px; margin: 0 auto;">
-        PhD Researcher in Decarb-AI at University College Dublin, applying AI to climate, energy, and environmental systems
+        As a PhD Researcher at University College Dublin (Decarb-AI iScholar), I focus on AI for climate-resilient offshore wind energy in Ireland. My work explores machine learning applications for renewable energy optimization, climate risk assessment, and environmental monitoring. Funded by the Met Eireann PhD Scholarship.
       </p>
     </div>
     
@@ -138,6 +138,32 @@ permalink: /portfolio/
     
     <div class="grid grid-cols-3" data-filter-container="projects" style="margin-top: 2rem;">
       
+      <!-- Project 0: Kola Market AI Systems -->
+      <div data-filterable="projects" data-category="ml-ai" data-title="Kola Market AI Systems" data-tags="Python Django LangChain OCR" data-date="2025">
+        <div class="project-card">
+          <div class="project-content" style="padding-top: 1.5rem;">
+            <h3 class="project-title">Kola Market AI Systems</h3>
+            
+            <p class="project-description">Lead AI/ML Engineer role building production ML systems for African MSME marketplace. Inventory recommendation engine using internal and external data sources, OCR/data-capture for field sales, credit-scoring logic for MSMEs, and WhatsApp LLM agent integration. Data consolidation across databases, CRM, and field reports with dashboards for automated insights.</p>
+            
+            <div class="project-tech-stack">
+              <span class="pill pill-sm pill-secondary">Python</span>
+              <span class="pill pill-sm pill-secondary">Django</span>
+              <span class="pill pill-sm pill-secondary">LangChain</span>
+              <span class="pill pill-sm pill-secondary">OCR</span>
+              <span class="pill pill-sm pill-secondary">SQL</span>
+            </div>
+            
+            <div class="project-metrics">
+              <div class="metric">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>Dec. 2025 - Present</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       <!-- Project 1: Quantathon Judging App -->
       <div data-filterable="projects" data-category="web-apps" data-title="Quantathon Judging App" data-tags="Django PostgreSQL HTMX" data-date="2024">
         <div class="project-card">
@@ -151,7 +177,7 @@ permalink: /portfolio/
           <div class="project-content">
             <h3 class="project-title">Quantathon Judging App</h3>
             
-            <p class="project-description">A Django-based hackathon judging platform used in the AIMS Quantathon 2024 with 50+ participants. Features real-time leaderboard, analytics, criteria filtered by judge expertise, one-time secure voting links, and admin dashboard for managing live events.</p>
+            <p class="project-description">A Django-based hackathon judging platform used in the AIMS Quantathon 2025 with 50+ participants. Features real-time leaderboard, analytics, criteria filtered by judge expertise, one-time secure voting links, and admin dashboard for managing live events. Mentored winning team Qualaria who developed quantum-inspired malaria drug discovery model.</p>
             
             <div class="project-tech-stack">
               <span class="pill pill-sm pill-secondary">Django</span>
