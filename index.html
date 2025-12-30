@@ -1,665 +1,371 @@
 ---
 layout: default
-title: Home
 ---
-
-<!-- Hero Section -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <h1 class="hero-title">Hi, I'm Chantelle</h1>
-      <p class="hero-subtitle">Data Analyst | Insight Builder | Problem Solver</p>
-      <p class="hero-description">
-        I transform complex data into clear, actionable insights that drive business decisions. 
-        With expertise in Python, SQL, and data visualization, I help organizations make sense of their data.
-      </p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">View My Work</a>
-        <a href="/about" class="btn btn-secondary">About Me</a>
+<div class="home">
+  <a class="rss-link" href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS Feed</a>
+  
+  <!-- Professional Hero Section -->
+  <section class="professional-hero">
+    <div class="hero-content-wrapper">
+      <div class="hero-text">
+        <h1 class="hero-name">Chantelle Amoako-Atta</h1>
+        <p class="hero-tagline">AI Researcher | Machine Learning Engineer | Climate Tech Specialist</p>
+        <p class="hero-description">PhD candidate at University College Dublin advancing climate-resilient AI for offshore wind. Leading ML at Kola Market building production systems for African markets.</p>
+        
+        <div class="hero-actions">
+          <a href="#research" class="btn btn-primary">View Research</a>
+          <a href="/projects/" class="btn btn-outline">My Projects</a>
+          <a href="mailto:chantelatta@gmail.com" class="btn btn-ghost">Get in Touch</a>
+        </div>
+        
+        <div class="hero-social">
+          <a href="https://github.com/ChantelleAA" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/chantelleaa" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="mailto:chantelatta@gmail.com" class="social-link" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Skills Overview -->
-<section class="skills-overview">
-  <div class="container">
-    <h2 class="section-title">What I Do</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-icon">📊</div>
-        <h3>Data Analysis</h3>
-        <p>Extracting meaningful patterns and insights from complex datasets using statistical methods and analytical tools.</p>
-      </div>
-      <div class="skill-card">
-        <div class="skill-icon">📈</div>
-        <h3>Data Visualization</h3>
-        <p>Creating compelling visual stories with tools like Tableau, Power BI, and Python libraries to communicate data insights.</p>
-      </div>
-      <div class="skill-card">
-        <div class="skill-icon">🐍</div>
-        <h3>Python & SQL</h3>
-        <p>Developing automated solutions and efficient queries to process, analyze, and manipulate data at scale.</p>
-      </div>
-      <div class="skill-card">
-        <div class="skill-icon">🔍</div>
-        <h3>Business Intelligence</h3>
-        <p>Building dashboards and reports that provide stakeholders with real-time insights for informed decision-making.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Featured Projects -->
-<section id="projects" class="featured-projects">
-  <div class="container">
-    <h2 class="section-title">Featured Projects</h2>
-    <div class="projects-grid">
       
-      <!-- Project 1: Sales Performance Dashboard -->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="/assets/images/projects/sales-dashboard.jpg" alt="Sales Performance Dashboard" onerror="this.src='/assets/images/placeholder.jpg'">
-        </div>
-        <div class="project-content">
-          <div class="project-tags">
-            <span class="tag">Tableau</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Business Intelligence</span>
-          </div>
-          <h3>Sales Performance Dashboard</h3>
-          <p>Interactive Tableau dashboard tracking key sales metrics, regional performance, and product trends. Helped identify underperforming products and optimize inventory management.</p>
-          <div class="project-links">
-            <a href="/projects/sales-dashboard" class="project-link">View Project →</a>
-          </div>
-        </div>
+      <div class="hero-image">
+        <img src="{{ site.avatar }}" alt="Chantelle Amoako-Atta" class="profile-image">
       </div>
-
-      <!-- Project 2: Customer Segmentation Analysis -->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="/assets/images/projects/customer-segmentation.jpg" alt="Customer Segmentation Analysis" onerror="this.src='/assets/images/placeholder.jpg'">
-        </div>
-        <div class="project-content">
-          <div class="project-tags">
-            <span class="tag">Python</span>
-            <span class="tag">Machine Learning</span>
-            <span class="tag">Clustering</span>
-          </div>
-          <h3>Customer Segmentation Analysis</h3>
-          <p>K-means clustering analysis to identify distinct customer segments based on purchasing behavior. Results informed targeted marketing strategies and increased conversion rates by 23%.</p>
-          <div class="project-links">
-            <a href="/projects/customer-segmentation" class="project-link">View Project →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 3: E-commerce Analysis -->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="/assets/images/projects/ecommerce-analysis.jpg" alt="E-commerce Analysis" onerror="this.src='/assets/images/placeholder.jpg'">
-        </div>
-        <div class="project-content">
-          <div class="project-tags">
-            <span class="tag">Python</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">Data Cleaning</span>
-          </div>
-          <h3>E-commerce Analysis</h3>
-          <p>Comprehensive analysis of e-commerce transaction data to identify purchasing patterns, seasonal trends, and customer lifetime value. Provided actionable recommendations for business growth.</p>
-          <div class="project-links">
-            <a href="/projects/ecommerce-analysis" class="project-link">View Project →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 4: COVID-19 Data Exploration -->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="/assets/images/projects/covid-analysis.jpg" alt="COVID-19 Data Analysis" onerror="this.src='/assets/images/placeholder.jpg'">
-        </div>
-        <div class="project-content">
-          <div class="project-tags">
-            <span class="tag">SQL</span>
-            <span class="tag">Data Exploration</span>
-            <span class="tag">Visualization</span>
-          </div>
-          <h3>COVID-19 Data Exploration</h3>
-          <p>SQL-based exploration of global COVID-19 data, analyzing infection rates, mortality trends, and vaccination progress across countries. Created compelling visualizations to communicate findings.</p>
-          <div class="project-links">
-            <a href="/projects/covid-analysis" class="project-link">View Project →</a>
-          </div>
-        </div>
-      </div>
-
     </div>
-    <div class="view-all-projects">
-      <a href="/projects" class="btn btn-primary">View All Projects</a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Python for Beginners Section -->
-<section class="python-course-section">
-  <div class="container">
-    <h2 class="section-title">Python for Beginners</h2>
-    <div class="course-intro">
-      <p>Start your journey into data analysis with Python! This beginner-friendly series covers everything you need to know to get started with Python programming and data analysis.</p>
+  <!-- Current Work Section -->
+  <section class="current-work-section">
+    <h2 class="section-title">What I Do</h2>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="work-icon climate">
+          <i class="fa-solid fa-earth-africa"></i>
+        </div>
+        <h3>Climate and GeoAI</h3>
+        <p>Build models for weather, air quality, land cover, and environmental risk, using satellite data (Sentinel, Copernicus, OpenEarthMap) and deep learning for forecasting and segmentation.</p>
+        <a href="#research" class="work-link">Learn more →</a>
+      </div>
+      
+      <div class="work-card">
+        <div class="work-icon production">
+          <i class="fa-solid fa-robot"></i>
+        </div>
+        <h3>Applied Machine Learning</h3>
+        <p>Design and deploy ML systems in NLP, computer vision, and time series, from brain tumor segmentation to hackathon judging platforms and inventory or decision support tools.</p>
+        <a href="/projects/" class="work-link">View projects →</a>
+      </div>
+      
+      <div class="work-card">
+        <div class="work-icon mentoring">
+          <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
+        <h3>Teaching and Mentorship</h3>
+        <p>Teach and mentor undergraduate, MSc, and professional learners in Python, R, data science, and AI, designing projects that connect theory to real-world problems.</p>
+        <a href="/courses/" class="work-link">Teaching materials →</a>
+      </div>
+      
+      <div class="work-card">
+        <div class="work-icon speaking">
+          <i class="fa-solid fa-puzzle-piece"></i>
+        </div>
+        <h3>AI for Social Impact</h3>
+        <p>Build tools that support teachers, students, and communities, including curriculum-aligned teaching resources, GeoAI workshops, and accessible AI assistants.</p>
+        <a href="/projects/" class="work-link">See impact →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section class="featured-projects-section">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="featured-grid">
+      <div class="featured-project-card">
+        <div class="project-status in-production">In Production</div>
+        <h3>Kola Market AI Systems</h3>
+        <p>Production ML systems for African MSME marketplace: inventory recommendation engine, OCR/data-capture, credit scoring, and WhatsApp LLM agent integration.</p>
+        <div class="project-tech">
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">Django</span>
+          <span class="tech-pill">LangChain</span>
+          <span class="tech-pill">OCR</span>
+        </div>
+        <div class="project-links">
+          <span class="project-meta"><i class="fa-solid fa-calendar"></i> Dec 2025 - Present</span>
+        </div>
+      </div>
+      
+      <div class="featured-project-card">
+        <div class="project-status award">Award-Winning</div>
+        <div class="project-image">
+          <img src="/assets/images/projects/judging_demo.gif" alt="Quantathon Platform Demo">
+        </div>
+        <h3>Quantathon Judging Platform</h3>
+        <p>Full judging and scoring platform used at AIMS Quantathon, with real-time leaderboards, expertise-based criteria, and secure one-time voting links.</p>
+        <div class="project-tech">
+          <span class="tech-pill">Django</span>
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">HTMX</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/ChantelleAA/judging_criteria" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i> Code
+          </a>
+          <span class="project-meta"><i class="fa-solid fa-calendar"></i> Jul 2025</span>
+        </div>
+      </div>
+      
+      <div class="featured-project-card">
+        <div class="project-status">Education</div>
+        <div class="project-image">
+          <img src="/assets/images/projects/tlr_helper_1.gif" alt="TLR Helper">
+        </div>
+        <h3>TLR Helper – Curriculum Support</h3>
+        <p>Web app for Ghana's Standards-Based Curriculum suggesting teaching resources by class, strand, indicator, special needs, and learning styles. Used in TEDD Ghana workshops.</p>
+        <div class="project-tech">
+          <span class="tech-pill">Django</span>
+          <span class="tech-pill">HTMX</span>
+          <span class="tech-pill">Bootstrap</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/ChantelleAA/tlr_app" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i> Code
+          </a>
+        </div>
+      </div>
+      
+      <div class="featured-project-card">
+        <div class="project-status research">Research</div>
+        <div class="project-image">
+          <img src="/assets/images/projects/biodiversity.gif" alt="GeoSeg Biodiversity">
+        </div>
+        <h3>GeoAI for Biodiversity & Air Quality</h3>
+        <p>Geospatial AI combining land cover segmentation with pollution and air-quality dashboards, using Sentinel-5P and OpenEarthMap for environmental monitoring.</p>
+        <div class="project-tech">
+          <span class="tech-pill">PyTorch</span>
+          <span class="tech-pill">GeoPandas</span>
+          <span class="tech-pill">Streamlit</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/ChantelleAA/geoseg" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i> Code
+          </a>
+          <span class="project-meta"><i class="fa-solid fa-chart-line"></i> 87-90% mIoU</span>
+        </div>
+      </div>
     </div>
     
-    <div class="course-grid">
+    <div class="section-cta">
+      <a href="/projects/" class="btn btn-primary">View All Projects</a>
+    </div>
+  </section>
+
+  <!-- Research & Publications Section -->
+  <section id="research" class="research-publications-section">
+    <h2 class="section-title">Research & Publications</h2>
+    
+    <div class="research-highlight">
+      <div class="highlight-badge">Current PhD Research</div>
+      <h3>AI for Climate-Resilient Offshore Wind</h3>
+      <p class="research-institution">University College Dublin | Met Eireann PhD Scholarship</p>
+      <p>Developing AI systems to optimize offshore wind energy production in Irish waters. Focus on climate resilience, predictive maintenance, and energy forecasting using machine learning and remote sensing.</p>
+      <div class="research-keywords">
+        <span class="keyword">Climate AI</span>
+        <span class="keyword">Renewable Energy</span>
+        <span class="keyword">Offshore Wind</span>
+        <span class="keyword">Geospatial ML</span>
+      </div>
+    </div>
+    
+    <h3 class="subsection-title">Selected Publications</h3>
+    <div class="publications-grid">
+      <div class="publication-card">
+        <div class="pub-venue">MICCAI 2023</div>
+        <h4>Brain Tumor Segmentation on Sub-Saharan MRI</h4>
+        <p class="pub-authors">Chantelle Amoako-Atta et al.</p>
+        <p class="pub-description">Ensemble methods for improved medical imaging segmentation on limited datasets. MICCAI Scholarship recipient.</p>
+        <a href="https://arxiv.org/abs/2508.10905" class="pub-link" target="_blank" rel="noopener">
+          <i class="fa-solid fa-file-pdf"></i> Read Paper
+        </a>
+      </div>
+      
+      <div class="publication-card">
+        <div class="pub-venue">LUT Master's Thesis</div>
+        <h4>Playing Oware Nam-nam with Deep Q-Networks</h4>
+        <p class="pub-authors">Chantelle Amoako-Atta</p>
+        <p class="pub-description">DQN, DDQN, A3C, and AlphaZero implementations for traditional African game. Custom reinforcement learning environment.</p>
+        <a href="https://lutpub.lut.fi/bitstream/handle/10024/167861/mastersthesis_Amoako-Atta_Chantelle.pdf" class="pub-link" target="_blank" rel="noopener">
+          <i class="fa-solid fa-file-pdf"></i> Read Thesis
+        </a>
+      </div>
+      
+      <div class="publication-card">
+        <div class="pub-venue">AIMS Master's Thesis</div>
+        <h4>Machine Learning for Cardiac Arrhythmia Classification</h4>
+        <p class="pub-authors">Chantelle Amoako-Atta</p>
+        <p class="pub-description">ML algorithms for arrhythmia prediction from physiological signals. Classical ML and signal processing for healthcare.</p>
+        <a href="https://github.com/ChantelleAA/Cardiac_Arrhythmia_ML" class="pub-link" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github"></i> View Project
+        </a>
+      </div>
+    </div>
+    
+    <h3 class="subsection-title">Research Interests</h3>
+    <div class="research-interests-grid">
+      <div class="interest-card">
+        <i class="fa-solid fa-wind"></i>
+        <span>Climate AI</span>
+      </div>
+      <div class="interest-card">
+        <i class="fa-solid fa-language"></i>
+        <span>NLP</span>
+      </div>
+      <div class="interest-card">
+        <i class="fa-solid fa-eye"></i>
+        <span>Computer Vision</span>
+      </div>
+      <div class="interest-card">
+        <i class="fa-solid fa-map"></i>
+        <span>Geospatial ML</span>
+      </div>
+      <div class="interest-card">
+        <i class="fa-solid fa-heart-pulse"></i>
+        <span>Healthcare AI</span>
+      </div>
+      <div class="interest-card">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>AI for Education</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Technical Writing -->
+  <section class="blog-section">
+    <h2 class="section-title">Latest Technical Writing</h2>
+    <div class="blog-grid">
+      {% assign post_count = 0 %}
       {% for post in site.posts %}
-        {% if post.categories contains 'python-course' %}
-          <div class="course-card">
-            {% if post.lesson_number %}
-              <div class="lesson-number">Lesson {{ post.lesson_number }}</div>
-            {% endif %}
-            <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-            <p class="course-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</p>
-            {% if post.duration %}
-              <div class="lesson-meta">
-                <span class="duration">⏱️ {{ post.duration }}</span>
-              </div>
-            {% endif %}
-            <a href="{{ post.url | prepend: site.baseurl }}" class="start-lesson">Start Lesson →</a>
-          </div>
-        {% endif %}
+        {% unless post.categories contains 'python-course' %}
+          {% if post_count < 4 %}
+            <div class="blog-card-mini">
+              {% if post.categories.size > 0 %}
+                <span class="post-category">{{ post.categories[0] | capitalize }}</span>
+              {% endif %}
+              <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+              <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+              <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+              <a href="{{ post.url | prepend: site.baseurl }}" class="read-article">Read Article →</a>
+            </div>
+            {% assign post_count = post_count | plus: 1 %}
+          {% endif %}
+        {% endunless %}
       {% endfor %}
     </div>
     
-    <div class="course-cta">
-      <a href="/python-course" class="btn btn-primary">View Full Course</a>
+    <div class="section-cta">
+      <a href="/category/" class="btn btn-outline">View All Posts</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Recent Blog Posts -->
-<section class="recent-posts">
-  <div class="container">
-    <h2 class="section-title">Recent Articles</h2>
-    <div class="blog-grid">
-  {% assign post_count = 0 %}
-  {% for post in site.posts %}
-    {% unless post.categories contains 'python-course' %}
-      {% if post_count < 4 %}
-        <div class="blog-card-mini">
-          {% if post.categories.size > 0 %}
-            <span class="post-category">{{ post.categories[0] | capitalize }}</span>
-          {% endif %}
-          <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
-          <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
-          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-          <a href="{{ post.url | prepend: site.baseurl }}" class="read-article">Read Article →</a>
-        </div>
-        {% assign post_count = post_count | plus: 1 %}
-      {% endif %}
-    {% endunless %}
-  {% endfor %}
-</div>
-    <div class="view-all-posts">
-      <a href="/blog" class="btn btn-secondary">View All Articles</a>
-    </div>
-  </div>
-</section>
-
-<!-- Call to Action -->
-<section class="cta-section">
-  <div class="container">
-    <div class="cta-content">
-      <h2>Let's Work Together</h2>
-      <p>I'm always interested in hearing about new projects and opportunities. Whether you need help with data analysis, visualization, or building automated solutions, let's connect!</p>
-      <div class="cta-buttons">
-        <a href="/contact" class="btn btn-primary">Get in Touch</a>
-        <a href="/assets/resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
+  <!-- Recognition & Impact Section -->
+  <section class="recognition-section">
+    <h2 class="section-title">Recognition & Impact</h2>
+    
+    <div class="impact-stats">
+      <div class="impact-stat">
+        <span class="stat-number">200+</span>
+        <span class="stat-label">Students Taught</span>
+      </div>
+      <div class="impact-stat">
+        <span class="stat-number">5</span>
+        <span class="stat-label">Publications</span>
+      </div>
+      <div class="impact-stat">
+        <span class="stat-number">15+</span>
+        <span class="stat-label">Projects</span>
+      </div>
+      <div class="impact-stat">
+        <span class="stat-number">3</span>
+        <span class="stat-label">Hackathon Wins</span>
       </div>
     </div>
-  </div>
-</section>
-
-<style>
-/* Hero Section */
-.hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 100px 0;
-  text-align: center;
-}
-
-.hero-title {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-}
-
-.hero-subtitle {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  opacity: 0.95;
-}
-
-.hero-description {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  line-height: 1.8;
-  opacity: 0.9;
-}
-
-.hero-cta {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* Skills Overview */
-.skills-overview {
-  padding: 80px 0;
-  background: #f8f9fa;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.skill-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-}
-
-.skill-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.skill-card h3 {
-  color: #667eea;
-  margin-bottom: 1rem;
-}
-
-/* Featured Projects */
-.featured-projects {
-  padding: 80px 0;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.project-card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-}
-
-.project-image {
-  width: 100%;
-  height: 200px;
-  overflow: hidden;
-  background: #f0f0f0;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.project-content {
-  padding: 1.5rem;
-}
-
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.tag {
-  background: #e0e7ff;
-  color: #667eea;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.project-card h3 {
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-.project-links {
-  margin-top: 1rem;
-}
-
-.project-link {
-  color: #667eea;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.project-link:hover {
-  color: #764ba2;
-}
-
-/* Python Course Section */
-.python-course-section {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-}
-
-.python-course-section .section-title {
-  color: white;
-}
-
-.course-intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-
-.course-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.course-card {
-  background: white;
-  color: #333;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.course-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-}
-
-.lesson-number {
-  background: #667eea;
-  color: white;
-  display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.course-card h3 {
-  margin-bottom: 1rem;
-}
-
-.course-card h3 a {
-  color: #333;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.course-card h3 a:hover {
-  color: #667eea;
-}
-
-.course-excerpt {
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.lesson-meta {
-  margin: 1rem 0;
-  color: #888;
-  font-size: 0.9rem;
-}
-
-.start-lesson {
-  color: #667eea;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.start-lesson:hover {
-  color: #764ba2;
-}
-
-.course-cta {
-  text-align: center;
-}
-
-/* Recent Blog Posts */
-.recent-posts {
-  padding: 80px 0;
-  background: #f8f9fa;
-}
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.blog-card-mini {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.blog-card-mini:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-}
-
-.post-category {
-  background: #e0e7ff;
-  color: #667eea;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  display: inline-block;
-  margin-bottom: 0.5rem;
-}
-
-.post-date {
-  color: #888;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.blog-card-mini h3 {
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
-.blog-card-mini h3 a {
-  color: #333;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.blog-card-mini h3 a:hover {
-  color: #667eea;
-}
-
-.post-excerpt {
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.read-article {
-  color: #667eea;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.read-article:hover {
-  color: #764ba2;
-}
-
-/* CTA Section */
-.cta-section {
-  padding: 80px 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  text-align: center;
-}
-
-.cta-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: white;
-}
-
-.cta-content p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto 2rem;
-  line-height: 1.8;
-  opacity: 0.9;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* View All Buttons */
-.view-all-projects,
-.view-all-posts {
-  text-align: center;
-  margin-top: 3rem;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.btn-primary {
-  background: white;
-  color: #667eea;
-}
-
-.btn-primary:hover {
-  background: #f0f0f0;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-}
-
-.btn-secondary:hover {
-  background: white;
-  color: #667eea;
-  transform: translateY(-2px);
-}
-
-.featured-projects .btn-primary {
-  background: #667eea;
-  color: white;
-}
-
-.featured-projects .btn-primary:hover {
-  background: #764ba2;
-}
-
-.recent-posts .btn-secondary {
-  background: #667eea;
-  color: white;
-  border: 2px solid #667eea;
-}
-
-.recent-posts .btn-secondary:hover {
-  background: #764ba2;
-  border-color: #764ba2;
-}
-
-/* Section Titles */
-.section-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #333;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.2rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .skills-grid,
-  .projects-grid,
-  .course-grid,
-  .blog-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-cta,
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-</style>
+    
+    <div class="recognition-grid">
+      <div class="recognition-card">
+        <i class="fa-solid fa-award"></i>
+        <h4>Met Eireann PhD Scholarship</h4>
+        <p>Selected for prestigious scholarship in AI for Decarbonization at UCD</p>
+      </div>
+      
+      <div class="recognition-card">
+        <i class="fa-solid fa-trophy"></i>
+        <h4>MICCAI 2023 Scholar</h4>
+        <p>International scholarship to present brain tumor segmentation research</p>
+      </div>
+      
+      <div class="recognition-card">
+        <i class="fa-solid fa-medal"></i>
+        <h4>SIAM Hackathon Winner</h4>
+        <p>Led team to victory in mathematical sciences competition</p>
+      </div>
+      
+      <div class="recognition-card">
+        <i class="fa-solid fa-code"></i>
+        <h4>Ghana NLP Contributor</h4>
+        <p>Active contributor to advancing NLP for Ghanaian languages</p>
+      </div>
+      
+      <div class="recognition-card">
+        <i class="fa-solid fa-chalkboard-user"></i>
+        <h4>NLP Lecturer at AIMS</h4>
+        <p>Delivered intensive 2-week NLP course for graduate students</p>
+      </div>
+      
+      <div class="recognition-card">
+        <i class="fa-solid fa-heart"></i>
+        <h4>FemAfricMaths Mentor</h4>
+        <p>Mentoring early-career African women in AI and machine learning</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaboration CTA Section -->
+  <section class="collaboration-section">
+    <h2 class="section-title">Let's Collaborate</h2>
+    <p class="collaboration-description">Open to research collaborations, speaking engagements, ML consulting, and mentorship opportunities. Let's work together on impactful AI projects.</p>
+    
+    <div class="collaboration-types">
+      <div class="collab-type">
+        <i class="fa-solid fa-microscope"></i>
+        <h4>Research</h4>
+        <p>Climate AI, NLP, computer vision collaborations</p>
+      </div>
+      
+      <div class="collab-type">
+        <i class="fa-solid fa-microphone"></i>
+        <h4>Speaking</h4>
+        <p>Conference talks, workshops, technical lectures</p>
+      </div>
+      
+      <div class="collab-type">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h4>Consulting</h4>
+        <p>ML engineering, NLP systems, AI strategy</p>
+      </div>
+      
+      <div class="collab-type">
+        <i class="fa-solid fa-user-group"></i>
+        <h4>Mentorship</h4>
+        <p>Career guidance for aspiring ML engineers</p>
+      </div>
+    </div>
+    
+    <div class="collaboration-actions">
+      <a href="mailto:chantelatta@gmail.com" class="btn btn-primary btn-lg">Email Me</a>
+      <a href="https://linkedin.com/in/chantelleaa" class="btn btn-outline btn-lg" target="_blank" rel="noopener">Connect on LinkedIn</a>
+    </div>
+  </section>
+</div>
