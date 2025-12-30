@@ -420,17 +420,17 @@
 
 // Tag colors
 .tag-primary {
-  background: #2c3e50;
+  background: $color-neutral-800;
   color: white;
 }
 
 .tag-secondary {
-  background: #0e7490;
+  background: $color-secondary-700;
   color: white;
 }
 
 .tag-accent {
-  background: #d97706;
+  background: $color-accent-600;
   color: white;
 }
 
@@ -1638,7 +1638,7 @@
   
   .tech-pill {
     padding: $spacing-1 $spacing-3;
-    background: #2c3e50;
+    background: $color-neutral-800;
     color: white;
     border-radius: $radius-full;
     font-size: $font-size-xs;
@@ -1820,7 +1820,7 @@
   .pub-venue {
     display: inline-block;
     padding: $spacing-1 $spacing-2;
-    background: #d97706;
+    background: $color-accent-600;
     color: white;
     border-radius: $radius-sm;
     font-size: $font-size-xs;
@@ -1969,7 +1969,7 @@
   .post-category {
     display: inline-block;
     padding: $spacing-1 $spacing-2;
-    background: #2c3e50;
+    background: $color-neutral-800;
     color: white;
     border-radius: $radius-sm;
     font-size: $font-size-xs;
@@ -2506,7 +2506,7 @@
       
       .workshop-badge {
         padding: $spacing-1 $spacing-2;
-        background: #d97706;
+        background: $color-accent-600;
         color: white;
         border-radius: $radius-sm;
         font-size: $font-size-xs;
@@ -2544,7 +2544,7 @@
       
       .topic-pill {
         padding: $spacing-1 $spacing-2;
-        background: #2c3e50;
+        background: $color-neutral-800;
         color: white;
         border-radius: $radius-sm;
         font-size: $font-size-xs;

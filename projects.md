@@ -7,7 +7,7 @@ permalink: /projects/
 <div class="projects-hero">
   <div class="hero-content">
     <h1 class="hero-title">My Projects</h1>
-    <p class="hero-subtitle">From climate AI research to production ML systems deployed across Africa and internationally. Building technology that solves real-world problems.</p>
+    <p class="hero-subtitle">From climate AI research to production ML systems for education, healthcare, and environmental monitoring. Building technology that solves real-world problems.</p>
   </div>
 </div>
 
@@ -54,12 +54,16 @@ permalink: /projects/
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 3rem;
-  
-  @media (max-width: 1200px) {
+}
+
+@media (max-width: 1200px) {
+  .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
     grid-template-columns: 1fr;
   }
 }
