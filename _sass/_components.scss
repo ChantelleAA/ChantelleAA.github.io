@@ -2088,6 +2088,7 @@
     padding: $spacing-6;
     background: rgba(255, 255, 255, 0.1);
     border-radius: $radius-lg;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     transition: all $transition-normal $ease-out;
     
