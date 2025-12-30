@@ -1,0 +1,249 @@
+{% comment %}
+  Stats Dashboard Component
+  
+  Parameters:
+  - stat1_number: First stat number
+  - stat1_label: First stat label
+  - stat1_icon: Font Awesome icon class for first stat
+  - stat2_number, stat2_label, stat2_icon: Second stat
+  - stat3_number, stat3_label, stat3_icon: Third stat
+  - stat4_number, stat4_label, stat4_icon: Fourth stat (optional)
+  - animate: Boolean to enable counter animation (default: true)
+{% endcomment %}
+
+{% assign animate = include.animate | default: true %}
+
+<div class="stats-dashboard">
+  <div class="stats-grid grid-{{ include.stat4_number | default: false | if: '4', '3' }}">
+    {% if include.stat1_number %}
+    <div class="stat-card">
+      {% if include.stat1_icon %}
+      <div class="stat-icon">
+        <i class="{{ include.stat1_icon }}"></i>
+      </div>
+      {% endif %}
+      <div class="stat-number" {% if animate %}data-count="{{ include.stat1_number }}"{% endif %}>
+        {{ include.stat1_number }}
+      </div>
+      <div class="stat-label">{{ include.stat1_label }}</div>
+    </div>
+    {% endif %}
+    
+    {% if include.stat2_number %}
+    <div class="stat-card">
+      {% if include.stat2_icon %}
+      <div class="stat-icon">
+        <i class="{{ include.stat2_icon }}"></i>
+      </div>
+      {% endif %}
+      <div class="stat-number" {% if animate %}data-count="{{ include.stat2_number }}"{% endif %}>
+        {{ include.stat2_number }}
+      </div>
+      <div class="stat-label">{{ include.stat2_label }}</div>
+    </div>
+    {% endif %}
+    
+    {% if include.stat3_number %}
+    <div class="stat-card">
+      {% if include.stat3_icon %}
+      <div class="stat-icon">
+        <i class="{{ include.stat3_icon }}"></i>
+      </div>
+      {% endif %}
+      <div class="stat-number" {% if animate %}data-count="{{ include.stat3_number }}"{% endif %}>
+        {{ include.stat3_number }}
+      </div>
+      <div class="stat-label">{{ include.stat3_label }}</div>
+    </div>
+    {% endif %}
+    
+    {% if include.stat4_number %}
+    <div class="stat-card">
+      {% if include.stat4_icon %}
+      <div class="stat-icon">
+        <i class="{{ include.stat4_icon }}"></i>
+      </div>
+      {% endif %}
+      <div class="stat-number" {% if animate %}data-count="{{ include.stat4_number }}"{% endif %}>
+        {{ include.stat4_number }}
+      </div>
+      <div class="stat-label">{{ include.stat4_label }}</div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+{% if animate %}
+<script>
+(function() {
+  // Counter animation for stats
+  function animateCounter(element) {
+    const target = element.dataset.count;
+    const hasPlus = target.includes('+');
+    const hasPercent = target.includes('%');
+    const numericValue = parseInt(target.replace(/[^0-9]/g, ''));
+    const duration = 2000;
+    const startTime = performance.now();
+    
+    function updateCounter(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing function for smooth animation
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const current = Math.floor(easeOutQuart * numericValue);
+      
+      let displayValue = current;
+      if (hasPlus) displayValue += '+';
+      if (hasPercent) displayValue += '%';
+      
+      element.textContent = displayValue;
+      
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target;
+      }
+    }
+    
+    requestAnimationFrame(updateCounter);
+  }
+  
+  // Intersection Observer to trigger animation when stats come into view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.dataset.animated) {
+        animateCounter(entry.target);
+        entry.target.dataset.animated = 'true';
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+  
+  // Observe all stat numbers
+  document.querySelectorAll('.stat-number[data-count]').forEach(stat => {
+    // Set initial value to 0
+    const target = stat.dataset.count;
+    const hasPlus = target.includes('+');
+    const hasPercent = target.includes('%');
+    let initial = '0';
+    if (hasPlus) initial += '+';
+    if (hasPercent) initial += '%';
+    stat.textContent = initial;
+    
+    observer.observe(stat);
+  });
+})();
+</script>
+{% endif %}
+
+<style>
+  .stats-dashboard {
+    margin: 3rem 0;
+  }
+  
+  .stats-grid {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  .stats-grid.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .stats-grid.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  @media (max-width: 1024px) {
+    .stats-grid.grid-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .stats-grid.grid-3,
+    .stats-grid.grid-4 {
+      grid-template-columns: 1fr;
+    }
+    
+    .stats-dashboard {
+      margin: 2rem 0;
+    }
+    
+    .stats-grid {
+      gap: 1.5rem;
+    }
+  }
+  
+  .stat-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid rgba(241, 245, 249, 1);
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: #3b82f6;
+  }
+  
+  .stat-icon {
+    font-size: 2.5rem;
+    color: #3b82f6;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .stat-card:hover .stat-icon {
+    transform: scale(1.1);
+  }
+  
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+  }
+  
+  .stat-label {
+    color: #475569;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 480px) {
+    .stat-card {
+      padding: 1.5rem;
+    }
+    
+    .stat-icon {
+      font-size: 2rem;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+    }
+    
+    .stat-label {
+      font-size: 0.875rem;
+    }
+  }
+  
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .stat-card {
+      transition: none;
+    }
+    
+    .stat-card:hover {
+      transform: none;
+    }
+  }
+</style>

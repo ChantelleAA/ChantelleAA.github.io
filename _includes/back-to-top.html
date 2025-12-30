@@ -1,0 +1,107 @@
+{% comment %}
+  Back to Top Button Component
+  
+  Displays a fixed button that appears when user scrolls down
+  and smoothly scrolls to top when clicked
+{% endcomment %}
+
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script>
+(function() {
+  const backToTopButton = document.getElementById('back-to-top');
+  
+  // Show/hide button based on scroll position
+  function toggleBackToTop() {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add('visible');
+    } else {
+      backToTopButton.classList.remove('visible');
+    }
+  }
+  
+  // Scroll to top smoothly
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+  
+  // Event listeners
+  window.addEventListener('scroll', toggleBackToTop);
+  backToTopButton.addEventListener('click', scrollToTop);
+  
+  // Initial check
+  toggleBackToTop();
+})();
+</script>
+
+<style>
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    z-index: 300;
+    border: none;
+    font-size: 1.25rem;
+  }
+  
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .back-to-top:hover {
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  }
+  
+  .back-to-top:active {
+    transform: translateY(-2px) scale(1.05);
+  }
+  
+  .back-to-top:focus {
+    outline: 3px solid #f59e0b;
+    outline-offset: 2px;
+  }
+  
+  @media (max-width: 768px) {
+    .back-to-top {
+      width: 40px;
+      height: 40px;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      font-size: 1rem;
+    }
+  }
+  
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .back-to-top {
+      transition: opacity 0.01ms, visibility 0.01ms;
+    }
+    
+    .back-to-top:hover {
+      transform: none;
+    }
+  }
+</style>

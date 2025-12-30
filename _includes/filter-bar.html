@@ -1,0 +1,336 @@
+{% comment %}
+  Filter Bar Component
+  
+  Parameters:
+  - categories: Array of category options
+  - show_search: Boolean to show search input (default: true)
+  - show_sort: Boolean to show sort dropdown (default: true)
+  - placeholder: Search placeholder text
+  - filter_type: Type of filtering - "projects" or "posts" (default: "projects")
+{% endcomment %}
+
+{% assign show_search = include.show_search | default: true %}
+{% assign show_sort = include.show_sort | default: true %}
+{% assign filter_type = include.filter_type | default: "projects" %}
+{% assign placeholder = include.placeholder | default: "Search..." %}
+
+<div class="filter-bar" id="filter-bar-{{ filter_type }}">
+  {% if show_search %}
+  <div class="filter-search">
+    <i class="fa-solid fa-search search-icon"></i>
+    <input 
+      type="text" 
+      id="{{ filter_type }}-search" 
+      placeholder="{{ placeholder }}"
+      aria-label="Search {{ filter_type }}"
+    >
+  </div>
+  {% endif %}
+  
+  {% if include.categories %}
+  <div class="filter-categories">
+    <button 
+      class="pill pill-clickable pill-primary active" 
+      data-category="all"
+      aria-label="Show all"
+    >
+      All
+    </button>
+    {% assign category_list = include.categories | split: "," %}
+    {% for category in category_list %}
+      <button 
+        class="pill pill-clickable" 
+        data-category="{{ category | strip | slugify }}"
+        aria-label="Filter by {{ category | strip }}"
+      >
+        {{ category | strip }}
+      </button>
+    {% endfor %}
+  </div>
+  {% endif %}
+  
+  {% if show_sort %}
+  <div class="filter-sort">
+    <select 
+      id="{{ filter_type }}-sort" 
+      aria-label="Sort {{ filter_type }}"
+    >
+      <option value="latest">Latest First</option>
+      <option value="oldest">Oldest First</option>
+      <option value="name-asc">Name (A-Z)</option>
+      <option value="name-desc">Name (Z-A)</option>
+      {% if filter_type == "projects" %}
+      <option value="impact">Impact</option>
+      {% elsif filter_type == "posts" %}
+      <option value="popular">Most Popular</option>
+      {% endif %}
+    </select>
+  </div>
+  {% endif %}
+  
+  <button class="filter-clear" id="{{ filter_type }}-clear" style="display: none;" aria-label="Clear filters">
+    <i class="fa-solid fa-times"></i>
+    Clear Filters
+  </button>
+</div>
+
+<div id="{{ filter_type }}-active-filters" class="active-filters" style="display: none; margin-top: 1rem;">
+  <!-- Active filter pills will be added here by JavaScript -->
+</div>
+
+<script>
+(function() {
+  const filterType = '{{ filter_type }}';
+  const searchInput = document.getElementById(filterType + '-search');
+  const sortSelect = document.getElementById(filterType + '-sort');
+  const categoryButtons = document.querySelectorAll('#filter-bar-' + filterType + ' .pill-clickable');
+  const clearButton = document.getElementById(filterType + '-clear');
+  const activeFiltersContainer = document.getElementById(filterType + '-active-filters');
+  
+  let activeFilters = {
+    category: 'all',
+    search: '',
+    sort: 'latest'
+  };
+  
+  // Category filter
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      categoryButtons.forEach(btn => btn.classList.remove('active', 'pill-primary'));
+      this.classList.add('active', 'pill-primary');
+      activeFilters.category = this.dataset.category;
+      applyFilters();
+      updateActiveFiltersDisplay();
+    });
+  });
+  
+  // Search filter
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      activeFilters.search = this.value.toLowerCase();
+      applyFilters();
+      updateActiveFiltersDisplay();
+    });
+  }
+  
+  // Sort filter
+  if (sortSelect) {
+    sortSelect.addEventListener('change', function() {
+      activeFilters.sort = this.value;
+      applyFilters();
+    });
+  }
+  
+  // Clear filters
+  if (clearButton) {
+    clearButton.addEventListener('click', function() {
+      activeFilters = { category: 'all', search: '', sort: 'latest' };
+      if (searchInput) searchInput.value = '';
+      if (sortSelect) sortSelect.value = 'latest';
+      categoryButtons.forEach(btn => {
+        btn.classList.remove('active', 'pill-primary');
+        if (btn.dataset.category === 'all') {
+          btn.classList.add('active', 'pill-primary');
+        }
+      });
+      applyFilters();
+      updateActiveFiltersDisplay();
+    });
+  }
+  
+  function applyFilters() {
+    const items = document.querySelectorAll('[data-filterable="' + filterType + '"]');
+    let visibleCount = 0;
+    
+    items.forEach(item => {
+      const itemCategory = item.dataset.category?.toLowerCase() || '';
+      const itemTitle = item.dataset.title?.toLowerCase() || '';
+      const itemTags = item.dataset.tags?.toLowerCase() || '';
+      const searchText = itemTitle + ' ' + itemTags;
+      
+      let showItem = true;
+      
+      // Category filter
+      if (activeFilters.category !== 'all' && itemCategory !== activeFilters.category) {
+        showItem = false;
+      }
+      
+      // Search filter
+      if (activeFilters.search && !searchText.includes(activeFilters.search)) {
+        showItem = false;
+      }
+      
+      if (showItem) {
+        item.style.display = '';
+        visibleCount++;
+      } else {
+        item.style.display = 'none';
+      }
+    });
+    
+    // Show/hide "no results" message
+    const container = document.querySelector('[data-filter-container="' + filterType + '"]');
+    if (container) {
+      let noResultsMsg = container.querySelector('.no-results');
+      if (visibleCount === 0) {
+        if (!noResultsMsg) {
+          noResultsMsg = document.createElement('div');
+          noResultsMsg.className = 'no-results text-center p-8';
+          noResultsMsg.innerHTML = '<i class="fa-solid fa-search text-4xl mb-4 opacity-30"></i><p class="text-lg text-secondary">No ' + filterType + ' found matching your criteria.</p>';
+          container.appendChild(noResultsMsg);
+        }
+        noResultsMsg.style.display = 'block';
+      } else if (noResultsMsg) {
+        noResultsMsg.style.display = 'none';
+      }
+    }
+    
+    // Sort items (if needed)
+    sortItems(items, activeFilters.sort);
+  }
+  
+  function sortItems(items, sortBy) {
+    const container = items[0]?.parentElement;
+    if (!container) return;
+    
+    const itemsArray = Array.from(items);
+    
+    itemsArray.sort((a, b) => {
+      switch(sortBy) {
+        case 'latest':
+          return (b.dataset.date || 0) - (a.dataset.date || 0);
+        case 'oldest':
+          return (a.dataset.date || 0) - (b.dataset.date || 0);
+        case 'name-asc':
+          return (a.dataset.title || '').localeCompare(b.dataset.title || '');
+        case 'name-desc':
+          return (b.dataset.title || '').localeCompare(a.dataset.title || '');
+        default:
+          return 0;
+      }
+    });
+    
+    itemsArray.forEach(item => container.appendChild(item));
+  }
+  
+  function updateActiveFiltersDisplay() {
+    const hasActiveFilters = activeFilters.category !== 'all' || activeFilters.search !== '';
+    
+    if (clearButton) {
+      clearButton.style.display = hasActiveFilters ? 'block' : 'none';
+    }
+    
+    if (!activeFiltersContainer) return;
+    
+    if (hasActiveFilters) {
+      activeFiltersContainer.style.display = 'flex';
+      activeFiltersContainer.style.flexWrap = 'wrap';
+      activeFiltersContainer.style.gap = '0.5rem';
+      
+      let html = '<span style="font-weight: 500; margin-right: 0.5rem;">Active filters:</span>';
+      
+      if (activeFilters.category !== 'all') {
+        html += '<span class="pill pill-sm pill-primary">' + activeFilters.category + ' <button onclick="this.parentElement.remove(); applyFilters();" style="margin-left: 0.25rem; background: none; border: none; cursor: pointer;">×</button></span>';
+      }
+      
+      if (activeFilters.search) {
+        html += '<span class="pill pill-sm pill-secondary">Search: "' + activeFilters.search + '" <button onclick="document.getElementById(\'' + filterType + '-search\').value = \'\'; applyFilters(); updateActiveFiltersDisplay();" style="margin-left: 0.25rem; background: none; border: none; cursor: pointer;">×</button></span>';
+      }
+      
+      activeFiltersContainer.innerHTML = html;
+    } else {
+      activeFiltersContainer.style.display = 'none';
+    }
+  }
+})();
+</script>
+
+<style>
+  .filter-bar {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .filter-search {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+  }
+  
+  .filter-search input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.15s ease-out;
+  }
+  
+  .filter-search input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #64748b;
+  }
+  
+  .filter-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .filter-sort select {
+    padding: 0.75rem 2rem 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background: white;
+    transition: all 0.15s ease-out;
+  }
+  
+  .filter-sort select:focus {
+    outline: none;
+    border-color: #3b82f6;
+  }
+  
+  .filter-clear {
+    color: #ef4444;
+    background: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.15s ease-out;
+  }
+  
+  .filter-clear:hover {
+    background: rgba(239, 68, 68, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    .filter-bar {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .filter-search {
+      min-width: 100%;
+    }
+  }
+</style>
