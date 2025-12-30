@@ -11,14 +11,14 @@
     {% endfor %}
     
     {% if current_index %}
-      {% assign prev_index = current_index | minus: 1 %}
-      {% assign next_index = current_index | plus: 1 %}
+      {% assign prev_index = current_index | minus: 2 %}
+      {% assign next_index = current_index %}
       
-      {% if prev_index > 0 %}
+      {% if prev_index >= 0 %}
         {% assign prev_lesson = python_posts[prev_index] | default: nil %}
       {% endif %}
       
-      {% if next_index <= python_posts.size %}
+      {% if next_index < python_posts.size %}
         {% assign next_lesson = python_posts[next_index] | default: nil %}
       {% endif %}
     {% endif %}
