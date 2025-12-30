@@ -1033,7 +1033,7 @@
 
 .featured-projects {
   .projects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     
     @include media-max($breakpoint-desktop) {
       grid-template-columns: 1fr;

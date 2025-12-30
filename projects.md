@@ -14,7 +14,7 @@ permalink: /projects/
 <section class="section">
   <div class="container-lg">
     {% include filter-bar.html 
-       categories="All,ML/AI,Web Apps,Research,Education"
+       categories="ML/AI,Web Apps,Research,Education"
        placeholder="Search projects by name or technology..."
        filter_type="projects"
     %}
