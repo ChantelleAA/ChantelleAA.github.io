@@ -1,0 +1,173 @@
+{% if page.categories contains 'python-course' %}
+<div class="lesson-navigation">
+  <div class="lesson-nav-container">
+    {% assign python_posts = site.posts | where_exp: "post", "post.categories contains 'python-course'" | sort: 'order' %}
+    
+    {% for post in python_posts %}
+      {% if post.order == page.order %}
+        {% assign current_index = forloop.index %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    
+    {% if current_index %}
+      {% assign prev_index = current_index | minus: 1 %}
+      {% assign next_index = current_index | plus: 1 %}
+      
+      {% if prev_index > 0 %}
+        {% assign prev_lesson = python_posts[prev_index] | default: nil %}
+      {% endif %}
+      
+      {% if next_index <= python_posts.size %}
+        {% assign next_lesson = python_posts[next_index] | default: nil %}
+      {% endif %}
+    {% endif %}
+    
+    {% if prev_lesson %}
+      <a href="{{ prev_lesson.url | prepend: site.baseurl }}" class="lesson-nav-btn prev-lesson">
+        <span class="nav-arrow">←</span>
+        <div class="nav-content">
+          <span class="nav-label">Previous Lesson</span>
+          <span class="nav-title">{{ prev_lesson.lesson_title | default: prev_lesson.title }}</span>
+        </div>
+      </a>
+    {% else %}
+      <div class="lesson-nav-spacer"></div>
+    {% endif %}
+    
+    <a href="/#course-overview" class="lesson-nav-btn all-lessons">
+      <span class="nav-icon">📚</span>
+      <span class="nav-label">All Lessons</span>
+    </a>
+    
+    {% if next_lesson %}
+      <a href="{{ next_lesson.url | prepend: site.baseurl }}" class="lesson-nav-btn next-lesson">
+        <div class="nav-content">
+          <span class="nav-label">Next Lesson</span>
+          <span class="nav-title">{{ next_lesson.lesson_title | default: next_lesson.title }}</span>
+        </div>
+        <span class="nav-arrow">→</span>
+      </a>
+    {% else %}
+      <div class="lesson-nav-spacer"></div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+.lesson-navigation {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  border-top: 2px solid #e5e7eb;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.lesson-nav-container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  max-width: 100%;
+}
+
+.lesson-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  color: #374151;
+  transition: all 0.2s ease;
+  min-height: 4rem;
+}
+
+.lesson-nav-btn:hover {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.prev-lesson {
+  justify-content: flex-start;
+}
+
+.next-lesson {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.all-lessons {
+  justify-content: center;
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+  font-weight: 500;
+}
+
+.all-lessons:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.nav-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nav-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+.nav-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.nav-arrow {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.nav-icon {
+  font-size: 1.25rem;
+}
+
+.lesson-nav-spacer {
+  min-height: 4rem;
+}
+
+@media (max-width: 768px) {
+  .lesson-nav-container {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .prev-lesson,
+  .next-lesson {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .lesson-nav-btn {
+    padding: 0.875rem 1.25rem;
+  }
+  
+  .nav-title {
+    font-size: 0.8125rem;
+  }
+  
+  .lesson-nav-spacer {
+    display: none;
+  }
+}
+</style>
+{% endif %}
