@@ -4,495 +4,929 @@ title: Projects
 permalink: /projects/
 ---
 
-<div class="projects-hero">
-  <div class="hero-content">
-    <h1 class="hero-title">My Projects</h1>
-    <p class="hero-subtitle">A collection of machine learning, data science, and software engineering projects showcasing my technical expertise and problem-solving abilities.</p>
-  </div>
-</div>
-
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Core brand colors - matching site palette */
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary-color: #06b6d4;
+  --accent-color: #f59e0b;
+  
+  /* Sophisticated neutrals */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  
+  /* Modern backgrounds */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-accent: #eff6ff;
+  
+  /* Border and effects */
+  --color-border: #e2e8f0;
+  
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  --shadow-sm: 0 2px 8px rgba(31, 38, 135, 0.15);
+  --shadow-md: 0 4px 16px rgba(31, 38, 135, 0.2);
+  --shadow-lg: 0 12px 32px rgba(31, 38, 135, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* Hero Section */
 .projects-hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   color: white;
-  padding: 4rem 2rem;
-  margin: -2rem -2rem 3rem -2rem;
-  text-align: center;
+  padding: 8rem 2rem 6rem;
+  margin: -2rem -2rem 5rem -2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 20s ease-in-out infinite;
+}
+
+.projects-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 15s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 30px) scale(1.05); }
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
 }
 
 .hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  letter-spacing: -0.5px;
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.4s forwards;
 }
 
 .hero-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 300;
-  line-height: 1.6;
-  opacity: 0.95;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
 }
 
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 3rem 0 2rem 0;
-  color: #2c3e50;
-  border-bottom: 3px solid #667eea;
-  padding-bottom: 0.5rem;
-  display: inline-block;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* Filter Section */
+.filter-section {
+  max-width: 1400px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 0.875rem 2rem;
+  border: 1.5px solid var(--color-border);
+  background: white;
+  color: var(--text-primary);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.filter-btn:hover::before {
+  left: 100%;
+}
+
+.filter-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.filter-btn.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Projects Grid */
 .projects-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 3rem;
+  margin-bottom: 6rem;
 }
 
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2.5rem;
-  margin-bottom: 4rem;
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
 }
 
+/* Project Card */
 .project-card {
   background: white;
-  border: 1px solid #e1e8ed;
   border-radius: 12px;
-  padding: 2rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  border: 1px solid var(--color-border);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardFadeIn 0.6s ease-out forwards;
 }
+
+@keyframes cardFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.15s; }
+.project-card:nth-child(3) { animation-delay: 0.2s; }
+.project-card:nth-child(4) { animation-delay: 0.25s; }
+.project-card:nth-child(5) { animation-delay: 0.3s; }
+.project-card:nth-child(6) { animation-delay: 0.35s; }
+.project-card:nth-child(7) { animation-delay: 0.4s; }
+.project-card:nth-child(8) { animation-delay: 0.45s; }
+.project-card:nth-child(9) { animation-delay: 0.5s; }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  border-color: #667eea;
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
 }
 
-.project-card.featured {
-  background: linear-gradient(135deg, #f8f9ff 0%, #fff 100%);
-  border: 2px solid #667eea;
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, #e2e8f0 100%);
 }
 
-.project-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-icon {
-  font-size: 2rem;
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-category-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  color: var(--text-primary);
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.project-content {
+  padding: 2.25rem;
 }
 
 .project-title {
-  font-size: 1.4rem;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
   font-weight: 600;
-  color: #2c3e50;
-  margin: 0;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.project-title .emoji {
+  font-size: 2rem;
 }
 
 .project-description {
-  color: #555;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.project-description strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.project-features {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.project-features li {
+  padding: 0.625rem 0;
+  padding-left: 2rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--text-primary);
   line-height: 1.6;
-  margin-bottom: 1rem;
+}
+
+.project-features li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .project-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 0.625rem;
+  margin: 1.75rem 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-border);
 }
 
-.tech-tag {
-  background: #667eea;
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
+.tech-badge {
+  padding: 0.5rem 1rem;
+  background: var(--bg-accent);
+  color: var(--text-primary);
+  border-radius: 6px;
+  font-size: 0.8rem;
   font-weight: 500;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
 .project-links {
   display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
 }
 
 .project-link {
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  display: inline-block;
-}
-
-.project-link.primary {
-  background: #667eea;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  background: var(--primary-color);
   color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1.5px solid var(--primary-color);
 }
 
-.project-link.primary:hover {
-  background: #5568d3;
+.project-link:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .project-link.secondary {
-  background: #f0f2f5;
-  color: #2c3e50;
+  background: white;
+  color: var(--primary-color);
+  border: 1.5px solid var(--primary-color);
 }
 
 .project-link.secondary:hover {
-  background: #e1e8ed;
+  background: var(--primary-color);
+  color: white;
 }
 
-.stats-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 3rem 2rem;
-  border-radius: 12px;
-  margin: 4rem 0;
+/* Stats Section */
+.projects-stats {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  padding: 5rem 2rem;
+  border-radius: 16px;
+  margin: 0 2rem 5rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-stats::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.05) 50%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(255, 255, 255, 0.05) 50%, transparent 52%);
+  background-size: 40px 40px;
+  opacity: 0.5;
+}
+
+.projects-stats h2 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 3.5rem;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 1;
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .stat-item {
-  padding: 1.5rem;
-  background: rgba(255,255,255,0.1);
-  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-color);
+  transform: translateY(-4px);
 }
 
 .stat-number {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 600;
   display: block;
   margin-bottom: 0.5rem;
+  color: var(--accent-color);
+  line-height: 1;
 }
 
 .stat-label {
   font-size: 1rem;
   opacity: 0.9;
+  font-weight: 400;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
+  .projects-hero {
+    padding: 5rem 1.5rem 4rem;
+  }
+  
   .hero-title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   
   .hero-subtitle {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   
-  .projects-grid,
-  .featured-grid {
-    grid-template-columns: 1fr;
+  .projects-grid {
+    padding: 0 1.5rem;
   }
+  
+  .project-image-wrapper {
+    height: 220px;
+  }
+  
+  .filter-section {
+    padding: 0 1.5rem;
+    justify-content: flex-start;
+  }
+  
+  .projects-stats {
+    margin: 0 1.5rem 4rem;
+    padding: 4rem 1.5rem;
+  }
+  
+  .projects-stats h2 {
+    font-size: 2.25rem;
+  }
+  
+  .stats-grid {
+    gap: 2rem;
+  }
+}
+
+/* Accessibility */
+.project-link:focus,
+.filter-btn:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 </style>
 
-## Featured Projects
+<!-- Hero Section -->
+<div class="projects-hero">
+  <div class="hero-content">
+    <div class="hero-label">Portfolio</div>
+    <h1 class="hero-title">Selected Projects</h1>
+    <p class="hero-subtitle">From climate AI research to production ML systems for education, healthcare, and environmental monitoring. Building technology that solves real-world problems and creates meaningful impact.</p>
+  </div>
+</div>
 
-<div class="featured-grid">
+<!-- Filter Section -->
+<div class="filter-section">
+  <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
+  <button class="filter-btn" onclick="filterProjects('ai-research')">AI Research</button>
+  <button class="filter-btn" onclick="filterProjects('web-apps')">Web Applications</button>
+  <button class="filter-btn" onclick="filterProjects('climate')">Climate Tech</button>
+  <button class="filter-btn" onclick="filterProjects('education')">Education</button>
+</div>
+
+<!-- Projects Grid -->
+<div class="projects-grid">
   
-  <div class="project-card featured">
-    <div class="project-header">
-      <span class="project-icon">🏆</span>
-      <h3 class="project-title">Quantathon Trading Strategy</h3>
+  <!-- Quantathon Judging App -->
+  <div class="project-card" data-category="web-apps education">
+    <div class="project-image-wrapper">
+      <img src="https://github.com/ChantelleAA/ChantelleAA/blob/main/judging_demo.gif?raw=true" alt="Quantathon Judging App" class="project-image">
+      <span class="project-category-badge">Web App</span>
     </div>
-    <p class="project-description">
-      Developed a sophisticated trading strategy for WBS Quantathon 2024, achieving 3rd place. Implemented advanced statistical analysis and machine learning techniques for market prediction and portfolio optimization.
-    </p>
-    <div class="project-tech">
-      <span class="tech-tag">Python</span>
-      <span class="tech-tag">Pandas</span>
-      <span class="tech-tag">NumPy</span>
-      <span class="tech-tag">Machine Learning</span>
-      <span class="tech-tag">Finance</span>
-    </div>
-    <div class="project-links">
-      <a href="https://github.com/ChantelleAA/Quantathon" class="project-link primary">View on GitHub</a>
-    </div>
-  </div>
-
-  <div class="project-card featured">
-    <div class="project-header">
-      <span class="project-icon">🧠</span>
-      <h3 class="project-title">Brain Tumor Segmentation</h3>
-    </div>
-    <p class="project-description">
-      Deep learning solution for medical image segmentation using U-Net architecture. Achieved high accuracy in identifying and segmenting brain tumors from MRI scans, with potential applications in clinical diagnosis.
-    </p>
-    <div class="project-tech">
-      <span class="tech-tag">Python</span>
-      <span class="tech-tag">TensorFlow</span>
-      <span class="tech-tag">Keras</span>
-      <span class="tech-tag">Computer Vision</span>
-      <span class="tech-tag">Medical AI</span>
-    </div>
-    <div class="project-links">
-      <a href="https://github.com/ChantelleAA/brain-tumor-segmentation" class="project-link primary">View on GitHub</a>
+    <div class="project-content">
+      <h3 class="project-title">
+        <span class="emoji">🧑🏾‍⚖️</span>
+        Quantathon Judging App
+      </h3>
+      <p class="project-description">
+        A Django-based hackathon judging platform used in the <strong>AIMS Quantathon 2024</strong> with 50+ participants. Streamlined the entire judging process with real-time analytics and secure voting.
+      </p>
+      <ul class="project-features">
+        <li>Real-time leaderboard & analytics dashboard</li>
+        <li>Criteria filtered by judge expertise</li>
+        <li>One-time secure voting links</li>
+        <li>Admin dashboard for live event management</li>
+      </ul>
+      <div class="project-tech">
+        <span class="tech-badge">Django</span>
+        <span class="tech-badge">PostgreSQL</span>
+        <span class="tech-badge">HTMX</span>
+        <span class="tech-badge">Railway</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/ChantelleAA/judging_criteria" class="project-link" target="_blank">
+          🔗 GitHub
+        </a>
+        <a href="https://www.linkedin.com/posts/african-institute-for-mathematical-sciences-ghana_aimsqtedu25-quantumforgood-quantathonwinners-activity-7353129321454100482-uauo" class="project-link secondary" target="_blank">
+          📰 Coverage
+        </a>
+      </div>
     </div>
   </div>
 
-  <div class="project-card featured">
-    <div class="project-header">
-      <span class="project-icon">💬</span>
-      <h3 class="project-title">TLR Helper</h3>
+  <!-- TLR Helper -->
+  <div class="project-card" data-category="web-apps education">
+    <div class="project-image-wrapper">
+      <img src="https://github.com/ChantelleAA/ChantelleAA/blob/main/tlr_helper_1.gif?raw=true" alt="TLR Helper" class="project-image">
+      <span class="project-category-badge">Education</span>
     </div>
-    <p class="project-description">
-      AI-powered Telegram bot using RAG (Retrieval-Augmented Generation) to assist with university-related questions. Leverages GPT-4 and vector databases for accurate, context-aware responses to student queries.
-    </p>
-    <div class="project-tech">
-      <span class="tech-tag">Python</span>
-      <span class="tech-tag">LangChain</span>
-      <span class="tech-tag">OpenAI</span>
-      <span class="tech-tag">Telegram Bot</span>
-      <span class="tech-tag">RAG</span>
+    <div class="project-content">
+      <h3 class="project-title">
+        <span class="emoji">📘</span>
+        TLR Helper
+      </h3>
+      <p class="project-description">
+        Teaching & Learning Resource Assistant supporting Ghana's <strong>Standards-Based Curriculum</strong>, used in TEDD Ghana teacher workshops.
+      </p>
+      <ul class="project-features">
+        <li>Smart curriculum filtering (Class → Strand → Indicator)</li>
+        <li>Offline PDFs for limited-internet schools</li>
+        <li>Special needs & learning styles support</li>
+        <li>Teacher resource library</li>
+      </ul>
+      <div class="project-tech">
+        <span class="tech-badge">Django</span>
+        <span class="tech-badge">HTMX</span>
+        <span class="tech-badge">PostgreSQL</span>
+        <span class="tech-badge">Bootstrap5</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/ChantelleAA/tlr_app" class="project-link" target="_blank">
+          🔗 GitHub
+        </a>
+      </div>
     </div>
-    <div class="project-links">
-      <a href="https://github.com/ChantelleAA/tlr-helper" class="project-link primary">View on GitHub</a>
+  </div>
+
+  <!-- Brain Tumor Segmentation -->
+  <div class="project-card" data-category="ai-research">
+    <div class="project-image-wrapper">
+      <img src="https://github.com/ChantelleAA/ChantelleAA/blob/main/bts_img.png?raw=true" alt="Brain Tumor Segmentation" class="project-image">
+      <span class="project-category-badge">AI Research</span>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">
+        <span class="emoji">🧠</span>
+        Brain Tumor Segmentation
+      </h3>
+      <p class="project-description">
+        Developed <strong>ensemble models</strong> for brain tumor segmentation on Sub-Saharan MRI data. Presented at <strong>MICCAI 2023</strong> with scholarship award.
+      </p>
+      <ul class="project-features">
+        <li>MICCAI 2023 Scholarship recipient</li>
+        <li>Novel Staple Assembling & Mednex methods</li>
+        <li>Resource-limited healthcare focus</li>
+        <li>Clinical application ready</li>
+      </ul>
+      <div class="project-tech">
+        <span class="tech-badge">PyTorch</span>
+        <span class="tech-badge">MONAI</span>
+        <span class="tech-badge">NumPy</span>
+        <span class="tech-badge">Medical Imaging</span>
+      </div>
+      <div class="project-links">
+        <a href="https://arxiv.org/abs/2508.10905" class="project-link" target="_blank">
+          📄 Paper
+        </a>
+        <a href="https://drive.google.com/file/d/1Mhlt9DPoW-HOK1Ky5_jtWJBCNLwpWW6M/view?usp=sharing" class="project-link secondary" target="_blank">
+          📜 Certificate
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NileEdge AI Assistant -->
+  <div class="project-card" data-category="ai-research web-apps">
+    <div class="project-image-wrapper">
+      <img src="https://github.com/ChantelleAA/ChantelleAA/blob/main/nileedgechatbot.gif?raw=true" alt="NileEdge AI" class="project-image">
+      <span class="project-category-badge">AI Assistant</span>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">
+        <span class="emoji">🤖</span>
+        NileEdge AI Assistant
+      </h3>
+      <p class="project-description">
+        Context-aware chatbot with <strong>semantic FAQ matching + Whisper transcription</strong>. Privacy-first design with entirely local inference.
+      </p>
+      <ul class="project-features">
+        <li>Hybrid retrieval + LLM inference</li>
+        <li>Runs entirely locally (privacy-first)</li>
+        <li>Custom UI with FAQ expansion</li>
+        <li>Voice input via Whisper</li>
+      </ul>
+      <div class="project-tech">
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">Flask</span>
+        <span class="tech-badge">ChromaDB</span>
+        <span class="tech-badge">Whisper</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/ChantelleAA/response_aigent" class="project-link" target="_blank">
+          🔗 GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Oware RL -->
+  <div class="project-card" data-category="ai-research">
+    <div class="project-image-wrapper">
+      <img src="https://github.com/ChantelleAA/ChantelleAA/blob/main/oware_demo1.gif?raw=true" alt="Oware RL" class="project-image">
+      <span class="project-category-badge">Reinforcement Learning</span>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">
+        <span class="emoji">🎮</span>
+        Oware Reinforcement Learning
+      </h3>
+      <p class="project-description">
+        Full Python environment for traditional <strong>Oware</strong> game with multiple trained RL agents using state-of-the-art algorithms.
+      </p>
+      <ul class="project-features">
+        <li>DQN, DDQN, A3C, AlphaZero implementations</li>
+        <li>Human-vs-agent & agent-vs-agent modes</li>
+        <li>Reward tracking & gameplay visualization</li>
+        <li>Complete thesis on game theory & RL</li>
+      </ul>
+      <div class="project-tech">
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">TensorFlow</span>
+        <span class="tech-badge">Stable-Baselines</span>
+        <span class="tech-badge">Game Theory</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/ChantelleAA/Reinforcement_Learning_Oware" class="project-link" target="_blank">
+          🔗 GitHub
+        </a>
+        <a href="https://lutpub.lut.fi/bitstream/handle/10024/167861/mastersthesis_Amoako-Atta_Chantelle.pdf?sequence=1&isAllowed=y" class="project-link secondary" target="_blank">
+          📄 Thesis
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- GeoSeg Biodiversity -->
+  <div class="project-card" data-category="ai-research climate">
+    <div class="project-image-wrapper">
+      <img src="https://github.com/ChantelleAA/ChantelleAA/blob/main/biodiversity.gif?raw=true" alt="GeoSeg" class="project-image">
+      <span class="project-category-badge">Climate AI</span>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">
+        <span class="emoji">🌍</span>
+        GeoSeg Biodiversity Segmentation
+      </h3>
+      <p class="project-description">
+        Led geospatial AI for <strong>ODOS Tech</strong>, building biodiversity segmentation using Sentinel/OpenEarthMap satellite imagery.
+      </p>
+      <ul class="project-features">
+        <li>Improved mIoU from 68–72% → 87–90%</li>
+        <li>Knowledge Distillation framework</li>
+        <li>Full training & evaluation pipeline</li>
+        <li>Reproducible land-cover classification</li>
+      </ul>
+      <div class="project-tech">
+        <span class="tech-badge">PyTorch</span>
+        <span class="tech-badge">UNetFormer</span>
+        <span class="tech-badge">GeoPandas</span>
+        <span class="tech-badge">Rasterio</span>
+        <span class="tech-badge">GDAL</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/ChantelleAA/geoseg" class="project-link" target="_blank">
+          🔗 Analysis
+        </a>
+        <a href="https://github.com/ChantelleAA/geseg_GAN" class="project-link secondary" target="_blank">
+          🔗 Image Gen
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RTE Energy Research -->
+  <div class="project-card" data-category="climate">
+    <div class="project-image-wrapper">
+      <img src="https://github.com/ChantelleAA/ChantelleAA/blob/main/air-quality-app.gif?raw=true" alt="RTE Energy" class="project-image">
+      <span class="project-category-badge">Climate</span>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">
+        <span class="emoji">🔋</span>
+        RTE Energy Research Dashboard
+      </h3>
+      <p class="project-description">
+        Multi-city pollution dashboards for RTE Investigates research on renewable energy costs with satellite & ground sensor fusion.
+      </p>
+      <ul class="project-features">
+        <li>Air-quality analytics for multiple cities</li>
+        <li>Satellite + ground sensor data fusion</li>
+        <li>Trend analysis & geo-scatter maps</li>
+        <li>Decarb-AI research insights</li>
+      </ul>
+      <div class="project-tech">
+        <span class="tech-badge">Streamlit</span>
+        <span class="tech-badge">GeoPandas</span>
+        <span class="tech-badge">Plotly</span>
+        <span class="tech-badge">Pandas</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/ChantelleAA/urumqi_analysis" class="project-link" target="_blank">
+          🔗 Analysis
+        </a>
+        <a href="https://github.com/ChantelleAA/pollution_viz" class="project-link secondary" target="_blank">
+          🔗 Dashboard
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- OCR Research -->
+  <div class="project-card" data-category="ai-research">
+    <div class="project-image-wrapper">
+      <div style="height: 280px; background: linear-gradient(135deg, #F5F3EF 0%, #E8E5DF 100%); display: flex; align-items: center; justify-content: center;">
+        <span style="font-size: 5rem;">📄</span>
+      </div>
+      <span class="project-category-badge">Research</span>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">
+        <span class="emoji">📄</span>
+        OCR Research & Evaluation
+      </h3>
+      <p class="project-description">
+        Comprehensive research evaluating state-of-the-art OCR tools for document processing with focus on low-resource languages.
+      </p>
+      <ul class="project-features">
+        <li>Benchmarking multiple OCR engines</li>
+        <li>Performance metrics comparison</li>
+        <li>Preprocessing pipeline optimization</li>
+        <li>Low-resource language support</li>
+      </ul>
+      <div class="project-tech">
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">Tesseract</span>
+        <span class="tech-badge">EasyOCR</span>
+        <span class="tech-badge">PaddleOCR</span>
+        <span class="tech-badge">OpenCV</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GeoAI Workshop -->
+  <div class="project-card" data-category="education climate">
+    <div class="project-image-wrapper">
+      <img src="https://github.com/ChantelleAA/ChantelleAA/blob/main/geoai workshop.gif?raw=true" alt="GeoAI Workshop" class="project-image">
+      <span class="project-category-badge">Education</span>
+    </div>
+    <div class="project-content">
+      <h3 class="project-title">
+        <span class="emoji">🌍</span>
+        GeoAI Workshop Materials
+      </h3>
+      <p class="project-description">
+        Workshop materials for geospatial AI and environmental monitoring, delivered at GAIN conference with hands-on tutorials.
+      </p>
+      <ul class="project-features">
+        <li>Satellite imagery processing tutorials</li>
+        <li>Land cover ML classification</li>
+        <li>Environmental data analysis</li>
+        <li>Jupyter notebooks for remote sensing</li>
+      </ul>
+      <div class="project-tech">
+        <span class="tech-badge">Python</span>
+        <span class="tech-badge">Jupyter</span>
+        <span class="tech-badge">GeoPandas</span>
+        <span class="tech-badge">Rasterio</span>
+        <span class="tech-badge">QGIS</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/ChantelleAA/gain_geoai_workshop" class="project-link" target="_blank">
+          🔗 GitHub
+        </a>
+      </div>
     </div>
   </div>
 
 </div>
 
-## Machine Learning & AI
-
-<div class="projects-grid">
-
-  <div class="project-card">
-    <div class="project-header">
-      <span class="project-icon">🤖</span>
-      <h3 class="project-title">Sentiment Analysis Tool</h3>
-    </div>
-    <p class="project-description">
-      Advanced NLP model for analyzing sentiment in text data. Implements transformer-based architectures for high-accuracy classification across multiple sentiment categories.
-    </p>
-    <div class="project-tech">
-      <span class="tech-tag">Python</span>
-      <span class="tech-tag">Transformers</span>
-      <span class="tech-tag">PyTorch</span>
-      <span class="tech-tag">NLP</span>
-    </div>
-    <div class="project-links">
-      <a href="https://github.com/ChantelleAA/sentiment-analysis" class="project-link primary">View Project</a>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-header">
-      <span class="project-icon">📊</span>
-      <h3 class="project-title">Customer Churn Prediction</h3>
-    </div>
-    <p class="project-description">
-      Predictive model to identify customers at risk of churning. Utilizes ensemble methods and feature engineering to achieve high precision and recall in churn detection.
-    </p>
-    <div class="project-tech">
-      <span class="tech-tag">Python</span>
-      <span class="tech-tag">Scikit-learn</span>
-      <span class="tech-tag">XGBoost</span>
-      <span class="tech-tag">Analytics</span>
-    </div>
-    <div class="project-links">
-      <a href="https://github.com/ChantelleAA/churn-prediction" class="project-link primary">View Project</a>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-header">
-      <span class="project-icon">🖼️</span>
-      <h3 class="project-title">Image Classification System</h3>
-    </div>
-    <p class="project-description">
-      CNN-based image classifier trained on large-scale datasets. Implements transfer learning with pre-trained models for efficient and accurate image recognition.
-    </p>
-    <div class="project-tech">
-      <span class="tech-tag">Python</span>
-      <span class="tech-tag">TensorFlow</span>
-      <span class="tech-tag">CNN</span>
-      <span class="tech-tag">Computer Vision</span>
-    </div>
-    <div class="project-links">
-      <a href="https://github.com/ChantelleAA/image-classifier" class="project-link primary">View Project</a>
-    </div>
-  </div>
-
-</div>
-
-## Data Science & Analytics
-
-<div class="projects-grid">
-
-  <div class="project-card">
-    <div class="project-header">
-      <span class="project-icon">📈</span>
-      <h3 class="project-title">Sales Forecasting Dashboard</h3>
-    </div>
-    <p class="project-description">
-      Interactive dashboard for sales forecasting using time series analysis. Provides actionable insights through visualizations and predictive models.
-    </p>
-    <div class="project-tech">
-      <span class="tech-tag">Python</span>
-      <span class="tech-tag">Streamlit</span>
-      <span class="tech-tag">Prophet</span>
-      <span class="tech-tag">Time Series</span>
-    </div>
-    <div class="project-links">
-      <a href="https://github.com/ChantelleAA/sales-forecasting" class="project-link primary">View Project</a>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-header">
-      <span class="project-icon">🔍</span>
-      <h3 class="project-title">A/B Testing Framework</h3>
-    </div>
-    <p class="project-description">
-      Statistical framework for designing and analyzing A/B tests. Includes power analysis, sample size calculation, and comprehensive statistical testing.
-    </p>
-    <div class="project-tech">
-      <span class="tech-tag">Python</span>
-      <span class="tech-tag">SciPy</span>
-      <span class="tech-tag">Statistics</span>
-      <span class="tech-tag">Analytics</span>
-    </div>
-    <div class="project-links">
-      <a href="https://github.com/ChantelleAA/ab-testing" class="project-link primary">View Project</a>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-header">
-      <span class="project-icon">💹</span>
-      <h3 class="project-title">Market Analysis Tool</h3>
-    </div>
-    <p class="project-description">
-      Comprehensive tool for analyzing market trends and patterns. Combines technical indicators with fundamental analysis for informed decision-making.
-    </p>
-    <div class="project-tech">
-      <span class="tech-tag">Python</span>
-      <span class="tech-tag">Pandas</span>
-      <span class="tech-tag">Plotly</span>
-      <span class="tech-tag">Finance</span>
-    </div>
-    <div class="project-links">
-      <a href="https://github.com/ChantelleAA/market-analysis" class="project-link primary">View Project</a>
-    </div>
-  </div>
-
-</div>
-
-## Web Development & Software Engineering
-
-<div class="projects-grid">
-
-  <div class="project-card">
-    <div class="project-header">
-      <span class="project-icon">🌐</span>
-      <h3 class="project-title">Portfolio Website</h3>
-    </div>
-    <p class="project-description">
-      Personal portfolio website built with modern web technologies. Features responsive design, smooth animations, and optimized performance.
-    </p>
-    <div class="project-tech">
-      <span class="tech-tag">HTML</span>
-      <span class="tech-tag">CSS</span>
-      <span class="tech-tag">JavaScript</span>
-      <span class="tech-tag">Jekyll</span>
-    </div>
-    <div class="project-links">
-      <a href="https://github.com/ChantelleAA/ChantelleAA.github.io" class="project-link primary">View Project</a>
-      <a href="https://chantelleaa.github.io" class="project-link secondary">Live Demo</a>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-header">
-      <span class="project-icon">⚙️</span>
-      <h3 class="project-title">API Development</h3>
-    </div>
-    <p class="project-description">
-      RESTful API built with FastAPI for serving machine learning models. Includes authentication, rate limiting, and comprehensive documentation.
-    </p>
-    <div class="project-tech">
-      <span class="tech-tag">Python</span>
-      <span class="tech-tag">FastAPI</span>
-      <span class="tech-tag">PostgreSQL</span>
-      <span class="tech-tag">Docker</span>
-    </div>
-    <div class="project-links">
-      <a href="https://github.com/ChantelleAA/ml-api" class="project-link primary">View Project</a>
-    </div>
-  </div>
-
-  <div class="project-card">
-    <div class="project-header">
-      <span class="project-icon">🔧</span>
-      <h3 class="project-title">Data Pipeline Automation</h3>
-    </div>
-    <p class="project-description">
-      Automated ETL pipeline for processing large-scale datasets. Implements error handling, monitoring, and scalable architecture for production use.
-    </p>
-    <div class="project-tech">
-      <span class="tech-tag">Python</span>
-      <span class="tech-tag">Apache Airflow</span>
-      <span class="tech-tag">AWS</span>
-      <span class="tech-tag">SQL</span>
-    </div>
-    <div class="project-links">
-      <a href="https://github.com/ChantelleAA/data-pipeline" class="project-link primary">View Project</a>
-    </div>
-  </div>
-
-</div>
-
-<div class="stats-section">
-  <h2 style="margin-bottom: 0.5rem; font-size: 2rem;">Project Statistics</h2>
-  <p style="opacity: 0.9; margin-bottom: 2rem;">A snapshot of my technical journey</p>
+<!-- Stats Section -->
+<div class="projects-stats">
+  <h2>Impact & Recognition</h2>
   <div class="stats-grid">
     <div class="stat-item">
-      <span class="stat-number">15+</span>
-      <span class="stat-label">Projects Completed</span>
+      <span class="stat-number">9</span>
+      <span class="stat-label">Major Projects</span>
     </div>
     <div class="stat-item">
-      <span class="stat-number">10+</span>
-      <span class="stat-label">Technologies Mastered</span>
+      <span class="stat-number">5</span>
+      <span class="stat-label">Publications</span>
     </div>
     <div class="stat-item">
-      <span class="stat-number">3rd</span>
-      <span class="stat-label">Place at WBS Quantathon</span>
+      <span class="stat-number">200+</span>
+      <span class="stat-label">Students Taught</span>
     </div>
     <div class="stat-item">
-      <span class="stat-number">100%</span>
-      <span class="stat-label">Passion for Learning</span>
+      <span class="stat-number">3</span>
+      <span class="stat-label">Hackathon Wins</span>
     </div>
   </div>
 </div>
 
----
-
-<div style="text-align: center; margin-top: 4rem; padding: 2rem; background: #f8f9fa; border-radius: 8px;">
-  <p style="font-size: 1.1rem; color: #555; margin-bottom: 1rem;">
-    Interested in collaborating or learning more about my work?
-  </p>
-  <a href="/contact/" style="background: #667eea; color: white; padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.2s ease;">
-    Get In Touch
-  </a>
-</div>
+<script>
+function filterProjects(category) {
+  const cards = document.querySelectorAll('.project-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+  
+  // Update active button
+  buttons.forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  // Filter cards
+  cards.forEach(card => {
+    if (category === 'all') {
+      card.style.display = 'block';
+    } else {
+      const categories = card.getAttribute('data-category');
+      if (categories && categories.includes(category)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    }
+  });
+}
+</script>
