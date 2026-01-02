@@ -4,11 +4,11 @@ body {
 
 .wrapper {
 	margin: 0 auto;
-	max-width: 1100px;
+	max-width: 2300px;
 }
-@media (max-width: 1120px) {
+@media (max-width: 2320px) {
 	.wrapper {
-		max-width: 800px;
+		max-width: 1600px;
 	}
 }
 
@@ -51,7 +51,7 @@ body {
 
 $col-main-width: 1800px;
 $col-secnod-width: 400px;
-$hide-sidebar-screen-width: 1120px;
+$hide-sidebar-screen-width: 2320px;
 
 .header-placeholder { position: absolute; }
 @media (max-width: $hide-sidebar-screen-width) {

@@ -314,11 +314,11 @@
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, $color-primary-600, $color-primary-500);
-  color: $color-text-inverse;
+  background: linear-gradient(135deg, #FBBF24, #FCD34D);
+  color: #1F2937;
   
   &:hover {
-    background: linear-gradient(135deg, $color-primary-700, $color-primary-600);
+    background: linear-gradient(135deg, #F59E0B, #FBBF24);
     transform: translateY(-2px);
     box-shadow: $shadow-lg;
   }
@@ -337,22 +337,22 @@
 
 .btn-outline {
   background: transparent;
-  color: $color-primary-600;
-  border: 2px solid $color-primary-600;
+  color: #FBBF24;
+  border: 2px solid #FBBF24;
   
   &:hover {
-    background: $color-primary-600;
-    color: $color-text-inverse;
+    background: #FBBF24;
+    color: #1F2937;
     transform: translateY(-2px);
   }
 }
 
 .btn-ghost {
   background: transparent;
-  color: $color-primary-600;
+  color: #FCD34D;
   
   &:hover {
-    background: rgba($color-primary-500, 0.1);
+    background: rgba(251, 191, 36, 0.15);
     transform: translateY(-1px);
   }
 }
