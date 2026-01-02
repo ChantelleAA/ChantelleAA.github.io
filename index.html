@@ -79,133 +79,458 @@ layout: default
     </div>
   </section>
 
-  <!-- Featured Projects Section -->
+  <!-- Featured Projects Section with Projects.md Design -->
   <section class="featured-projects-section">
     <h2 class="section-title">Featured Projects</h2>
     <p class="section-subtitle">From research prototypes to production systems deployed across Africa and internationally</p>
-    <div class="featured-grid">
-      <div class="featured-project-card">
-        <div class="project-status award">Award-Winning</div>
-        <div class="project-image">
-          <img src="/assets/images/projects/judging_demo.gif" alt="Quantathon Platform Demo">
-        </div>
-        <h3>Quantathon Judging Platform</h3>
-        <p>Full judging and scoring platform used at AIMS Quantathon, with real-time leaderboards, expertise-based criteria, and secure one-time voting links.</p>
-        <div class="project-tech">
-          <span class="tech-pill">Django</span>
-          <span class="tech-pill">PostgreSQL</span>
-          <span class="tech-pill">HTMX</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/ChantelleAA/judging_criteria" target="_blank" rel="noopener">
-            <i class="fa-brands fa-github"></i> Code
-          </a>
-          <span class="project-meta"><i class="fa-solid fa-calendar"></i> Jul 2025</span>
-        </div>
-      </div>
+    
+    <style>
+      /* Projects Grid Styling */
+      .projects-grid-featured {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        gap: 3rem;
+        margin-bottom: 4rem;
+      }
+
+      @media (max-width: 768px) {
+        .projects-grid-featured {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+          padding: 0 1.5rem;
+        }
+      }
+
+      /* Project Card */
+      .project-card-featured {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(31, 38, 135, 0.15);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        border: 1px solid #e2e8f0;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: cardFadeIn 0.6s ease-out forwards;
+      }
+
+      @keyframes cardFadeIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .project-card-featured:nth-child(1) { animation-delay: 0.1s; }
+      .project-card-featured:nth-child(2) { animation-delay: 0.15s; }
+      .project-card-featured:nth-child(3) { animation-delay: 0.2s; }
+      .project-card-featured:nth-child(4) { animation-delay: 0.25s; }
+      .project-card-featured:nth-child(5) { animation-delay: 0.3s; }
+      .project-card-featured:nth-child(6) { animation-delay: 0.35s; }
+
+      .project-card-featured:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 32px rgba(31, 38, 135, 0.25);
+        border-color: #2563eb;
+      }
+
+      .project-image-wrapper-featured {
+        position: relative;
+        width: 100%;
+        height: 280px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      }
+
+      .project-image-featured {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .project-card-featured:hover .project-image-featured {
+        transform: scale(1.05);
+      }
+
+      .project-category-badge-featured {
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        color: #0f172a;
+        padding: 0.5rem 1.25rem;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .project-content-featured {
+        padding: 2.25rem;
+      }
+
+      .project-title-featured {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .project-title-featured .emoji {
+        font-size: 2rem;
+      }
+
+      .project-description-featured {
+        font-size: 1rem;
+        line-height: 1.75;
+        color: #64748b;
+        margin-bottom: 1.5rem;
+      }
+
+      .project-description-featured strong {
+        color: #0f172a;
+        font-weight: 600;
+      }
+
+      .project-features-featured {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+      }
+
+      .project-features-featured li {
+        padding: 0.625rem 0;
+        padding-left: 2rem;
+        position: relative;
+        font-size: 0.95rem;
+        color: #0f172a;
+        line-height: 1.6;
+      }
+
+      .project-features-featured li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #2563eb;
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      .project-tech-featured {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.625rem;
+        margin: 1.75rem 0;
+        padding-top: 1.75rem;
+        border-top: 1px solid #e2e8f0;
+      }
+
+      .tech-badge-featured {
+        padding: 0.5rem 1rem;
+        background: #eff6ff;
+        color: #0f172a;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+      }
+
+      .tech-badge-featured:hover {
+        background: #2563eb;
+        color: white;
+        border-color: #2563eb;
+        transform: translateY(-2px);
+      }
+
+      .project-links-featured {
+        display: flex;
+        gap: 0.875rem;
+        flex-wrap: wrap;
+        margin-top: 1.75rem;
+      }
+
+      .project-link-featured {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.875rem 1.5rem;
+        background: #2563eb;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1.5px solid #2563eb;
+      }
+
+      .project-link-featured:hover {
+        background: #1d4ed8;
+        border-color: #1d4ed8;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      }
+
+      .project-link-featured.secondary {
+        background: white;
+        color: #2563eb;
+        border: 1.5px solid #2563eb;
+      }
+
+      .project-link-featured.secondary:hover {
+        background: #2563eb;
+        color: white;
+      }
+
+      @media (max-width: 768px) {
+        .project-image-wrapper-featured {
+          height: 220px;
+        }
+        
+        .project-content-featured {
+          padding: 2rem;
+        }
+        
+        .project-title-featured {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+    
+    <div class="projects-grid-featured">
       
-      <div class="featured-project-card">
-        <div class="project-status">Education</div>
-        <div class="project-image">
-          <img src="/assets/images/projects/tlr_helper_1.gif" alt="TLR Helper">
+      <!-- Quantathon Judging App -->
+      <div class="project-card-featured">
+        <div class="project-image-wrapper-featured">
+          <img src="/assets/images/projects/judging_demo.gif" alt="Quantathon Judging App" class="project-image-featured">
+          <span class="project-category-badge-featured">Web App</span>
         </div>
-        <h3>TLR Helper – Curriculum Support</h3>
-        <p>Web app for Ghana's Standards-Based Curriculum suggesting teaching resources by class, strand, indicator, special needs, and learning styles. Used in TEDD Ghana workshops.</p>
-        <div class="project-tech">
-          <span class="tech-pill">Django</span>
-          <span class="tech-pill">HTMX</span>
-          <span class="tech-pill">Bootstrap</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/ChantelleAA/tlr_app" target="_blank" rel="noopener">
-            <i class="fa-brands fa-github"></i> Code
-          </a>
-        </div>
-      </div>
-      
-      <div class="featured-project-card">
-        <div class="project-status research">Research</div>
-        <div class="project-image">
-          <img src="/assets/images/projects/bts_img.png" alt="Brain Tumor Segmentation">
-        </div>
-        <h3>Brain Tumor Segmentation on Sub-Saharan MRI</h3>
-        <p>Ensemble deep learning methods for medical imaging on limited datasets. MICCAI 2023 scholarship recipient. Improving healthcare AI for resource-constrained settings.</p>
-        <div class="project-tech">
-          <span class="tech-pill">PyTorch</span>
-          <span class="tech-pill">Medical Imaging</span>
-          <span class="tech-pill">Ensemble ML</span>
-        </div>
-        <div class="project-links">
-          <a href="https://arxiv.org/abs/2508.10905" target="_blank" rel="noopener" class="project-btn">
-            <i class="fa-solid fa-file-pdf"></i> Paper
-          </a>
-          <span class="project-meta"><i class="fa-solid fa-award"></i> MICCAI 2023</span>
+        <div class="project-content-featured">
+          <h3 class="project-title-featured">
+            <span class="emoji">🧑🏾‍⚖️</span>
+            Quantathon Judging App
+          </h3>
+          <p class="project-description-featured">
+            A Django-based hackathon judging platform used in the <strong>AIMS Quantathon 2024</strong> with 50+ participants. Streamlined the entire judging process with real-time analytics and secure voting.
+          </p>
+          <ul class="project-features-featured">
+            <li>Real-time leaderboard & analytics dashboard</li>
+            <li>Criteria filtered by judge expertise</li>
+            <li>One-time secure voting links</li>
+            <li>Admin dashboard for live event management</li>
+          </ul>
+          <div class="project-tech-featured">
+            <span class="tech-badge-featured">Django</span>
+            <span class="tech-badge-featured">PostgreSQL</span>
+            <span class="tech-badge-featured">HTMX</span>
+            <span class="tech-badge-featured">Railway</span>
+          </div>
+          <div class="project-links-featured">
+            <a href="https://github.com/ChantelleAA/judging_criteria" class="project-link-featured" target="_blank">
+              🔗 GitHub
+            </a>
+            <a href="https://www.linkedin.com/posts/african-institute-for-mathematical-sciences-ghana_aimsqtedu25-quantumforgood-quantathonwinners-activity-7353129321454100482-uauo" class="project-link-featured secondary" target="_blank">
+              📰 Coverage
+            </a>
+          </div>
         </div>
       </div>
-      
-      <div class="featured-project-card">
-        <div class="project-status research">Research</div>
-        <div class="project-image">
-          <img src="/assets/images/projects/biodiversity.gif" alt="GeoSeg Biodiversity">
+
+      <!-- TLR Helper -->
+      <div class="project-card-featured">
+        <div class="project-image-wrapper-featured">
+          <img src="/assets/images/projects/tlr_helper_1.gif" alt="TLR Helper" class="project-image-featured">
+          <span class="project-category-badge-featured">Education</span>
         </div>
-        <h3>GeoAI for Biodiversity & Air Quality</h3>
-        <p>Geospatial AI combining land cover segmentation with pollution and air-quality dashboards, using Sentinel-5P and OpenEarthMap for environmental monitoring.</p>
-        <div class="project-tech">
-          <span class="tech-pill">PyTorch</span>
-          <span class="tech-pill">GeoPandas</span>
-          <span class="tech-pill">Streamlit</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/ChantelleAA/geoseg" target="_blank" rel="noopener">
-            <i class="fa-brands fa-github"></i> Code
-          </a>
-          <span class="project-meta"><i class="fa-solid fa-chart-line"></i> 87-90% mIoU</span>
-        </div>
-      </div>
-      
-      <div class="featured-project-card">
-        <div class="project-status">ML/AI</div>
-        <div class="project-image">
-          <img src="/assets/images/projects/nileedgechatbot.gif" alt="NileEdge AI Assistant">
-        </div>
-        <h3>NileEdge AI Assistant</h3>
-        <p>Context-aware chatbot with semantic FAQ matching, ChromaDB vector search, and Whisper transcription. Production-ready customer support system with intelligent query routing and multi-language support.</p>
-        <div class="project-tech">
-          <span class="tech-pill">Python</span>
-          <span class="tech-pill">Flask</span>
-          <span class="tech-pill">ChromaDB</span>
-          <span class="tech-pill">Whisper</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/ChantelleAA/response_aigent" target="_blank" rel="noopener" class="project-btn">
-            <i class="fa-brands fa-github"></i> View Code
-          </a>
-          <span class="project-meta"><i class="fa-solid fa-calendar"></i> 2024</span>
+        <div class="project-content-featured">
+          <h3 class="project-title-featured">
+            <span class="emoji">📘</span>
+            TLR Helper
+          </h3>
+          <p class="project-description-featured">
+            Teaching & Learning Resource Assistant supporting Ghana's <strong>Standards-Based Curriculum</strong>, used in TEDD Ghana teacher workshops.
+          </p>
+          <ul class="project-features-featured">
+            <li>Smart curriculum filtering (Class → Strand → Indicator)</li>
+            <li>Offline PDFs for limited-internet schools</li>
+            <li>Special needs & learning styles support</li>
+            <li>Teacher resource library</li>
+          </ul>
+          <div class="project-tech-featured">
+            <span class="tech-badge-featured">Django</span>
+            <span class="tech-badge-featured">HTMX</span>
+            <span class="tech-badge-featured">PostgreSQL</span>
+            <span class="tech-badge-featured">Bootstrap5</span>
+          </div>
+          <div class="project-links-featured">
+            <a href="https://github.com/ChantelleAA/tlr_app" class="project-link-featured" target="_blank">
+              🔗 GitHub
+            </a>
+          </div>
         </div>
       </div>
-      
-      <div class="featured-project-card">
-        <div class="project-status research">RL/Games</div>
-        <div class="project-image">
-          <img src="/assets/images/projects/oware_demo1.gif" alt="Oware Reinforcement Learning">
+
+      <!-- Brain Tumor Segmentation -->
+      <div class="project-card-featured">
+        <div class="project-image-wrapper-featured">
+          <img src="/assets/images/projects/bts_img.png" alt="Brain Tumor Segmentation" class="project-image-featured">
+          <span class="project-category-badge-featured">AI Research</span>
         </div>
-        <h3>Reinforcement Learning for Oware Nam-nam</h3>
-        <p>DQN, DDQN, A3C, and AlphaZero implementations for traditional African game. Custom RL environment with self-play training and human-vs-agent modes. LUT Masters thesis project.</p>
-        <div class="project-tech">
-          <span class="tech-pill">Python</span>
-          <span class="tech-pill">TensorFlow</span>
-          <span class="tech-pill">Stable-Baselines</span>
-          <span class="tech-pill">RL</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/ChantelleAA/Reinforcement_Learning_Oware" target="_blank" rel="noopener" class="project-btn">
-            <i class="fa-brands fa-github"></i> View Code
-          </a>
-          <a href="https://lutpub.lut.fi/bitstream/handle/10024/167861/mastersthesis_Amoako-Atta_Chantelle.pdf" target="_blank" rel="noopener" class="project-btn">
-            <i class="fa-solid fa-file-pdf"></i> Thesis
-          </a>
+        <div class="project-content-featured">
+          <h3 class="project-title-featured">
+            <span class="emoji">🧠</span>
+            Brain Tumor Segmentation
+          </h3>
+          <p class="project-description-featured">
+            Developed <strong>ensemble models</strong> for brain tumor segmentation on Sub-Saharan MRI data. Presented at <strong>MICCAI 2023</strong> with scholarship award.
+          </p>
+          <ul class="project-features-featured">
+            <li>MICCAI 2023 Scholarship recipient</li>
+            <li>Novel Staple Assembling & Mednex methods</li>
+            <li>Resource-limited healthcare focus</li>
+            <li>Clinical application ready</li>
+          </ul>
+          <div class="project-tech-featured">
+            <span class="tech-badge-featured">PyTorch</span>
+            <span class="tech-badge-featured">MONAI</span>
+            <span class="tech-badge-featured">NumPy</span>
+            <span class="tech-badge-featured">Medical Imaging</span>
+          </div>
+          <div class="project-links-featured">
+            <a href="https://arxiv.org/abs/2508.10905" class="project-link-featured" target="_blank">
+              📄 Paper
+            </a>
+            <a href="https://drive.google.com/file/d/1Mhlt9DPoW-HOK1Ky5_jtWJBCNLwpWW6M/view?usp=sharing" class="project-link-featured secondary" target="_blank">
+              📜 Certificate
+            </a>
+          </div>
         </div>
       </div>
+
+      <!-- NileEdge AI Assistant -->
+      <div class="project-card-featured">
+        <div class="project-image-wrapper-featured">
+          <img src="/assets/images/projects/nileedgechatbot.gif" alt="NileEdge AI" class="project-image-featured">
+          <span class="project-category-badge-featured">AI Assistant</span>
+        </div>
+        <div class="project-content-featured">
+          <h3 class="project-title-featured">
+            <span class="emoji">🤖</span>
+            NileEdge AI Assistant
+          </h3>
+          <p class="project-description-featured">
+            Context-aware chatbot with <strong>semantic FAQ matching + Whisper transcription</strong>. Privacy-first design with entirely local inference.
+          </p>
+          <ul class="project-features-featured">
+            <li>Hybrid retrieval + LLM inference</li>
+            <li>Runs entirely locally (privacy-first)</li>
+            <li>Custom UI with FAQ expansion</li>
+            <li>Voice input via Whisper</li>
+          </ul>
+          <div class="project-tech-featured">
+            <span class="tech-badge-featured">Python</span>
+            <span class="tech-badge-featured">Flask</span>
+            <span class="tech-badge-featured">ChromaDB</span>
+            <span class="tech-badge-featured">Whisper</span>
+          </div>
+          <div class="project-links-featured">
+            <a href="https://github.com/ChantelleAA/response_aigent" class="project-link-featured" target="_blank">
+              🔗 GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oware RL -->
+      <div class="project-card-featured">
+        <div class="project-image-wrapper-featured">
+          <img src="/assets/images/projects/oware_demo1.gif" alt="Oware RL" class="project-image-featured">
+          <span class="project-category-badge-featured">Reinforcement Learning</span>
+        </div>
+        <div class="project-content-featured">
+          <h3 class="project-title-featured">
+            <span class="emoji">🎮</span>
+            Oware Reinforcement Learning
+          </h3>
+          <p class="project-description-featured">
+            Full Python environment for traditional <strong>Oware</strong> game with multiple trained RL agents using state-of-the-art algorithms.
+          </p>
+          <ul class="project-features-featured">
+            <li>DQN, DDQN, A3C, AlphaZero implementations</li>
+            <li>Human-vs-agent & agent-vs-agent modes</li>
+            <li>Reward tracking & gameplay visualization</li>
+            <li>Complete thesis on game theory & RL</li>
+          </ul>
+          <div class="project-tech-featured">
+            <span class="tech-badge-featured">Python</span>
+            <span class="tech-badge-featured">TensorFlow</span>
+            <span class="tech-badge-featured">Stable-Baselines</span>
+            <span class="tech-badge-featured">Game Theory</span>
+          </div>
+          <div class="project-links-featured">
+            <a href="https://github.com/ChantelleAA/Reinforcement_Learning_Oware" class="project-link-featured" target="_blank">
+              🔗 GitHub
+            </a>
+            <a href="https://lutpub.lut.fi/bitstream/handle/10024/167861/mastersthesis_Amoako-Atta_Chantelle.pdf?sequence=1&isAllowed=y" class="project-link-featured secondary" target="_blank">
+              📄 Thesis
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GeoSeg Biodiversity -->
+      <div class="project-card-featured">
+        <div class="project-image-wrapper-featured">
+          <img src="/assets/images/projects/biodiversity.gif" alt="GeoSeg" class="project-image-featured">
+          <span class="project-category-badge-featured">Climate AI</span>
+        </div>
+        <div class="project-content-featured">
+          <h3 class="project-title-featured">
+            <span class="emoji">🌍</span>
+            GeoSeg Biodiversity Segmentation
+          </h3>
+          <p class="project-description-featured">
+            Led geospatial AI for <strong>ODOS Tech</strong>, building biodiversity segmentation using Sentinel/OpenEarthMap satellite imagery.
+          </p>
+          <ul class="project-features-featured">
+            <li>Improved mIoU from 68–72% → 87–90%</li>
+            <li>Knowledge Distillation framework</li>
+            <li>Full training & evaluation pipeline</li>
+            <li>Reproducible land-cover classification</li>
+          </ul>
+          <div class="project-tech-featured">
+            <span class="tech-badge-featured">PyTorch</span>
+            <span class="tech-badge-featured">UNetFormer</span>
+            <span class="tech-badge-featured">GeoPandas</span>
+            <span class="tech-badge-featured">Rasterio</span>
+            <span class="tech-badge-featured">GDAL</span>
+          </div>
+          <div class="project-links-featured">
+            <a href="https://github.com/ChantelleAA/geoseg" class="project-link-featured" target="_blank">
+              🔗 Analysis
+            </a>
+            <a href="https://github.com/ChantelleAA/geseg_GAN" class="project-link-featured secondary" target="_blank">
+              🔗 Image Gen
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
     
     <div class="section-cta">
