@@ -240,25 +240,25 @@
   &:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: $shadow-xl;
-    border-color: $color-primary-500;
+    border-color: #FBBF24;
   }
   
   .stat-icon {
     font-size: $font-size-4xl;
-    color: $color-primary-500;
+    color: #FBBF24;
     margin-bottom: $spacing-3;
   }
   
   .stat-number {
     font-size: $font-size-5xl;
     font-weight: $font-weight-extrabold;
-    color: $color-text-primary;
+    color: #F59E0B;
     margin-bottom: $spacing-2;
     line-height: $line-height-none;
   }
   
   .stat-label {
-    color: $color-text-secondary;
+    color: #D97706;
     font-size: $font-size-base;
     font-weight: $font-weight-medium;
   }
@@ -1383,6 +1383,17 @@
     
     @media (max-width: 1024px) {
       justify-content: center;
+    }
+  }
+  
+  .hero-actions {
+    .btn-outline,
+    .btn-ghost {
+      color: #FBBF24 !important;
+      
+      &:hover {
+        color: #1F2937 !important;
+      }
     }
   }
   
