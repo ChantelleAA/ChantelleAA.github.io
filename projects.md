@@ -366,13 +366,16 @@ permalink: /projects/
 .project-card:nth-child(4) { animation-delay: 0.4s; }
 .project-card:nth-child(5) { animation-delay: 0.5s; }
 .project-card:nth-child(6) { animation-delay: 0.6s; }
+.project-card:nth-child(7) { animation-delay: 0.7s; }
+.project-card:nth-child(8) { animation-delay: 0.8s; }
+.project-card:nth-child(9) { animation-delay: 0.9s; }
 </style>
 
 <!-- Hero Section -->
 <div class="projects-hero">
   <div class="hero-content">
     <h1 class="hero-title">My Projects Portfolio</h1>
-    <p class="hero-subtitle">From climate AI research to production ML systems for education, healthcare, and environmental monitoring. Building technology that solves real-world problems and creates impact across Africa and beyond.</p>
+    <p class="hero-subtitle">From climate AI research to production ML systems for education, healthcare, and environmental monitoring. Building technology that solves real-world problems and creates meaningful impact.</p>
   </div>
 </div>
 
