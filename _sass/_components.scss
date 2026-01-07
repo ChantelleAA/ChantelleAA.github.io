@@ -2265,6 +2265,106 @@
 }
 
 // ===================================
+// CATEGORY PAGE STYLES
+// ===================================
+
+.category-container {
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  gap: 1em;
+  
+  @include mobile {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.filter-select,
+.filter-input {
+  padding: 0.3em;
+  font-size: 1em;
+}
+
+.category-list {
+  margin-bottom: 2em;
+  
+  label {
+    margin-right: 1em;
+  }
+}
+
+.post-table {
+  width: 100%;
+  border-collapse: collapse;
+  
+  th,
+  td {
+    padding: 0.7em;
+    border-bottom: 1px solid #ececec;
+    text-align: left;
+    
+    @include mobile {
+      font-size: 0.95em;
+    }
+  }
+  
+  th {
+    background: #fafafa;
+  }
+  
+  .post-title {
+    font-weight: 600;
+  }
+  
+  .post-date {
+    color: #888;
+    font-size: 0.9em;
+  }
+}
+
+.email-form {
+  background: #f7f7fa;
+  padding: 1.2em 1em;
+  border-radius: 8px;
+  margin-top: 2em;
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  button {
+    background: #0066CC;
+    color: #fff;
+    border: none;
+    padding: 0.6em 1.1em;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    
+    &:hover {
+      background: #004080;
+    }
+  }
+}
+
+// ===================================
 // COURSES PAGE STYLES
 // ===================================
 
