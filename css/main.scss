@@ -315,6 +315,10 @@ a:active {
   transform: translateY(-2px);
 }
 
+// NOTE: Do NOT add .post-card:hover styles here
+// Blog post cards should not have lift, shadow, or border color-change effects on hover
+// The .post-card-link hover styles above are sufficient for interactivity
+
 // Premium typography
 .post-title {
   background: none !important;
