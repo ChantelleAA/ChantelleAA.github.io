@@ -2282,6 +2282,207 @@ pre::-webkit-scrollbar-thumb {
     }
   }
 
+// ===================================
+// Category Cards - Filter Bar, Category Chips, and Article Cards
+// ===================================
+
+// Category page container
+.category-container {
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+// Filter bar component
+.filter-bar {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  
+  @include mobile {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.filter-search {
+  flex: 1;
+  min-width: 250px;
+  position: relative;
+  
+  input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.15s ease-out;
+    
+    &:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+  }
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+}
+
+.filter-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-sort {
+  position: relative;
+  
+  select {
+    padding: 0.75rem 2rem 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background: white;
+    transition: all 0.15s ease-out;
+    
+    &:focus {
+      outline: none;
+      border-color: #3b82f6;
+    }
+  }
+}
+
+.filter-clear {
+  color: #ef4444;
+  background: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.15s ease-out;
+  
+  &:hover {
+    background: rgba(239, 68, 68, 0.1);
+  }
+}
+
+// Additional filter bar elements from category page
+.filter-select,
+.filter-input {
+  padding: 0.3em;
+  font-size: 1em;
+}
+
+.category-list {
+  margin-bottom: 2em;
+  
+  label {
+    margin-right: 1em;
+  }
+}
+
+// Category labels/chips
+.category-label {
+  display: inline-block;
+  padding: 0.25em 0.6em;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-radius: 0.5em;
+  font-size: 0.85em;
+  font-weight: 500;
+  margin: 0 0.2em;
+}
+
+// Post table for category page
+.post-table {
+  width: 100%;
+  border-collapse: collapse;
+  
+  th,
+  td {
+    padding: 0.7em;
+    border-bottom: 1px solid #ececec;
+    text-align: left;
+    
+    @include mobile {
+      font-size: 0.95em;
+    }
+  }
+  
+  th {
+    background: #fafafa;
+  }
+  
+  .post-title {
+    font-weight: 600;
+  }
+  
+  .post-date {
+    color: #888;
+    font-size: 0.9em;
+  }
+}
+
+// Email form on category page
+.email-form {
+  background: #f7f7fa;
+  padding: 1.2em 1em;
+  border-radius: 8px;
+  margin-top: 2em;
+  
+  h2 {
+    margin-bottom: 1em;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 0.5em;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  button {
+    background: #0066CC;
+    color: #fff;
+    border: none;
+    padding: 0.6em 1.1em;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    
+    &:hover {
+      background: #004080;
+    }
+  }
+  
+  small {
+    display: block;
+    margin-top: 0.7em;
+    color: #666;
+  }
+}
+
 // Theme imports
 @import
   "base",
