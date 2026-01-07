@@ -2383,8 +2383,8 @@ pre::-webkit-scrollbar-thumb {
 // Additional filter bar elements from legacy category page
 .filter-select,
 .filter-input {
-  padding: 0.3em;
-  font-size: 1em;
+  padding: $spacing-3;
+  font-size: $font-size-base;
 }
 
 .category-list {
@@ -2399,7 +2399,7 @@ pre::-webkit-scrollbar-thumb {
 .category-label {
   display: inline-block;
   padding: 0.25em 0.6em;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, $color-primary, $color-secondary);
   color: white;
   border-radius: 0.5em;
   font-size: 0.85em;
@@ -2415,7 +2415,7 @@ pre::-webkit-scrollbar-thumb {
   th,
   td {
     padding: 0.7em;
-    border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid $color-border-light;
     text-align: left;
     
     @include mobile {
@@ -2424,7 +2424,7 @@ pre::-webkit-scrollbar-thumb {
   }
   
   th {
-    background: #fafafa;
+    background: $color-bg-secondary;
   }
   
   .post-title {
@@ -2432,14 +2432,14 @@ pre::-webkit-scrollbar-thumb {
   }
   
   .post-date {
-    color: #888;
+    color: $color-text-tertiary;
     font-size: 0.9em;
   }
 }
 
 // Email form on category page
 .email-form {
-  background: #f7f7fa;
+  background: $color-bg-secondary;
   padding: 1.2em 1em;
   border-radius: 8px;
   margin-top: 2em;
@@ -2460,12 +2460,12 @@ pre::-webkit-scrollbar-thumb {
     margin-bottom: 1em;
     padding: 0.5em;
     border-radius: 4px;
-    border: 1px solid #ddd;
+    border: 1px solid $color-border-medium;
   }
   
   button {
-    background: #0066CC;
-    color: #fff;
+    background: $color-primary;
+    color: $color-text-inverse;
     border: none;
     padding: 0.6em 1.1em;
     border-radius: 4px;
@@ -2473,14 +2473,14 @@ pre::-webkit-scrollbar-thumb {
     cursor: pointer;
     
     &:hover {
-      background: #004080;
+      background: $color-primary-hover;
     }
   }
   
   small {
     display: block;
     margin-top: 0.7em;
-    color: #666;
+    color: $color-text-tertiary;
   }
 }
 
