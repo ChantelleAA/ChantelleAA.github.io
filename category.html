@@ -4,23 +4,130 @@ title: Blog
 permalink: /category/
 ---
 
-<div class="home">
-  <h1 class="page-heading">Category</h1>
+<style>
+  .category-container { max-width: 900px; margin: 2rem auto; }
+  .page-heading { text-align: center; }
+  .filter-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-bottom: 2em; gap: 1em; }
+  .filter-select, .filter-input { padding: 0.3em; font-size: 1em; }
+  .category-list { margin-bottom: 2em; }
+  .category-list label { margin-right: 1em; }
+  .post-table { width: 100%; border-collapse: collapse; }
+  .post-table th, .post-table td { padding: 0.7em; border-bottom: 1px solid #ececec; text-align: left; }
+  .post-table th { background: #fafafa; }
+  .post-title { font-weight: 600; }
+  .post-date { color: #888; font-size: 0.9em; }
+  .email-form { background: #f7f7fa; padding: 1.2em 1em; border-radius: 8px; margin-top: 2em; }
+  .email-form label { font-weight: bold; }
+  .email-form input, .email-form textarea { width: 100%; margin-bottom: 1em; padding: 0.5em; border-radius: 4px; border: 1px solid #ddd; }
+  .email-form button { background: #0066CC; color: #fff; border: none; padding: 0.6em 1.1em; border-radius: 4px; font-size: 1em; cursor: pointer; }
+  .email-form button:hover { background: #004080; }
+  @media(max-width: 600px) {
+    .filter-bar { flex-direction: column; align-items: stretch; }
+    .post-table, .post-table th, .post-table td { font-size: 0.95em; }
+  }
+</style>
 
-  <ul class="post-list">
+<div class="category-container">
+  <h1 class="page-heading">Articles</h1>
 
-{% capture categories %}{% for category in site.categories %}{{ category | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-{% assign category = categories | split:',' | sort %}
-{% for item in (0..site.categories.size) %}{% unless forloop.last %}
-{% capture word %}{{ category[item] | strip_newlines }}{% endcapture %}
-<h2 class="category" id="{{ word }}">{{ word | upcase }}</h2>
-<ul>
-{% for post in site.categories[word] %}{% if post.title != null %}
-<li><span>{{ post.date | date: "%b %d" }}</span> » <a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></li>
-{% endif %}{% endfor %}
-</ul>
-{% endunless %}{% endfor %}
+  <div class="filter-bar">
+    <label>
+      Filter by category:
+      <select id="categorySelect" class="filter-select">
+        <option value="all">All</option>
+        {% assign categories = site.categories | sort %}
+        {% for category in categories %}
+          <option value="{{ category[0] | escape }}">{{ category[0] }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>
+      Sort by:
+      <select id="sortSelect" class="filter-select">
+        <option value="date-desc">Newest First</option>
+        <option value="date-asc">Oldest First</option>
+        <option value="title-asc">Title (A-Z)</option>
+        <option value="title-desc">Title (Z-A)</option>
+      </select>
+    </label>
+    <input type="search" id="searchInput" class="filter-input" placeholder="Search articles...">
+  </div>
 
-  </ul>
-  
+  <table class="post-table" id="postsTable">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% assign every_post = site.posts | sort: 'date' | reverse %}
+    {% for post in every_post %}
+      <tr data-category="{{ post.categories | join: ' ' }}" data-title="{{ post.title | escape }}" data-date="{{ post.date | date: "%Y-%m-%d" }}">
+        <td class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></td>
+        <td>
+          {% for cat in post.categories %}
+            <span class="category-label">{{ cat }}</span>{% unless forloop.last %}, {% endunless %}
+          {% endfor %}
+        </td>
+        <td class="post-date">{{ post.date | date: "%b %d, %Y" }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+  <form class="email-form" method="POST" action="mailto:chantelatta@gmail.com" enctype="text/plain">
+    <h2>Request a Write-up or Ask a Question</h2>
+    <label for="user-email">Your Email</label>
+    <input type="email" id="user-email" name="email" required>
+    <label for="user-message">Message</label>
+    <textarea id="user-message" name="message" rows="5" required placeholder="Let me know what you'd like me to write about, or ask me a question!"></textarea>
+    <button type="submit">Send Request</button>
+    <small style="display:block;margin-top:0.7em; color:#666">Your message will be sent to me by email.</small>
+  </form>
 </div>
+
+<script>
+  // Filter, search and sort logic
+  const categorySelect = document.getElementById('categorySelect');
+  const sortSelect = document.getElementById('sortSelect');
+  const searchInput = document.getElementById('searchInput');
+  const table = document.getElementById('postsTable');
+  const rows = Array.from(table.tBodies[0].rows);
+
+  function filterAndSort() {
+    let category = categorySelect.value;
+    let sort = sortSelect.value;
+    let search = searchInput.value.trim().toLowerCase();
+
+    let filtered = rows.filter(row => {
+      let matchesCategory = (category === "all") || row.dataset.category.split(' ').includes(category);
+      let matchesSearch = (row.dataset.title.toLowerCase().includes(search));
+      return matchesCategory && matchesSearch;
+    });
+
+    filtered.sort((a, b) => {
+      if (sort === "date-desc") {
+        return b.dataset.date.localeCompare(a.dataset.date);
+      } else if (sort === "date-asc") {
+        return a.dataset.date.localeCompare(b.dataset.date);
+      } else if (sort === "title-asc") {
+        return a.dataset.title.localeCompare(b.dataset.title);
+      } else if (sort === "title-desc") {
+        return b.dataset.title.localeCompare(a.dataset.title);
+      }
+      return 0;
+    });
+
+    // hide all
+    rows.forEach(row => row.style.display = 'none');
+    // show filtered
+    filtered.forEach(row => row.style.display = '');
+  }
+
+  categorySelect.addEventListener('change', filterAndSort);
+  sortSelect.addEventListener('change', filterAndSort);
+  searchInput.addEventListener('input', filterAndSort);
+  window.addEventListener('DOMContentLoaded', filterAndSort);
+</script>
