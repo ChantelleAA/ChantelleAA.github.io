@@ -3,67 +3,392 @@ layout: default
 title: Blog
 permalink: /category/
 ---
-
 <div class="category-container">
-  <h1 class="page-heading">Articles</h1>
-
-  <div class="filter-bar">
-    <label>
-      Filter by category:
-      <select id="categorySelect" class="filter-select">
-        <option value="all">All</option>
-        {% assign categories = site.categories | sort %}
-        {% for category in categories %}
-          <option value="{{ category[0] | escape }}">{{ category[0] }}</option>
-        {% endfor %}
-      </select>
-    </label>
-    <label>
-      Sort by:
-      <select id="sortSelect" class="filter-select">
-        <option value="date-desc">Newest First</option>
-        <option value="date-asc">Oldest First</option>
-        <option value="title-asc">Title (A-Z)</option>
-        <option value="title-desc">Title (Z-A)</option>
-      </select>
-    </label>
-    <input type="search" id="searchInput" class="filter-input" placeholder="Search articles...">
+  <div class="page-header">
+    <h1 class="page-heading">Articles</h1>
+    <p class="page-description">Explore our collection of articles and insights</p>
   </div>
 
-  <table class="post-table" id="postsTable">
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-    {% assign every_post = site.posts | sort: 'date' | reverse %}
-    {% for post in every_post %}
-      <tr data-category="{{ post.categories | join: ' ' }}" data-title="{{ post.title | escape }}" data-date="{{ post.date | date: "%Y-%m-%d" }}">
-        <td class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></td>
-        <td>
-          {% for cat in post.categories %}
-            <span class="category-label">{{ cat }}</span>{% unless forloop.last %}, {% endunless %}
+  <div class="filter-section">
+    <div class="filter-controls">
+      <div class="filter-group">
+        <label for="categorySelect" class="filter-label">Category</label>
+        <select id="categorySelect" class="filter-select">
+          <option value="all">All Categories</option>
+          {% assign categories = site.categories | sort %}
+          {% for category in categories %}
+            <option value="{{ category[0] | escape }}">{{ category[0] }}</option>
           {% endfor %}
-        </td>
-        <td class="post-date">{{ post.date | date: "%b %d, %Y" }}</td>
-      </tr>
-    {% endfor %}
-    </tbody>
-  </table>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label for="sortSelect" class="filter-label">Sort By</label>
+        <select id="sortSelect" class="filter-select">
+          <option value="date-desc">Newest First</option>
+          <option value="date-asc">Oldest First</option>
+          <option value="title-asc">Title (A-Z)</option>
+          <option value="title-desc">Title (Z-A)</option>
+        </select>
+      </div>
+      
+      <div class="filter-group search-group">
+        <label for="searchInput" class="filter-label">Search</label>
+        <input type="search" id="searchInput" class="filter-input" placeholder="Search articles...">
+      </div>
+    </div>
+  </div>
 
-  <form class="email-form" method="POST" action="mailto:chantelatta@gmail.com" enctype="text/plain">
-    <h2>Request a Write-up or Ask a Question</h2>
-    <label for="user-email">Your Email</label>
-    <input type="email" id="user-email" name="email" required>
-    <label for="user-message">Message</label>
-    <textarea id="user-message" name="message" rows="5" required placeholder="Let me know what you'd like me to write about, or ask me a question!"></textarea>
-    <button type="submit">Send Request</button>
-    <small>Your message will be sent to me by email.</small>
-  </form>
+  <div class="posts-container">
+    <table class="post-table" id="postsTable">
+      <thead>
+        <tr>
+          <th class="col-title">Title</th>
+          <th class="col-category">Category</th>
+          <th class="col-date">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% assign every_post = site.posts | sort: 'date' | reverse %}
+      {% for post in every_post %}
+        <tr class="post-row" data-category="{{ post.categories | join: ' ' }}" data-title="{{ post.title | escape }}" data-date="{{ post.date | date: "%Y-%m-%d" }}">
+          <td class="post-title">
+            <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+          </td>
+          <td class="post-categories">
+            {% for cat in post.categories %}
+              <span class="category-badge">{{ cat }}</span>
+            {% endfor %}
+          </td>
+          <td class="post-date">{{ post.date | date: "%b %d, %Y" }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="contact-section">
+    <div class="contact-card">
+      <h2 class="contact-heading">Get in Touch</h2>
+      <p class="contact-description">Have a topic you'd like me to cover? Questions about an article? I'd love to hear from you.</p>
+      
+      <form class="contact-form" method="POST" action="mailto:chantelatta@gmail.com" enctype="text/plain">
+        <div class="form-group">
+          <label for="user-email" class="form-label">Your Email</label>
+          <input type="email" id="user-email" name="email" class="form-input" placeholder="you@example.com" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="user-message" class="form-label">Message</label>
+          <textarea id="user-message" name="message" rows="6" class="form-textarea" placeholder="Let me know what you'd like me to write about, or ask me a question!" required></textarea>
+        </div>
+        
+        <button type="submit" class="form-button">Send Message</button>
+        <p class="form-note">Your message will be sent directly to my email</p>
+      </form>
+    </div>
+  </div>
 </div>
+
+<style>
+  .category-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  /* Page Header */
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .page-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-description {
+    font-size: 1.125rem;
+    color: #6b7280;
+    margin: 0;
+  }
+
+  /* Filter Section */
+  .filter-section {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid #e5e7eb;
+  }
+
+  .filter-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-group {
+    grid-column: span 1;
+  }
+
+  .filter-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+  }
+
+  .filter-select,
+  .filter-input {
+    padding: 0.625rem 0.875rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    color: #111827;
+    background: white;
+    transition: all 0.2s;
+  }
+
+  .filter-select:focus,
+  .filter-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+
+  .filter-input::placeholder {
+    color: #9ca3af;
+  }
+
+  /* Posts Table */
+  .posts-container {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    margin-bottom: 3rem;
+  }
+
+  .post-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .post-table thead {
+    background: #f9fafb;
+    border-bottom: 2px solid #e5e7eb;
+  }
+
+  .post-table th {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #374151;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .post-row {
+    border-bottom: 1px solid #f3f4f6;
+    transition: background-color 0.15s;
+  }
+
+  .post-row:hover {
+    background-color: #f9fafb;
+  }
+
+  .post-row:last-child {
+    border-bottom: none;
+  }
+
+  .post-table td {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .post-title {
+    font-weight: 500;
+  }
+
+  .post-link {
+    color: #111827;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 1rem;
+  }
+
+  .post-link:hover {
+    color: #3b82f6;
+  }
+
+  .post-categories {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .category-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: #dbeafe;
+    color: #1e40af;
+    border-radius: 6px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+  }
+
+  .post-date {
+    color: #6b7280;
+    font-size: 0.9375rem;
+    white-space: nowrap;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    margin-top: 4rem;
+  }
+
+  .contact-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+  }
+
+  .contact-heading {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact-description {
+    color: #6b7280;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-form {
+    max-width: 600px;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.9375rem;
+    color: #111827;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+
+  .form-input:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+
+  .form-textarea {
+    resize: vertical;
+  }
+
+  .form-button {
+    background: #3b82f6;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .form-button:hover {
+    background: #2563eb;
+  }
+
+  .form-button:active {
+    transform: translateY(1px);
+  }
+
+  .form-note {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .category-container {
+      padding: 1rem;
+    }
+
+    .page-heading {
+      font-size: 2rem;
+    }
+
+    .filter-controls {
+      grid-template-columns: 1fr;
+    }
+
+    .post-table {
+      font-size: 0.875rem;
+    }
+
+    .post-table th,
+    .post-table td {
+      padding: 0.75rem 1rem;
+    }
+
+    .col-category,
+    .col-date {
+      display: none;
+    }
+
+    .contact-card {
+      padding: 1.5rem;
+    }
+
+    .contact-heading {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .post-categories {
+      display: none;
+    }
+  }
+</style>
 
 <script>
   // Filter, search and sort logic
@@ -97,9 +422,7 @@ permalink: /category/
       return 0;
     });
 
-    // hide all
     rows.forEach(row => row.style.display = 'none');
-    // show filtered
     filtered.forEach(row => row.style.display = '');
   }
 
