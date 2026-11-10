@@ -179,7 +179,7 @@ permalink: /about/
 }
 
 .about-section ul li:before {
-  content: "â";
+  content: "Ã¢ÂÂ";
   position: absolute;
   left: 0;
   color: var(--primary-color);
@@ -533,7 +533,7 @@ html {
 <div class="about-section">
   <h2>Who I Am</h2>
   <p>
-    I'm a PhD researcher at University College Dublin working on AI for climate-resilient offshore wind energy, funded by the Innovate for Ireland (Decarb-AI). I build machine learning systems that bridge the gap between research and real-world impactâfrom climate AI and geospatial analysis to NLP, computer vision, and healthcare applications.
+    I'm a PhD researcher at University College Dublin working on AI for climate-resilient offshore wind energy, funded by the Innovate for Ireland (Decarb-AI). I build machine learning systems that bridge the gap between research and real-world impactÃ¢ÂÂfrom climate AI and geospatial analysis to NLP, computer vision, and healthcare applications.
   </p>
   <p>
     My work spans three core areas: advancing climate AI research, building production ML systems that solve real problems, and teaching the next generation of African AI practitioners. I believe that impactful AI must be both technically excellent and deeply connected to the communities it serves.
@@ -544,7 +544,7 @@ html {
   <h2>Current Work</h2>
   <ul>
     <li><strong>PhD Research at UCD:</strong> Developing AI systems for optimizing offshore wind energy production in Irish waters, focusing on climate resilience, predictive maintenance, and energy forecasting using machine learning and remote sensing</li>
-    <li><strong>Teaching & Mentorship:</strong> NLP lecturer at AIMS Ghana, teaching 200+ students across Africa in Python, data science, and AI. Mentor with FemAfricMaths and Divas in AI</li>
+    <li><strong>Teaching & Mentorship:</strong> MMST Academic Tutor at AIMS Ghana, teaching 200+ students across Africa in Python, data science, and AI. Mentor with FemAfricMaths and Divas in AI</li>
     <li><strong>Research & Consulting:</strong> Collaborating on climate AI, geospatial ML, NLP projects across academia and industry. MICCAI 2024 scholarship recipient for brain tumor segmentation research</li>
     <li><strong>Open Source & Community:</strong> Active contributor to Ghana NLP, building tools for Ghanaian languages and low-resource NLP</li>
   </ul>
@@ -586,14 +586,14 @@ html {
     <div class="education-item">
       <h3>University College Dublin</h3>
       <p class="degree">PhD, AI for Climate-Resilient Offshore Wind in Ireland (In Progress)</p>
-      <p class="year">Sep 2025 – Present</p>
+      <p class="year">Sep 2025 â Present</p>
       <p>Innovate for Ireland (Decarb-AI). Research focus: AI for climate-resilient offshore wind energy, predictive maintenance, and energy forecasting using machine learning and remote sensing.</p>
     </div>
     
     <div class="education-item">
       <h3>African Institute for Mathematical Sciences (AIMS) Rwanda</h3>
       <p class="degree">MSc in Mathematical Sciences</p>
-      <p class="year">Aug 2022 – Jun 2023</p>
+      <p class="year">Aug 2022 â Jun 2023</p>
       <p>Thesis: Machine Learning for Cardiac Arrhythmia Classification. Specialized in statistical learning, optimization, and signal processing for healthcare diagnostics.</p>
     </div>
     
@@ -621,11 +621,6 @@ html {
       <p>International scholarship to present brain tumor segmentation research at premier medical imaging conference</p>
     </div>
     
-    <div class="award-card">
-      <i class="fa-solid fa-medal"></i>
-      <h3>Ishango AI Hackathon Winner</h3>
-      <p>Led team to victory building intelligent case-mediator matching system for legal disputes</p>
-    </div>
     
     <div class="award-card">
       <i class="fa-solid fa-star"></i>
@@ -643,23 +638,22 @@ html {
       <span class="label">Students Taught</span>
     </div>
     <div class="stat-box">
-      <span class="number">5</span>
-      <span class="label">Publications</span>
+      <span class="number">1</span>
+      <span class="label">Publication</span>
     </div>
     <div class="stat-box">
       <span class="number">15+</span>
       <span class="label">Projects</span>
     </div>
     <div class="stat-box">
-      <span class="number">3</span>
-      <span class="label">Hackathon Wins</span>
+      
     </div>
   </div>
   <p>
     Teaching is at the heart of my work. As an NLP lecturer at AIMS Ghana, I delivered an intensive 2-week graduate-level course covering modern NLP techniques. I've taught Python, data science, and machine learning to over 200 students across universities (AIMS, Adaire School of AI) and professional training programs. Through FemAfricMaths and Divas in AI, I mentor early-career African women in mathematics and AI, serving as Mentor, FemAfricMaths and Divas in AI.
   </p>
   <p>
-    I also create and share educational resourcesâfrom GeoAI workshop materials on satellite imagery processing to Python learning notebooks used by hundreds of students. My goal is to make AI education accessible and empowering, especially for underrepresented communities in tech.
+    I also create and share educational resourcesÃ¢ÂÂfrom GeoAI workshop materials on satellite imagery processing to Python learning notebooks used by hundreds of students. My goal is to make AI education accessible and empowering, especially for underrepresented communities in tech.
   </p>
 </div>
 
@@ -673,7 +667,7 @@ html {
 <div class="cta-section">
   <h2>Let's Collaborate</h2>
   <p>
-    I'm open to research collaborations, speaking engagements, consulting opportunities, and mentorship. Whether you're working on climate AI, building ML systems for social good, or looking for technical guidanceâlet's connect!
+    I'm open to research collaborations, speaking engagements, consulting opportunities, and mentorship. Whether you're working on climate AI, building ML systems for social good, or looking for technical guidanceÃ¢ÂÂlet's connect!
   </p>
   <div class="cta-buttons">
     <a href="mailto:chantelatta@gmail.com" class="cta-button">
