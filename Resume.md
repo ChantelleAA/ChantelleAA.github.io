@@ -19,7 +19,7 @@ comments: true
     <i class="fa-brands fa-github"></i> github.com/ChantelleAA
   </a>
   <a href="tel:+353899418794" class="resume-contact-link">
-    <i class="fa-solid fa-phone"></i> (233) 550-986-002
+    <i class="fa-solid fa-phone"></i> +353 89 941 8794
   </a>
 </div>
 
@@ -141,7 +141,7 @@ Mastercard Foundation Transition Training Programme
 
 ---
 
-## ð¬ Research Work
+## Ã°ÂÂÂ¬ Research Work
 
 **SPARK Program Participant**  
 *Sprint AI Training for African Medical Imaging (SPARK)* | May 2024 - Aug. 2024  
@@ -152,7 +152,7 @@ Mastercard Foundation Transition Training Programme
 
 ---
 
-## ð¬ Selected Projects
+## Ã°ÂÂÂ¬ Selected Projects
 
 **Quantathon Judging Platform & Team Mentorship**  
 *AIMS Ghana* | Jul. 2025  
@@ -221,7 +221,7 @@ Mastercard Foundation Transition Training Programme
 
 ---
 
-## ð¢ Conferences and Workshops
+## Ã°ÂÂÂ¢ Conferences and Workshops
 
 - AIMS QTedu Workshop & AIMS Quantathon (Jul. 2025)
 - Mathematics and Statistics for Data Science and AI Conference, University of Ghana - Speaker (Jul. 2025)
