@@ -330,7 +330,7 @@ body {
 }
 
 .project-features li:before {
-  content: "✓";
+  content: "â";
   position: absolute;
   left: 0;
   color: var(--primary-color);
@@ -568,11 +568,11 @@ html {
     </div>
     <div class="project-content">
       <h3 class="project-title">
-        <span class="emoji">🧑🏾‍⚖️</span>
+        <span class="emoji">ð§ð¾ââï¸</span>
         Quantathon Judging App
       </h3>
       <p class="project-description">
-        A Django-based hackathon judging platform used in the <strong>AIMS Quantathon 2024</strong> with 50+ participants. Streamlined the entire judging process with real-time analytics and secure voting.
+        A Django-based hackathon judging platform used in the <strong>AIMS Quantathon 2025</strong> with 50+ participants. Streamlined the entire judging process with real-time analytics and secure voting.
       </p>
       <ul class="project-features">
         <li>Real-time leaderboard & analytics dashboard</li>
@@ -588,10 +588,10 @@ html {
       </div>
       <div class="project-links">
         <a href="https://github.com/ChantelleAA/judging_criteria" class="project-link" target="_blank">
-          🔗 GitHub
+          ð GitHub
         </a>
         <a href="https://www.linkedin.com/posts/african-institute-for-mathematical-sciences-ghana_aimsqtedu25-quantumforgood-quantathonwinners-activity-7353129321454100482-uauo" class="project-link secondary" target="_blank">
-          📰 Coverage
+          ð° Coverage
         </a>
       </div>
     </div>
@@ -605,14 +605,14 @@ html {
     </div>
     <div class="project-content">
       <h3 class="project-title">
-        <span class="emoji">📘</span>
+        <span class="emoji">ð</span>
         TLR Helper
       </h3>
       <p class="project-description">
         Teaching & Learning Resource Assistant supporting Ghana's <strong>Standards-Based Curriculum</strong>, used in TEDD Ghana teacher workshops.
       </p>
       <ul class="project-features">
-        <li>Smart curriculum filtering (Class → Strand → Indicator)</li>
+        <li>Smart curriculum filtering (Class â Strand â Indicator)</li>
         <li>Offline PDFs for limited-internet schools</li>
         <li>Special needs & learning styles support</li>
         <li>Teacher resource library</li>
@@ -625,7 +625,7 @@ html {
       </div>
       <div class="project-links">
         <a href="https://github.com/ChantelleAA/tlr_app" class="project-link" target="_blank">
-          🔗 GitHub
+          ð GitHub
         </a>
       </div>
     </div>
@@ -639,11 +639,11 @@ html {
     </div>
     <div class="project-content">
       <h3 class="project-title">
-        <span class="emoji">🧠</span>
+        <span class="emoji">ð§ </span>
         Brain Tumor Segmentation
       </h3>
       <p class="project-description">
-        Developed <strong>ensemble models</strong> for brain tumor segmentation on Sub-Saharan MRI data. Presented at <strong>MICCAI 2023</strong> with scholarship award.
+        Developed <strong>ensemble models</strong> for brain tumor segmentation on Sub-Saharan MRI data. Presented at <strong>MICCAI 2024</strong> with scholarship award. Published as a Springer book chapter.
       </p>
       <ul class="project-features">
         <li>MICCAI 2023 Scholarship recipient</li>
@@ -659,10 +659,10 @@ html {
       </div>
       <div class="project-links">
         <a href="https://arxiv.org/abs/2508.10905" class="project-link" target="_blank">
-          📄 Paper
+          ð Paper
         </a>
         <a href="https://drive.google.com/file/d/1Mhlt9DPoW-HOK1Ky5_jtWJBCNLwpWW6M/view?usp=sharing" class="project-link secondary" target="_blank">
-          📜 Certificate
+          ð Certificate
         </a>
       </div>
     </div>
@@ -676,7 +676,7 @@ html {
     </div>
     <div class="project-content">
       <h3 class="project-title">
-        <span class="emoji">🤖</span>
+        <span class="emoji">ð¤</span>
         NileEdge AI Assistant
       </h3>
       <p class="project-description">
@@ -696,7 +696,7 @@ html {
       </div>
       <div class="project-links">
         <a href="https://github.com/ChantelleAA/response_aigent" class="project-link" target="_blank">
-          🔗 GitHub
+          ð GitHub
         </a>
       </div>
     </div>
@@ -710,7 +710,7 @@ html {
     </div>
     <div class="project-content">
       <h3 class="project-title">
-        <span class="emoji">🎮</span>
+        <span class="emoji">ð®</span>
         Oware Reinforcement Learning
       </h3>
       <p class="project-description">
@@ -730,10 +730,10 @@ html {
       </div>
       <div class="project-links">
         <a href="https://github.com/ChantelleAA/Reinforcement_Learning_Oware" class="project-link" target="_blank">
-          🔗 GitHub
+          ð GitHub
         </a>
         <a href="https://lutpub.lut.fi/bitstream/handle/10024/167861/mastersthesis_Amoako-Atta_Chantelle.pdf?sequence=1&isAllowed=y" class="project-link secondary" target="_blank">
-          📄 Thesis
+          ð Thesis
         </a>
       </div>
     </div>
@@ -747,14 +747,14 @@ html {
     </div>
     <div class="project-content">
       <h3 class="project-title">
-        <span class="emoji">🌍</span>
+        <span class="emoji">ð</span>
         GeoSeg Biodiversity Segmentation
       </h3>
       <p class="project-description">
         Led geospatial AI for <strong>ODOS Tech</strong>, building biodiversity segmentation using Sentinel/OpenEarthMap satellite imagery.
       </p>
       <ul class="project-features">
-        <li>Improved mIoU from 68–72% → 87–90%</li>
+        <li>Improved mIoU from 68â72% â 87â90%</li>
         <li>Knowledge Distillation framework</li>
         <li>Full training & evaluation pipeline</li>
         <li>Reproducible land-cover classification</li>
@@ -768,10 +768,10 @@ html {
       </div>
       <div class="project-links">
         <a href="https://github.com/ChantelleAA/geoseg" class="project-link" target="_blank">
-          🔗 Analysis
+          ð Analysis
         </a>
         <a href="https://github.com/ChantelleAA/geseg_GAN" class="project-link secondary" target="_blank">
-          🔗 Image Gen
+          ð Image Gen
         </a>
       </div>
     </div>
@@ -785,11 +785,11 @@ html {
     </div>
     <div class="project-content">
       <h3 class="project-title">
-        <span class="emoji">🔋</span>
+        <span class="emoji">ð</span>
         RTE Energy Research Dashboard
       </h3>
       <p class="project-description">
-        Multi-city pollution dashboards for RTE Investigates research on renewable energy costs with satellite & ground sensor fusion.
+        Multi-city pollution dashboards for RTÉ Investigates air quality reporting with satellite & ground sensor fusion.
       </p>
       <ul class="project-features">
         <li>Air-quality analytics for multiple cities</li>
@@ -805,10 +805,10 @@ html {
       </div>
       <div class="project-links">
         <a href="https://github.com/ChantelleAA/urumqi_analysis" class="project-link" target="_blank">
-          🔗 Analysis
+          ð Analysis
         </a>
         <a href="https://github.com/ChantelleAA/pollution_viz" class="project-link secondary" target="_blank">
-          🔗 Dashboard
+          ð Dashboard
         </a>
       </div>
     </div>
@@ -818,13 +818,13 @@ html {
   <div class="project-card" data-category="ai-research">
     <div class="project-image-wrapper">
       <div style="height: 280px; background: linear-gradient(135deg, #F5F3EF 0%, #E8E5DF 100%); display: flex; align-items: center; justify-content: center;">
-        <span style="font-size: 5rem;">📄</span>
+        <span style="font-size: 5rem;">ð</span>
       </div>
       <span class="project-category-badge">Research</span>
     </div>
     <div class="project-content">
       <h3 class="project-title">
-        <span class="emoji">📄</span>
+        <span class="emoji">ð</span>
         OCR Research & Evaluation
       </h3>
       <p class="project-description">
@@ -854,7 +854,7 @@ html {
     </div>
     <div class="project-content">
       <h3 class="project-title">
-        <span class="emoji">🌍</span>
+        <span class="emoji">ð</span>
         GeoAI Workshop Materials
       </h3>
       <p class="project-description">
@@ -875,7 +875,7 @@ html {
       </div>
       <div class="project-links">
         <a href="https://github.com/ChantelleAA/gain_geoai_workshop" class="project-link" target="_blank">
-          🔗 GitHub
+          ð GitHub
         </a>
       </div>
     </div>
